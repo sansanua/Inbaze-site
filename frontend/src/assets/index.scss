@@ -1,3 +1,8 @@
-@import 'global.scss';
-@import 'media.scss';
-@import 'colors.scss';
+@import './style/font.scss';
+
+@import './style/variables.scss';
+@import './style/spacing.scss';
+
+@import './style/global.scss';
+@import './style/media.scss';
+@import './style/colors.scss';

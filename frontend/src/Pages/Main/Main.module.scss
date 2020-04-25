@@ -1,0 +1,35 @@
+@import '../../assets/index.scss';
+
+.base {
+    margin-top: calc(-#{$headerHeight});
+}
+
+.container {
+    @include contentWidth;
+}
+
+.imageContainer {
+    @include center;
+
+    height: 100vh;
+    background-image: url('/images/main-01.svg');
+    background-size: cover;
+    background-position: 65% bottom;
+    background-repeat: no-repeat;
+}
+
+.imageContent {
+    width: 500px;
+
+    .title {
+        font-size: 56px;
+        font-weight: bold;
+        color: $wight;
+        margin-bottom: $spacingBase;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        color: $wight;
+    }
+}

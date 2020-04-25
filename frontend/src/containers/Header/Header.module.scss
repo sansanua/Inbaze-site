@@ -1,21 +1,58 @@
 @import '../../assets/index.scss';
 
 .base {
+    display: flex;
+    background-color: $primary;
+    height: $headerHeight;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    z-index: 10;
+
+    &.transparent {
+        background-color: transparent;
+    }
+}
+
+.container {
     @include contentWidth;
 
     display: flex;
+
+    @include t {
+        justify-content: space-between;
+    }
 }
 
 .logo {
+    width: 150px;
+    height: 31px;
+    margin-right: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/logo-white-01.svg');
 }
 
 .items {
     display: flex;
+    align-items: center;
+
+    @include t {
+        display: none;
+    }
 
     .item {
         margin-right: 40px;
+        padding: 8px;
+        cursor: pointer;
     }
 }
 
 .button {
+    display: none;
+
+    @include t {
+        display: block;
+    }
 }

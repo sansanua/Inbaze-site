@@ -1,0 +1,29 @@
+@import './media.scss';
+
+@mixin contentWidth {
+    width: 1110px;
+
+    @include t {
+        width: 768px;
+    }
+
+    @include m {
+        width: 320px;
+    }
+}
+
+@mixin aCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin jCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

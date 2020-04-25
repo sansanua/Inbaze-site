@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'NobelWGL';
+    src: url('/font/NobelWGL-Light.eot');
+    src: local('NobelWGL-Light'), url('/font/NobelWGL-Light.eot?#iefix') format('embedded-opentype'),
+        url('/font/NobelWGL-Light.woff') format('woff'), url('/font/NobelWGL-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NobelWGL';
+    src: url('/font/NobelWGL-Book.eot');
+    src: local('NobelWGL-Book'), url('/font/NobelWGL-Book.eot?#iefix') format('embedded-opentype'),
+        url('/font/NobelWGL-Book.woff') format('woff'), url('/font/NobelWGL-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NobelWGL';
+    src: url('/font/NobelWGL-Bold.eot');
+    src: local('NobelWGL-Bold'), url('/font/NobelWGL-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/font/NobelWGL-Bold.woff') format('woff'), url('/font/NobelWGL-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
