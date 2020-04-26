@@ -33,3 +33,41 @@
         color: $wight;
     }
 }
+
+.instruments {
+    @include center;
+    margin-top: 100px;
+
+    .title {
+        @include jCenter;
+
+        font-size: 48px;
+        color: $primary;
+        margin-bottom: $spacingBase;
+    }
+
+    .subtitle {
+        @include jCenter;
+
+        font-size: 20px;
+        color: #000;
+        margin-bottom: 60px;
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .item {
+            width: 353px;
+            height: 290px;
+            margin-bottom: 25px;
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                width: 540px;
+            }
+        }
+    }
+}
