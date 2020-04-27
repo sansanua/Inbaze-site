@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
+import Button from '../../components/Button';
 import InstrumentCard from './components/InstrumentCard';
 
 import style from './Main.module.scss';
@@ -75,7 +76,9 @@ export default class Main extends Component {
                             <div className={cx(style.subtitle)}>
                                 Выберете способ инвестирования,который подходит именно Вам
                             </div>
-                            <div>button</div>
+                            <Button mainColor="#b2eaea" secondColor="#4349ba">
+                                Выбрать предложение
+                            </Button>
                         </div>
                     </div>
                 </div>
