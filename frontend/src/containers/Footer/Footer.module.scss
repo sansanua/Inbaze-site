@@ -1,3 +1,80 @@
+@import '../../assets/index.scss';
+
 .base {
-    color: #333333;
+    display: flex;
+    background-color: #ced1ec;
+    padding-top: 200px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    z-index: 10;
+
+    &.transparent {
+        background-color: transparent;
+    }
+}
+
+.container {
+    @include contentWidth;
+}
+
+.navigation {
+    display: flex;
+    font-size: 16px;
+
+    @include t {
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    width: 150px;
+    height: 31px;
+    margin-right: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/logo-blue-01.svg');
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    @include t {
+        // display: none;
+    }
+
+    .item {
+        margin-right: 40px;
+        padding: 8px;
+        cursor: pointer;
+    }
+}
+
+.navigationLeftPart {
+    // display: none;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    font-size: 18px;
+}
+
+.contactsLeft {
+    display: flex;
+
+    & > div {
+        margin-right: 30px;
+    }
+}
+
+.contactsRight {
+    display: flex;
+
+    & > div {
+        margin-left: 30px;
+    }
 }
