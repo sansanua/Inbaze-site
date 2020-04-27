@@ -19,7 +19,9 @@ export default function Footer() {
                         <div className={cx(style.item)}>О нас</div>
                     </div>
 
-                    <div className={cx(style.navigationLeftPart)}>Есть вопрос?</div>
+                    <div className={cx(style.navigationLeftPart)}>
+                        <div>Есть вопрос?</div>
+                    </div>
                 </div>
 
                 <Divider></Divider>

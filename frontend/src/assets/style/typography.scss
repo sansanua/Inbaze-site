@@ -1,0 +1,71 @@
+@mixin font56 {
+    font-size: 56px;
+
+    @include t {
+        font-size: 48px;
+    }
+
+    @include m {
+        font-size: 32px;
+    }
+}
+
+@mixin font48 {
+    font-size: 48px;
+
+    @include t {
+        font-size: 36px;
+    }
+
+    @include m {
+        font-size: 30px;
+    }
+}
+
+@mixin font30 {
+    font-size: 30px;
+
+    @include t {
+        font-size: 30px;
+    }
+
+    @include m {
+        font-size: 24px;
+    }
+}
+
+@mixin font24 {
+    font-size: 24px;
+
+    // @include t {
+    //     font-size: 24px;
+    // }
+
+    @include m {
+        font-size: 16px;
+    }
+}
+
+@mixin font20 {
+    font-size: 20px;
+
+    @include t {
+        font-size: 20px;
+    }
+
+    @include m {
+        font-size: 18px;
+    }
+}
+
+@mixin font18 {
+    font-size: 18px;
+
+    @include t {
+        font-size: 18px;
+    }
+
+    @include m {
+        font-size: 16px;
+    }
+}

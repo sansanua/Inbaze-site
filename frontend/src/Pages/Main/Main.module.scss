@@ -19,39 +19,49 @@
 }
 
 .imageContent {
-    width: 500px;
+    @include width(500px, 400px, 280px);
 
     .title {
-        font-size: 56px;
+        @include font56;
+
         font-weight: bold;
         color: $wight;
         margin-bottom: $spacingBase;
     }
 
     .subtitle {
-        font-size: 24px;
+        @include font24;
+
         color: $wight;
         margin-bottom: 90px;
+    }
+
+    .button {
+        @include t {
+            display: none;
+        }
     }
 }
 
 .instruments {
     @include center;
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 
     .title {
         @include jCenter;
+        @include font48;
 
-        font-size: 48px;
+        text-align: center;
         color: $primary;
         margin-bottom: $spacingBase;
     }
 
     .subtitle {
         @include jCenter;
+        @include font20;
 
-        font-size: 20px;
+        text-align: center;
         margin-bottom: 60px;
     }
 
@@ -60,14 +70,24 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
+        @include t {
+            padding: 0 17px;
+        }
+
         .item {
             width: 353px;
             height: 290px;
             margin-bottom: 25px;
 
-            &:nth-child(4),
-            &:nth-child(5) {
-                width: 540px;
+            @include d {
+                &:nth-child(4),
+                &:nth-child(5) {
+                    width: 540px;
+                }
+            }
+
+            @include m {
+                height: 200px;
             }
         }
     }

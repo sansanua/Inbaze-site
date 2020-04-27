@@ -13,6 +13,11 @@
     background-repeat: no-repeat;
     background-position: bottom 30px right -75px;
     opacity: 0.5;
+
+    @include m {
+        background-size: 150px;
+        background-position: bottom 20px right -50px;
+    }
 }
 
 .content {
@@ -22,10 +27,12 @@
 }
 
 .name {
-    font-size: 30px;
+    @include font30;
+    margin-bottom: 20px;
+
     color: $primary;
 }
 
 .description {
-    font-size: 20px;
+    @include font20;
 }

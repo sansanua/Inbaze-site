@@ -23,7 +23,7 @@ const items = [
     },
     {
         name: 'НПФ',
-        description: 'Негосударственный пенсионный фонд',
+        description: 'Негосударственный пенсионный фонд',
         color: '#dce3ff',
         image: '/images/schety-01.svg',
         link: 'l',
@@ -43,22 +43,22 @@ const items = [
         link: 'l',
     },
     {
-        name: 'Доверительное управление',
-        description: 'Паевой инвестиционный фонд',
+        name: 'Доверительное управление',
+        description: 'Паевой инвестиционный фонд',
         color: '#dce3ff',
         image: '/images/handshake-02.svg',
         link: 'l',
     },
     {
         name: 'Недвижимость',
-        description: 'Акции публичных компаний',
+        description: 'Акции публичных компаний',
         color: '#e8e8e8',
         image: '/images/property-01.svg',
         link: 'l',
     },
     {
         name: 'Бизнес',
-        description: 'Акции публичных компаний',
+        description: 'Акции публичных компаний',
         color: '#e8e8e8',
         image: '/images/papka-01.svg',
         link: 'l',
@@ -76,7 +76,7 @@ export default class Main extends Component {
                             <div className={cx(style.subtitle)}>
                                 Выберете способ инвестирования,который подходит именно Вам
                             </div>
-                            <Button mainColor="#b2eaea" secondColor="#4349ba">
+                            <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
                                 Выбрать предложение
                             </Button>
                         </div>

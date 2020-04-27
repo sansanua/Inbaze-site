@@ -3,11 +3,15 @@
 .base {
     display: flex;
     background-color: #ced1ec;
-    padding-top: 200px;
+    padding-top: 60px;
     justify-content: center;
     align-items: center;
     font-size: 14px;
     z-index: 10;
+
+    @include m {
+        padding-top: 40px;
+    }
 
     &.transparent {
         background-color: transparent;
@@ -25,6 +29,10 @@
     @include t {
         justify-content: space-between;
     }
+
+    @include m {
+        flex-wrap: wrap;
+    }
 }
 
 .logo {
@@ -34,6 +42,13 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('/images/logo-blue-01.svg');
+
+    @include m {
+        width: 100%;
+        margin-right: 0;
+        background-position: center;
+        margin-bottom: 40px;
+    }
 }
 
 .items {
@@ -42,7 +57,7 @@
     flex: 1;
 
     @include t {
-        // display: none;
+        display: none;
     }
 
     .item {
@@ -54,27 +69,60 @@
 
 .navigationLeftPart {
     // display: none;
+
+    @include m {
+        @include jCenter;
+
+        width: 100%;
+    }
 }
 
 .contacts {
+    @include font18;
+
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
-    font-size: 18px;
 }
 
 .contactsLeft {
     display: flex;
 
+    @include m {
+        width: 50%;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     & > div {
         margin-right: 30px;
+
+        @include m {
+            width: 100%;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
     }
 }
 
 .contactsRight {
     display: flex;
 
+    @include m {
+        width: 50%;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     & > div {
         margin-left: 30px;
+
+        @include m {
+            width: 100%;
+            margin-left: 8px;
+            margin-bottom: 8px;
+        }
     }
 }

@@ -8,7 +8,7 @@
     }
 
     @include m {
-        width: 320px;
+        width: 360px;
     }
 }
 
@@ -26,4 +26,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin width($des, $tab, $mob) {
+    width: $des;
+
+    @include t {
+        width: $tab;
+    }
+
+    @include m {
+        width: $mob;
+    }
 }

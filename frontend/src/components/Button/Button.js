@@ -5,7 +5,7 @@ import style from './Button.module.scss';
 
 export default function Button({ children, className, type = 'lightBlueTransparent' }) {
     return (
-        <button className={cx(className, style.animation, style[type])}>
+        <button className={cx(className, style.animation, style.base, style[type])}>
             <span>{children}</span>
         </button>
     );
