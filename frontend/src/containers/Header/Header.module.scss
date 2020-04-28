@@ -19,6 +19,7 @@
     @include contentWidth;
 
     display: flex;
+    align-items: center;
 
     @include t {
         justify-content: space-between;
@@ -40,19 +41,56 @@
 
     @include t {
         display: none;
+
+        &.menuOpen {
+            display: flex;
+        }
+    }
+
+    @include t {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 250px;
+        flex-wrap: wrap;
+        padding: 60px 25px 30px;
+        background-color: #1f2581;
+        border-radius: 14px;
+
+        @include font20;
+        font-weight: bold;
+        color: rgba($color: #ffffff, $alpha: 0.6);
     }
 
     .item {
         margin-right: 40px;
         padding: 8px;
         cursor: pointer;
+
+        @include t {
+            margin-right: 0;
+
+            &:hover {
+                color: rgba($color: #ffffff, $alpha: 1);
+            }
+        }
     }
 }
 
-.button {
+.menu {
     display: none;
+    cursor: pointer;
 
     @include t {
         display: block;
+    }
+
+    .button {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/menu.svg');
     }
 }
