@@ -1,0 +1,12 @@
+@import '../../../assets/index.scss';
+
+.base {
+    width: 300px;
+    padding-right: 16px;
+
+    .filterTitle {
+        @include font24;
+        color: $primary;
+        font-weight: bold;
+    }
+}

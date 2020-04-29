@@ -1,0 +1,40 @@
+@import '../../../assets/index.scss';
+
+.base {
+    @include jCenter;
+}
+
+.container {
+    @include contentWidth;
+}
+
+.header {
+    @include jCenter;
+    flex-wrap: wrap;
+    margin: 70px 0;
+
+    .headerTitle {
+        @include font48;
+
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: $spacingBase;
+        color: $primary;
+    }
+
+    .headerSubtitle {
+        @include font20;
+
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.content {
+    display: flex;
+}
+
+.list {
+    flex: 1;
+}

@@ -8,10 +8,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 import Main from '../../Pages/Main';
-
-// import Articles from '../Articles';
-// import Article from '../Article';
-// import Category from '../Category';
+import Companies from '../../Pages/Companies';
 
 function App() {
     return (
@@ -21,6 +18,7 @@ function App() {
             <Switch>
                 <Route path="/" component={Main} exact />
 
+                <Route path="/companies" component={Companies}></Route>
                 {/* <Route path="/articles" component={Articles} exact />
                 <Route path="/article/:id" component={Article} exact />
                 <Route path="/category/:id" component={Category} exact /> */}
