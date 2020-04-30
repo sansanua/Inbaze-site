@@ -17,7 +17,9 @@ export default function CompaniesComponent() {
                 </div>
 
                 <div className={cx(style.content)}>
-                    <Filter></Filter>
+                    <div className={cx(style.filters)}>
+                        <Filter></Filter>
+                    </div>
                     <div className={cx(style.list)}>123</div>
                 </div>
             </div>

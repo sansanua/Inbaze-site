@@ -1,12 +1,28 @@
 @import '../../../assets/index.scss';
 
 .base {
-    width: 300px;
-    padding-right: 16px;
+    width: 100%;
 
     .filterTitle {
         @include font24;
         color: $primary;
         font-weight: bold;
+    }
+}
+
+.filterBlok {
+    @include font18;
+
+    .filterBlokHeder {
+        font-weight: bold;
+    }
+
+    .filterBlokContent {
+        .filterBlokItem {
+            @include aCenter;
+
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
     }
 }

@@ -1,0 +1,32 @@
+@import '../../assets/index.scss';
+
+.base {
+    width: 21px;
+    height: 21px;
+    border: 1px solid $primary;
+    margin-right: 20px;
+    border-radius: 5px;
+
+    &.checked {
+        background: $primary;
+
+        .image {
+            display: block;
+        }
+    }
+
+    .image {
+        display: none;
+        margin-top: 5px;
+        margin-left: 2px;
+        width: 13px;
+        height: 13px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/check-01.svg');
+    }
+}
+
+.inline {
+    display: inline-block;
+}
