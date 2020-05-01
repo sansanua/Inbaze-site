@@ -12,8 +12,8 @@ export default function FilterContainer() {
 
     const { filters, toggleFilter } = useFilter();
 
-    const handleFilterClick = (filterName) => (selectedFilter) => {
-        toggleFilter(filterName, selectedFilter);
+    const handleFilterClick = (filterName, isSingleValue) => (selectedFilter) => {
+        toggleFilter(filterName, selectedFilter, isSingleValue);
     };
 
     return (
@@ -22,6 +22,7 @@ export default function FilterContainer() {
             instruments={instrumentsData && instrumentsData.instruments}
             selectedInstruments={filters['instruments']}
             onInstrumentClick={handleFilterClick('instruments')}
+            onMinimumInvestmentAmountChange={handleFilterClick('minimumInvestmentAmount', true)}
         ></FilterComponent>
     );
 }

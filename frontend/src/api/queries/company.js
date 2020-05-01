@@ -1,8 +1,10 @@
 import gql from 'graphql-tag';
 
 export const COMPANIES_FILTERED_BY_SLUG = gql`
-    query companiesFilteredBySlug($slugs: [String]) {
-        companies(where: { instruments: { slug_in: $slugs } }) {
+    query companiesFilteredBySlug($instruments: [String], $minimumInvestmentAmount: Int) {
+        companies(
+            where: { instruments: { slug_in: $instruments }, minimumInvestmentAmount_gte: $minimumInvestmentAmount }
+        ) {
             capital
             companyCommission
             complexity

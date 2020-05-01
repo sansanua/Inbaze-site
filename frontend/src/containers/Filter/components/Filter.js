@@ -1,37 +1,23 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Collapse from 'components/Collapse';
-import Checkbox from 'components/Checkbox';
+import SliderFilter from './SliderFilter';
+import FilterBlock from './FilterBlock';
 
 import style from './Filter.module.scss';
 
-function FilterBlock({ expanded, title, filters, selectedFilters, onClick }) {
-    return (
-        <div className={cx(style.filterBlok)}>
-            <Collapse
-                expanded={expanded}
-                header={<div className={cx(style.filterBlokHeder)}>{title}</div>}
-                content={
-                    <div className={cx(style.filterBlokContent)}>
-                        {filters.map((filter) => {
-                            return (
-                                <div className={cx(style.filterBlokItem)} onClick={onClick(filter.slug)}>
-                                    <Checkbox inline checked={selectedFilters.includes(filter.slug)}></Checkbox>
-                                    {filter.name}
-                                </div>
-                            );
-                        })}
-                    </div>
-                }
-            ></Collapse>
-        </div>
-    );
-}
-
-export default function FilterComponent({ instruments = [], selectedInstruments = [], onInstrumentClick }) {
+export default function FilterComponent({
+    instruments = [],
+    selectedInstruments = [],
+    onInstrumentClick,
+    onMinimumInvestmentAmountChange,
+}) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
+    };
+
+    const handleMinimumInvestmentAmount = (value) => {
+        onMinimumInvestmentAmountChange(value);
     };
 
     return (
@@ -46,6 +32,14 @@ export default function FilterComponent({ instruments = [], selectedInstruments 
                     selectedFilters={selectedInstruments}
                     onClick={handleInstrumentClick}
                 />
+
+                <div className={cx(style.filterBlok)}>
+                    <SliderFilter
+                        expanded
+                        title="Минимальная суммаинвестирования"
+                        onSelect={handleMinimumInvestmentAmount}
+                    ></SliderFilter>
+                </div>
             </div>
         </div>
     );

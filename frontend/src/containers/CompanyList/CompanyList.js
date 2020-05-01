@@ -6,9 +6,12 @@ import { COMPANIES_FILTERED_BY_SLUG } from '../../api/queries/company';
 import { useFilter } from '../../hooks/useFilter';
 
 export default function CompanyList() {
-    const { instruments } = useFilter();
+    const { instruments, minimumInvestmentAmount } = useFilter();
     const { data } = useQuery(COMPANIES_FILTERED_BY_SLUG, {
-        variables: { slugs: instruments },
+        variables: {
+            instruments,
+            minimumInvestmentAmount: minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined,
+        },
     });
 
     const companies = (data && data.companies) || [];

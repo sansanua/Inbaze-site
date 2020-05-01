@@ -36,18 +36,12 @@
     "complexity": {
       "type": "integer"
     },
-    "minimumInvestmentAmount": {
-      "type": "string"
-    },
     "liquidity": {
       "type": "enumeration",
       "enum": [
         "quick_exit",
         "long_exit"
       ]
-    },
-    "historicalProfitability": {
-      "type": "string"
     },
     "typeOfIncome": {
       "type": "enumeration",
@@ -107,14 +101,20 @@
     "startYear": {
       "type": "integer"
     },
-    "capital": {
-      "type": "string"
-    },
     "numberOfClients": {
       "type": "integer"
     },
     "onlineInvestmentStatusTracking": {
       "type": "boolean"
+    },
+    "minimumInvestmentAmount": {
+      "type": "integer"
+    },
+    "historicalProfitability": {
+      "type": "integer"
+    },
+    "capital": {
+      "type": "integer"
     }
   }
 }

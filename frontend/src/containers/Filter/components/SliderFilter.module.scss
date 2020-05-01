@@ -1,0 +1,16 @@
+@import '../../../assets/index.scss';
+
+.tooltip {
+    :global {
+        .rc-slider-tooltip-arrow {
+            display: none;
+        }
+        .rc-slider-tooltip-inner {
+            color: $primary;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: none;
+        }
+    }
+}

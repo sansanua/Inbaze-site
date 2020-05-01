@@ -15,13 +15,19 @@ export function useFilter() {
         }
     }
 
-    const toggleFilter = (filterName, selectedFilter) => {
+    const toggleFilter = (filterName, selectedFilter, isSingleValue = false) => {
         const prevFilters = filters[filterName];
-        const newFilters = toggleArrayItem(queryToArray(prevFilters), selectedFilter);
+        let newFilters;
+
+        if (isSingleValue) {
+            newFilters = selectedFilter;
+        } else {
+            newFilters = toggleArrayItem(queryToArray(prevFilters), selectedFilter);
+        }
 
         push({
             pathname,
-            search: toQuery({ [filterName]: newFilters }),
+            search: toQuery({ ...filters, [filterName]: newFilters }),
         });
     };
 
@@ -29,5 +35,6 @@ export function useFilter() {
         filters,
         toggleFilter,
         instruments: filters['instruments'] || [],
+        minimumInvestmentAmount: filters['minimumInvestmentAmount'] || [],
     };
 }
