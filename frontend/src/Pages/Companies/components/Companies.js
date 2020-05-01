@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import Filter from '../../../containers/Filter';
+import CompanyList from '../../../containers/CompanyList';
 
 import style from './Companies.module.scss';
 
@@ -20,7 +21,9 @@ export default function CompaniesComponent() {
                     <div className={cx(style.filters)}>
                         <Filter></Filter>
                     </div>
-                    <div className={cx(style.list)}>123</div>
+                    <div className={cx(style.list)}>
+                        <CompanyList></CompanyList>
+                    </div>
                 </div>
             </div>
         </div>

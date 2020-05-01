@@ -1,15 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Collapse from '../../../components/Collapse';
-import Checkbox from '../../../components/Checkbox';
+import Collapse from 'components/Collapse';
+import Checkbox from 'components/Checkbox';
 
 import style from './Filter.module.scss';
 
-function FilterBlock({ title, filters, selectedFilters, onClick }) {
+function FilterBlock({ expanded, title, filters, selectedFilters, onClick }) {
     return (
         <div className={cx(style.filterBlok)}>
             <Collapse
+                expanded={expanded}
                 header={<div className={cx(style.filterBlokHeder)}>{title}</div>}
                 content={
                     <div className={cx(style.filterBlokContent)}>
@@ -28,7 +29,7 @@ function FilterBlock({ title, filters, selectedFilters, onClick }) {
     );
 }
 
-export default function FilterComponent({ instruments = [], selectedInstruments, onInstrumentClick }) {
+export default function FilterComponent({ instruments = [], selectedInstruments = [], onInstrumentClick }) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
     };
@@ -39,6 +40,7 @@ export default function FilterComponent({ instruments = [], selectedInstruments,
 
             <div className={cx(style.filterBlokes)}>
                 <FilterBlock
+                    expanded
                     title="Инструменты"
                     filters={instruments}
                     selectedFilters={selectedInstruments}
