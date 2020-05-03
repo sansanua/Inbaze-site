@@ -5,12 +5,14 @@ export const COMPANIES_FILTERED = gql`
         $instruments: [String]
         $minimumInvestmentAmount: Int
         $investmentCurrency: [String]
+        $profitabilities: [String]
     ) {
         companies(
             where: {
                 instruments: { slug_in: $instruments }
                 minimumInvestmentAmount_gte: $minimumInvestmentAmount
                 investmentCurrency: { slug_in: $investmentCurrency }
+                profitability: { slug: $profitabilities }
             }
         ) {
             capital

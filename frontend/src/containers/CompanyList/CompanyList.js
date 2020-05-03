@@ -10,12 +10,13 @@ import CompanyItem from './components/CompanyItem';
 import style from './CompanyList.module.scss';
 
 export default function CompanyList() {
-    const { instruments, minimumInvestmentAmount, investmentCurrency } = useFilter();
+    const { instruments, minimumInvestmentAmount, investmentCurrency, profitabilities } = useFilter();
     const { data } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
-            minimumInvestmentAmount: minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined,
             investmentCurrency,
+            profitabilities,
+            minimumInvestmentAmount: minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined,
         },
     });
 

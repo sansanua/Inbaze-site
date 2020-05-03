@@ -38,5 +38,6 @@ export function useFilter() {
         instruments: filters[FILTERS.instruments] || [],
         minimumInvestmentAmount: filters[FILTERS.minimumInvestmentAmount] || [],
         investmentCurrency: filters[FILTERS.investmentCurrency] || [],
+        profitabilities: filters[FILTERS.profitabilities] || [],
     };
 }
