@@ -10,7 +10,7 @@ import style from './SliderFilter.module.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-export default function SliderFilter({ title, expanded = false, min = 500, max = 1000000, onSelect }) {
+export default function SliderFilter({ title, selectedFilter, expanded = false, min = 500, max = 1000000, onSelect }) {
     const handleBlur = (_value) => {
         onSelect(_value);
     };
@@ -23,6 +23,7 @@ export default function SliderFilter({ title, expanded = false, min = 500, max =
                 content={
                     <div className={cx(style.filterBlokContent)}>
                         <SliderWithTooltip
+                            defaultValue={selectedFilter}
                             min={500}
                             max={1000000}
                             step={500}

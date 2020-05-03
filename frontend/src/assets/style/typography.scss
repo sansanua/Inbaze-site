@@ -69,3 +69,15 @@
         font-size: 16px;
     }
 }
+
+@mixin font14 {
+    font-size: 14px;
+
+    @include t {
+        font-size: 14px;
+    }
+
+    @include m {
+        font-size: 14px;
+    }
+}

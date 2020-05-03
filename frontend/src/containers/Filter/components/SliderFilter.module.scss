@@ -1,5 +1,9 @@
 @import '../../../assets/index.scss';
 
+.filterBlokHeder {
+    font-weight: bold;
+}
+
 .tooltip {
     :global {
         .rc-slider-tooltip-arrow {

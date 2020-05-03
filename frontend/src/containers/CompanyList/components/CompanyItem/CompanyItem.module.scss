@@ -1,0 +1,129 @@
+@import 'assets/index.scss';
+
+.base {
+    width: 100%;
+    padding-left: 116px;
+    padding-right: 89px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.3);
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.logoContainer {
+    position: absolute;
+    left: 0;
+}
+
+.nameContainer {
+    @include aCenter;
+    margin-bottom: 30px;
+
+    .name {
+        @include font24;
+        color: $primary;
+        font-weight: bold;
+        margin-right: 30px;
+    }
+
+    .instruments {
+        @include font14;
+        font-weight: bold;
+    }
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+        width: 50%;
+    }
+
+    .descriptionPart {
+        margin-right: 30px;
+        @include font14;
+
+        .iconsContainer {
+            display: flex;
+            margin-bottom: 20px;
+
+            .risk,
+            .complexity {
+                width: 50%;
+                display: flex;
+                font-weight: bold;
+                color: #333333;
+
+                & > div {
+                    &:first-child {
+                        margin-right: 6px;
+                    }
+                    margin-right: 4px;
+                }
+            }
+
+            .iconRisk {
+                width: 13px;
+                height: 19px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('/images/flash.svg');
+
+                &.selected {
+                    background-image: url('/images/flash-02.svg');
+                }
+            }
+
+            .iconComplexity {
+                width: 16px;
+                height: 16px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('/images/puzzle-01.svg');
+
+                &.selected {
+                    background-image: url('/images/puzzle-02.svg');
+                }
+            }
+        }
+
+        .description {
+            color: #666666;
+        }
+    }
+
+    .amountPart {
+        margin-left: 30px;
+
+        .amount,
+        .profitability {
+            display: flex;
+
+            .title {
+                @include font18;
+                width: 140px;
+                font-weight: bold;
+            }
+
+            .number {
+                color: $primary;
+                @include font24;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 33px;
+    right: 30px;
+    width: 10px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/arrow-gray.svg');
+    transform: rotate(90deg);
+}

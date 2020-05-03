@@ -115,6 +115,10 @@
     },
     "capital": {
       "type": "integer"
+    },
+    "profitability": {
+      "via": "companies",
+      "model": "profitability"
     }
   }
 }

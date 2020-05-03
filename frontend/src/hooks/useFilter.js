@@ -2,6 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { toggleArrayItem } from '../utils/common';
 import { toQuery, fromQuery, queryToArray } from '../utils/query';
+import { FILTERS } from 'utils/filters';
 
 export function useFilter() {
     const { push } = useHistory();
@@ -34,7 +35,8 @@ export function useFilter() {
     return {
         filters,
         toggleFilter,
-        instruments: filters['instruments'] || [],
-        minimumInvestmentAmount: filters['minimumInvestmentAmount'] || [],
+        instruments: filters[FILTERS.instruments] || [],
+        minimumInvestmentAmount: filters[FILTERS.minimumInvestmentAmount] || [],
+        investmentCurrency: filters[FILTERS.investmentCurrency] || [],
     };
 }

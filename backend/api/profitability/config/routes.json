@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/profitabilities",
+      "handler": "profitability.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/profitabilities/count",
+      "handler": "profitability.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/profitabilities/:id",
+      "handler": "profitability.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/profitabilities",
+      "handler": "profitability.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/profitabilities/:id",
+      "handler": "profitability.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/profitabilities/:id",
+      "handler": "profitability.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

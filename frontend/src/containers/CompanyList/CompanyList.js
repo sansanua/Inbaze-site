@@ -1,25 +1,30 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import cx from 'classnames';
 
-import { COMPANIES_FILTERED_BY_SLUG } from '../../api/queries/company';
+import { COMPANIES_FILTERED } from '../../api/queries/company';
 
 import { useFilter } from '../../hooks/useFilter';
 
+import CompanyItem from './components/CompanyItem';
+import style from './CompanyList.module.scss';
+
 export default function CompanyList() {
-    const { instruments, minimumInvestmentAmount } = useFilter();
-    const { data } = useQuery(COMPANIES_FILTERED_BY_SLUG, {
+    const { instruments, minimumInvestmentAmount, investmentCurrency } = useFilter();
+    const { data } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
             minimumInvestmentAmount: minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined,
+            investmentCurrency,
         },
     });
 
     const companies = (data && data.companies) || [];
 
     return (
-        <div>
+        <div className={cx(style.base)}>
             {companies.map((company) => (
-                <div>{company.name}</div>
+                <CompanyItem {...company}></CompanyItem>
             ))}
         </div>
     );

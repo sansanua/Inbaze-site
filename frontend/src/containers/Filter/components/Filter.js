@@ -9,11 +9,24 @@ import style from './Filter.module.scss';
 export default function FilterComponent({
     instruments = [],
     selectedInstruments = [],
+    currencies = [],
+    selectedCurrencies = [],
+    profitabilities = [],
+    selectedProfitabilities = [],
+    selectedMinimumInvestmentAmount,
     onInstrumentClick,
     onMinimumInvestmentAmountChange,
+    onCurrenciesClick,
+    onProfitabilitiesClick,
 }) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
+    };
+    const handleCurrenciesClick = (selectedFilter) => () => {
+        onCurrenciesClick(selectedFilter);
+    };
+    const handleProfitabilitiesClick = (selectedFilter) => () => {
+        onProfitabilitiesClick(selectedFilter);
     };
 
     const handleMinimumInvestmentAmount = (value) => {
@@ -33,9 +46,28 @@ export default function FilterComponent({
                     onClick={handleInstrumentClick}
                 />
 
+                <FilterBlock
+                    title="Доходность"
+                    filters={profitabilities}
+                    selectedFilters={selectedProfitabilities}
+                    onClick={handleProfitabilitiesClick}
+                />
+
+                <FilterBlock
+                    title="Валюта инвестирования"
+                    filters={currencies}
+                    selectedFilters={selectedCurrencies}
+                    onClick={handleCurrenciesClick}
+                />
+
                 <div className={cx(style.filterBlok)}>
                     <SliderFilter
                         expanded
+                        selectedFilter={
+                            selectedMinimumInvestmentAmount && selectedMinimumInvestmentAmount.length
+                                ? selectedMinimumInvestmentAmount[0]
+                                : 500
+                        }
                         title="Минимальная суммаинвестирования"
                         onSelect={handleMinimumInvestmentAmount}
                     ></SliderFilter>
