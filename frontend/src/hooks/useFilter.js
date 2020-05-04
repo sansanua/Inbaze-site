@@ -33,6 +33,7 @@ export function useFilter() {
     };
 
     return {
+        isFilterSelected: !!Object.values(filters).length,
         filters,
         toggleFilter,
         instruments: filters[FILTERS.instruments] || [],

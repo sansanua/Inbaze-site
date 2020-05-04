@@ -22,7 +22,8 @@
     "react-markdown": "^4.3.1",
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "react-scrollbar": "^0.5.6"
   },
   "scripts": {
     "develop": "react-scripts start",

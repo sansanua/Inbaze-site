@@ -24,7 +24,7 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                     <div className={cx(style.filterBlokContent)}>
                         <SliderWithTooltip
                             defaultValue={selectedFilter}
-                            min={500}
+                            min={0}
                             max={1000000}
                             step={500}
                             style={{ height: 50 }}

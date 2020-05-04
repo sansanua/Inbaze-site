@@ -9,8 +9,8 @@ import { useFilter } from '../../hooks/useFilter';
 import CompanyItem from './components/CompanyItem';
 import style from './CompanyList.module.scss';
 
-export default function CompanyList() {
-    const { instruments, minimumInvestmentAmount, investmentCurrency, profitabilities } = useFilter();
+export default function CompanyList({ onFilterOpen }) {
+    const { instruments, minimumInvestmentAmount, investmentCurrency, profitabilities, isFilterSelected } = useFilter();
     const { data } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
@@ -24,6 +24,14 @@ export default function CompanyList() {
 
     return (
         <div className={cx(style.base)}>
+            <div className={cx(style.titlePanel)}>
+                <div className={cx(style.count)}>{companies.length} инвестиционных компаний</div>
+                <div className={cx(style.filterButton, { [style.selected]: isFilterSelected })} onClick={onFilterOpen}>
+                    Фильтр
+                </div>
+                <div className={cx(style.sortButton)}>Сортировать</div>
+            </div>
+
             {companies.map((company) => (
                 <CompanyItem {...company}></CompanyItem>
             ))}

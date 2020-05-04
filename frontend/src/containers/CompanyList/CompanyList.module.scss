@@ -1,2 +1,45 @@
+@import 'assets/index.scss';
+
 .base {
+}
+
+.titlePanel {
+    display: flex;
+    color: $grey;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+    .count {
+        flex: 1;
+    }
+
+    .filterButton {
+        cursor: pointer;
+
+        &.selected {
+            &::after {
+                background-image: url('/images/filter.svg');
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            margin-left: 5px;
+            width: 14px;
+            height: 14px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/images/filtr-01.svg');
+        }
+
+        @include d {
+            display: none;
+        }
+    }
+
+    .sortButton {
+        cursor: pointer;
+        margin-left: 60px;
+    }
 }

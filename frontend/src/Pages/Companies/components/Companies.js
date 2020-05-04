@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
+import ScrollArea from 'react-scrollbar';
 
 import Filter from '../../../containers/Filter';
 import CompanyList from '../../../containers/CompanyList';
@@ -7,8 +8,28 @@ import CompanyList from '../../../containers/CompanyList';
 import style from './Companies.module.scss';
 
 export default function CompaniesComponent() {
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = isMobileFilterOpen ? 'hidden' : 'visible';
+        return () => {
+            document.body.style.overflow = 'visible';
+        };
+    }, [isMobileFilterOpen]);
+
+    const handleToggleFilter = () => {
+        setIsMobileFilterOpen(!isMobileFilterOpen);
+    };
+
     return (
         <div className={cx(style.base)}>
+            <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
+                <ScrollArea className={cx(style.filtersMobile)}>
+                    <Filter></Filter>
+                </ScrollArea>
+
+                <div className={cx(style.overlay)} onClick={handleToggleFilter}></div>
+            </div>
             <div className={cx(style.container)}>
                 <div className={cx(style.header)}>
                     <div className={cx(style.headerTitle)}>Инструменты для инвестирования</div>
@@ -22,7 +43,7 @@ export default function CompaniesComponent() {
                         <Filter></Filter>
                     </div>
                     <div className={cx(style.list)}>
-                        <CompanyList></CompanyList>
+                        <CompanyList onFilterOpen={handleToggleFilter}></CompanyList>
                     </div>
                 </div>
             </div>
