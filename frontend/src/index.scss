@@ -5,9 +5,15 @@ html {
     font-family: 'NobelWGL', sans-serif;
     line-height: 1.15;
     color: $darkBlue;
+    margin: 0;
 }
 
 div {
     position: relative;
     box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }

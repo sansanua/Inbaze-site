@@ -16,7 +16,11 @@ export default function FilterBlock({ expanded, title, filters, selectedFilters,
                     <div className={cx(style.filterBlokContent)}>
                         {filters.map((filter) => {
                             return (
-                                <div className={cx(style.filterBlokItem)} onClick={onClick(filter.slug)}>
+                                <div
+                                    className={cx(style.filterBlokItem)}
+                                    key={filter.slug}
+                                    onClick={onClick(filter.slug)}
+                                >
                                     <Checkbox inline checked={selectedFilters.includes(filter.slug)}></Checkbox>
                                     {filter.name}
                                 </div>

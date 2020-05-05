@@ -15,6 +15,7 @@ export const COMPANIES_FILTERED = gql`
                 profitability: { slug: $profitabilities }
             }
         ) {
+            id
             capital
             companyCommission
             complexity
@@ -30,7 +31,6 @@ export const COMPANIES_FILTERED = gql`
             documentsFromInvestor
             documentsSecuringRights
             historicalProfitability
-            id
             incomePaymentProcess
             instruments {
                 name

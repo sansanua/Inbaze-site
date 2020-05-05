@@ -9,6 +9,10 @@
     box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.3);
     border-radius: 6px;
     margin-bottom: 20px;
+
+    @include m {
+        padding: 20px 15px;
+    }
 }
 
 .logoContainer {
@@ -20,16 +24,29 @@
     @include aCenter;
     margin-bottom: 30px;
 
+    @include m {
+        flex-wrap: wrap;
+    }
+
     .name {
         @include font24;
         color: $primary;
         font-weight: bold;
         margin-right: 30px;
+
+        @include m {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     .instruments {
         @include font14;
         font-weight: bold;
+
+        @include m {
+            width: 100%;
+        }
     }
 }
 
@@ -37,13 +54,26 @@
     display: flex;
     justify-content: space-between;
 
+    @include m {
+        flex-wrap: wrap;
+    }
+
     & > div {
         width: 50%;
+
+        @include m {
+            width: 100%;
+        }
     }
 
     .descriptionPart {
         margin-right: 30px;
         @include font14;
+
+        @include m {
+            margin: 0;
+            margin-bottom: 45px;
+        }
 
         .iconsContainer {
             display: flex;
@@ -97,6 +127,10 @@
     .amountPart {
         margin-left: 30px;
 
+        @include m {
+            margin: 0;
+        }
+
         .amount,
         .profitability {
             display: flex;
@@ -117,6 +151,7 @@
 }
 
 .arrow {
+    cursor: pointer;
     position: absolute;
     top: 33px;
     right: 30px;

@@ -33,7 +33,7 @@ export default function CompanyList({ onFilterOpen }) {
             </div>
 
             {companies.map((company) => (
-                <CompanyItem {...company}></CompanyItem>
+                <CompanyItem {...company} key={company.id}></CompanyItem>
             ))}
         </div>
     );

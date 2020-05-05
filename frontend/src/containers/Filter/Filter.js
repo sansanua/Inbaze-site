@@ -11,9 +11,9 @@ import { FILTERS } from 'utils/filters';
 import FilterComponent from './components/Filter';
 
 export default function FilterContainer() {
-    const { data: instrumentsData, instrumentsLoading } = useQuery(INSTRUMENTS);
-    const { data: currenciesData, currenciesLoading } = useQuery(CURRENCIES);
-    const { data: profitabilitiesData, profitabilitiesLoading } = useQuery(PROFITABILITIES);
+    const { data: instrumentsData } = useQuery(INSTRUMENTS);
+    const { data: currenciesData } = useQuery(CURRENCIES);
+    const { data: profitabilitiesData } = useQuery(PROFITABILITIES);
 
     const { filters, toggleFilter } = useFilter();
 

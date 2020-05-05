@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 
 import style from './Header.module.scss';
 
@@ -22,10 +22,18 @@ export default function Header() {
             <div className={cx(style.container)}>
                 <div className={cx(style.logo)}></div>
                 <div className={cx(style.items, { [style.menuOpen]: isMenuOpen })}>
-                    <div className={cx(style.item)}>Инструменты</div>
-                    <div className={cx(style.item)}>Компании</div>
-                    <div className={cx(style.item)}>Персональный советник</div>
-                    <div className={cx(style.item)}>О нас</div>
+                    <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
+                        Инструменты
+                    </NavLink>
+                    <NavLink to="/" className={cx(style.item)}>
+                        Компании
+                    </NavLink>
+                    <NavLink to="/" className={cx(style.item)}>
+                        Персональный советник
+                    </NavLink>
+                    <NavLink to="/" className={cx(style.item)}>
+                        О нас
+                    </NavLink>
                 </div>
                 <div className={cx(style.menu)} onClick={toggleMenu}>
                     <div className={cx(style.button)}></div>

@@ -3,9 +3,10 @@ import cx from 'classnames';
 
 import style from './InstrumentCard.module.scss';
 
-export default function InstrumentCard({ name, description, color, image, className, onClick }) {
+export default function InstrumentCard({ name, description, color, image, className, link }) {
+    const handleClick = () => {};
     return (
-        <div className={cx(className, style.base)} style={{ backgroundColor: color }} onClick={onClick}>
+        <div className={cx(className, style.base)} style={{ backgroundColor: color }} onClick={handleClick}>
             <div className={cx(style.image)} style={{ backgroundImage: `url(${image})` }}></div>
 
             <div className={cx(style.content)}>

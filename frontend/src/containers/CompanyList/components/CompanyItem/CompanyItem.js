@@ -25,7 +25,7 @@ export default function CompanyItem({
                 <div className={cx(style.name)}>{name}</div>
                 <div className={cx(style.instruments)}>
                     {instruments.map((i) => (
-                        <div>{i.name}</div>
+                        <div key={i.slug}>{i.name}</div>
                     ))}
                 </div>
             </div>
@@ -36,14 +36,17 @@ export default function CompanyItem({
                         <div className={cx(style.risk)}>
                             <div>Риск</div>
                             {icons.map((i) => (
-                                <div className={cx(style.iconRisk, { [style.selected]: i <= risk })}></div>
+                                <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })}></div>
                             ))}
                         </div>
 
                         <div className={cx(style.complexity)}>
                             <div>Сложность</div>
                             {icons.map((i) => (
-                                <div className={cx(style.iconComplexity, { [style.selected]: i <= complexity })}></div>
+                                <div
+                                    key={i}
+                                    className={cx(style.iconComplexity, { [style.selected]: i <= complexity })}
+                                ></div>
                             ))}
                         </div>
                     </div>
