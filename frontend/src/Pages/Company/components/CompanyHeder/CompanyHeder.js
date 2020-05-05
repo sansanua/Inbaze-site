@@ -1,21 +1,21 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Divider from 'components/Divider';
-
-import style from './CompanyItem.module.scss';
+import style from './CompanyHeder.module.scss';
 
 const icons = [1, 2, 3];
 
-export default function CompanyItem({
-    complexity,
-    description,
-    historicalProfitability,
-    instruments,
-    investmentCurrency,
-    minimumInvestmentAmount,
+export default function CompanyHeder({
     name,
+    description,
+    instruments,
     risk,
+    complexity,
+    minimumInvestmentAmount,
+    historicalProfitability,
+    investmentCurrency,
+    liquidity,
+    typeOfIncome,
 }) {
     return (
         <div className={cx(style.base)}>
@@ -55,21 +55,27 @@ export default function CompanyItem({
                 </div>
                 <div className={cx(style.amountPart)}>
                     <div className={cx(style.amount)}>
-                        <div className={cx(style.title)}>Минимальная сумма</div>
-                        <div className={cx(style.number)}>
-                            {minimumInvestmentAmount}
-                            {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
+                        <div className={cx(style.wrapper)}>
+                            <div className={cx(style.title)}>Минимальная сумма</div>
+                            <div className={cx(style.number)}>
+                                {minimumInvestmentAmount}
+                                {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
+                            </div>
                         </div>
+
+                        <div className={cx(style.liquidity)}>{liquidity}</div>
                     </div>
-                    <Divider color="#b2eaea" margin={15}></Divider>
+
                     <div className={cx(style.profitability)}>
-                        <div className={cx(style.title)}>Историческая доходность</div>
-                        <div className={cx(style.number)}>{historicalProfitability}%</div>
+                        <div className={cx(style.wrapper)}>
+                            <div className={cx(style.title)}>Историческая доходность</div>
+                            <div className={cx(style.number)}>{historicalProfitability}%</div>
+                        </div>
+
+                        <div className={cx(style.typeOfIncome)}>typeOfIncome</div>
                     </div>
                 </div>
             </div>
-
-            <div className={cx(style.arrow)}></div>
         </div>
     );
 }

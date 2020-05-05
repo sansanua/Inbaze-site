@@ -16,6 +16,29 @@ export const COMPANIES_FILTERED = gql`
             }
         ) {
             id
+            complexity
+            description
+            historicalProfitability
+            minimumInvestmentAmount
+            name
+            risk
+            instruments {
+                name
+                slug
+            }
+            investmentCurrency {
+                name
+                slug
+                symbol
+            }
+        }
+    }
+`;
+
+export const COMPANY = gql`
+    query company($id: ID!) {
+        company(id: $id) {
+            id
             capital
             companyCommission
             complexity

@@ -1,0 +1,10 @@
+@import 'assets/index.scss';
+
+.base {
+    @include jCenter;
+    min-height: calc(100vh - #{$headerHeight});
+}
+
+.container {
+    @include contentWidth;
+}

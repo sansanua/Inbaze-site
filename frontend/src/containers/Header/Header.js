@@ -22,16 +22,16 @@ export default function Header() {
             <div className={cx(style.container)}>
                 <div className={cx(style.logo)}></div>
                 <div className={cx(style.items, { [style.menuOpen]: isMenuOpen })}>
-                    <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
+                    <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Инструменты
                     </NavLink>
-                    <NavLink to="/" className={cx(style.item)}>
+                    <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Компании
                     </NavLink>
-                    <NavLink to="/" className={cx(style.item)}>
+                    <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Персональный советник
                     </NavLink>
-                    <NavLink to="/" className={cx(style.item)}>
+                    <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         О нас
                     </NavLink>
                 </div>
