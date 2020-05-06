@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import { DYNAMIC_TEXTS } from 'utils/dynamicTexts';
+
 import style from './CompanyHeder.module.scss';
 
 const icons = [1, 2, 3];
@@ -63,7 +65,7 @@ export default function CompanyHeder({
                             </div>
                         </div>
 
-                        <div className={cx(style.liquidity)}>{liquidity}</div>
+                        <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS.liquidity[liquidity]}</div>
                     </div>
 
                     <div className={cx(style.profitability)}>
@@ -72,7 +74,7 @@ export default function CompanyHeder({
                             <div className={cx(style.number)}>{historicalProfitability}%</div>
                         </div>
 
-                        <div className={cx(style.typeOfIncome)}>typeOfIncome</div>
+                        <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS.typeOfIncome[typeOfIncome]}</div>
                     </div>
                 </div>
             </div>

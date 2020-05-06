@@ -16,8 +16,8 @@
       "type": "string"
     },
     "companies": {
-      "collection": "companies",
-      "via": "profitability"
+      "via": "profitability",
+      "collection": "companies"
     }
   }
 }

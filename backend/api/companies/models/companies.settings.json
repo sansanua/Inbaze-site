@@ -39,8 +39,8 @@
     "liquidity": {
       "type": "enumeration",
       "enum": [
-        "quick_exit",
-        "long_exit"
+        "quickExit",
+        "longExit"
       ]
     },
     "typeOfIncome": {
@@ -117,8 +117,8 @@
       "type": "integer"
     },
     "profitability": {
-      "via": "companies",
-      "model": "profitability"
+      "model": "profitability",
+      "via": "companies"
     }
   }
 }

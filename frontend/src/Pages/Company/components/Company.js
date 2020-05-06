@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import { useMedia } from 'hooks/useMedia';
+
 import CompanyHeder from './CompanyHeder';
 
 import style from './Company.module.scss';
@@ -41,6 +43,8 @@ export default function CompanyComponent({
     typeOfIncome,
     updated_at,
 }) {
+    const { isMobile } = useMedia();
+
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
@@ -57,7 +61,7 @@ export default function CompanyComponent({
                     typeOfIncome={typeOfIncome}
                 ></CompanyHeder>
 
-                <div>111</div>
+                <div>{isMobile ? 'MMM' : 'DDTT'}</div>
             </div>
         </div>
     );

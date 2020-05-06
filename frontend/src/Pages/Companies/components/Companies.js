@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import ScrollArea from 'react-scrollbar';
 
-import Filter from '../../../containers/Filter';
-import CompanyList from '../../../containers/CompanyList';
+import { useMedia } from 'hooks/useMedia';
+
+import Filter from 'containers/Filter';
+import CompanyList from 'containers/CompanyList';
 
 import style from './Companies.module.scss';
 
 export default function CompaniesComponent() {
+    const { isTab } = useMedia();
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
     useEffect(() => {
@@ -23,13 +26,16 @@ export default function CompaniesComponent() {
 
     return (
         <div className={cx(style.base)}>
-            <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
-                <ScrollArea className={cx(style.filtersMobile)}>
-                    <Filter></Filter>
-                </ScrollArea>
+            {isTab && (
+                <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
+                    <ScrollArea className={cx(style.filtersMobile)}>
+                        <Filter></Filter>
+                    </ScrollArea>
 
-                <div className={cx(style.overlay)} onClick={handleToggleFilter}></div>
-            </div>
+                    <div className={cx(style.overlay)} onClick={handleToggleFilter}></div>
+                </div>
+            )}
+
             <div className={cx(style.container)}>
                 <div className={cx(style.header)}>
                     <div className={cx(style.headerTitle)}>Инструменты для инвестирования</div>
@@ -39,9 +45,12 @@ export default function CompaniesComponent() {
                 </div>
 
                 <div className={cx(style.content)}>
-                    <div className={cx(style.filters)}>
-                        <Filter></Filter>
-                    </div>
+                    {!isTab && (
+                        <div className={cx(style.filters)}>
+                            <Filter></Filter>
+                        </div>
+                    )}
+
                     <div className={cx(style.list)}>
                         <CompanyList onFilterOpen={handleToggleFilter}></CompanyList>
                     </div>
