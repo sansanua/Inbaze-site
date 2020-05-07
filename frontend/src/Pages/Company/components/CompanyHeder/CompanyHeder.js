@@ -65,7 +65,7 @@ export default function CompanyHeder({
                             </div>
                         </div>
 
-                        <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS.liquidity[liquidity]}</div>
+                        <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS[liquidity]}</div>
                     </div>
 
                     <div className={cx(style.profitability)}>
@@ -74,7 +74,7 @@ export default function CompanyHeder({
                             <div className={cx(style.number)}>{historicalProfitability}%</div>
                         </div>
 
-                        <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS.typeOfIncome[typeOfIncome]}</div>
+                        <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS[typeOfIncome]}</div>
                     </div>
                 </div>
             </div>

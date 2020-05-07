@@ -1,11 +1,6 @@
 export const DYNAMIC_TEXTS = {
-    liquidity: {
-        quickExit: 'Быстрый выход',
-        longExit: 'Длительный выход',
-    },
-
-    typeOfIncome: {
-        fixed: 'Фиксированный',
-        floating: 'Плавающий',
-    },
+    quickExit: 'Быстрый выход',
+    longExit: 'Длительный выход',
+    fixed: 'Фиксированный',
+    floating: 'Плавающий',
 };

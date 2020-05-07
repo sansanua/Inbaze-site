@@ -39,6 +39,7 @@ export const COMPANY = gql`
     query company($id: ID!) {
         company(id: $id) {
             id
+            aboutCompany
             capital
             companyCommission
             complexity

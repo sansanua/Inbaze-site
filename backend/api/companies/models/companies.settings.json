@@ -119,6 +119,9 @@
     "profitability": {
       "model": "profitability",
       "via": "companies"
+    },
+    "aboutCompany": {
+      "type": "text"
     }
   }
 }
