@@ -20,7 +20,9 @@ export default function Header() {
     return (
         <div className={cx(style.base, { [style.transparent]: isTransparent })}>
             <div className={cx(style.container)}>
-                <div className={cx(style.logo)}></div>
+                <a href="/">
+                    <div className={cx(style.logo)}></div>
+                </a>
                 <div className={cx(style.items, { [style.menuOpen]: isMenuOpen })}>
                     <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Инструменты

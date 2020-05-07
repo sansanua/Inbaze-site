@@ -153,12 +153,17 @@
 .arrow {
     cursor: pointer;
     position: absolute;
-    top: 33px;
-    right: 30px;
-    width: 10px;
-    height: 14px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('/images/arrow-gray.svg');
-    transform: rotate(90deg);
+    top: 23px;
+    right: 20px;
+
+    padding: 10px;
+
+    & > div {
+        width: 10px;
+        height: 14px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/arrow-gray.svg');
+        transform: rotate(90deg);
+    }
 }

@@ -146,7 +146,7 @@ export default function CompanyMainBlock(props) {
         let content = getContent(data, block);
 
         return (
-            <div className={cx(style.block)}>
+            <div className={cx(style.block)} key={block.title}>
                 <div className={cx(style.blockTitle)}>{block.title}</div>
                 <div className={cx(style.blockContent)}>{content}</div>
             </div>
@@ -158,6 +158,7 @@ export default function CompanyMainBlock(props) {
             <div>
                 {structure.map((tab) => (
                     <Collapse
+                        key={tab.header}
                         className={cx(style.collapse)}
                         classNameHeader={cx(style.collapseHeader)}
                         header={<div className={cx(style.tabHeader)}>{tab.header}</div>}
@@ -173,7 +174,7 @@ export default function CompanyMainBlock(props) {
             <Tabs>
                 <TabList>
                     {structure.map((tab) => (
-                        <Tab>{tab.header}</Tab>
+                        <Tab key={tab.header}>{tab.header}</Tab>
                     ))}
                 </TabList>
 

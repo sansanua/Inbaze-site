@@ -8,6 +8,7 @@ import style from './CompanyItem.module.scss';
 const icons = [1, 2, 3];
 
 export default function CompanyItem({
+    id,
     complexity,
     description,
     historicalProfitability,
@@ -69,7 +70,9 @@ export default function CompanyItem({
                 </div>
             </div>
 
-            <div className={cx(style.arrow)}></div>
+            <a href={`/company/${id}`} className={cx(style.arrow)}>
+                <div></div>
+            </a>
         </div>
     );
 }

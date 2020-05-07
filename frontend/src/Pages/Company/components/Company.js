@@ -9,12 +9,12 @@ import CompanyMainBlock from './CompanyMainBlock';
 import style from './Company.module.scss';
 
 export default function CompanyComponent(props) {
+    //#region props
     const {
         aboutCompany,
         capital,
         companyCommission,
         complexity,
-        created_at,
         currencyIncome,
         description,
         descriptionOfCooperation,
@@ -22,7 +22,6 @@ export default function CompanyComponent(props) {
         documentsFromInvestor,
         documentsSecuringRights,
         historicalProfitability,
-        id,
         incomePaymentProcess,
         instruments,
         investmentCurrency,
@@ -44,8 +43,8 @@ export default function CompanyComponent(props) {
         site,
         startYear,
         typeOfIncome,
-        updated_at,
     } = props;
+    //#endregion
 
     return (
         <div className={cx(style.base)}>
@@ -65,7 +64,28 @@ export default function CompanyComponent(props) {
 
                 <div className={cx(style.content)}>
                     <div className={cx(style.mainBlock)}>
-                        <CompanyMainBlock {...props}></CompanyMainBlock>
+                        <CompanyMainBlock
+                            aboutCompany={aboutCompany}
+                            processOfManagingMoney={processOfManagingMoney}
+                            processOfGeneratingIncome={processOfGeneratingIncome}
+                            investmentCurrency={investmentCurrency}
+                            currencyIncome={currencyIncome}
+                            descriptionOfCooperation={descriptionOfCooperation}
+                            historicalProfitability={historicalProfitability}
+                            typeOfIncome={typeOfIncome}
+                            minimumInvestmentPeriod={minimumInvestmentPeriod}
+                            optimalInvestmentPeriod={optimalInvestmentPeriod}
+                            incomePaymentProcess={incomePaymentProcess}
+                            risksOfLossInvested={risksOfLossInvested}
+                            placeOfStorageFunds={placeOfStorageFunds}
+                            liquidityOfInvestment={liquidityOfInvestment}
+                            companyCommission={companyCommission}
+                            otherServiceCharges={otherServiceCharges}
+                            payingTaxesIncome={payingTaxesIncome}
+                            documentsSecuringRights={documentsSecuringRights}
+                            documentsActivities={documentsActivities}
+                            documentsFromInvestor={documentsFromInvestor}
+                        ></CompanyMainBlock>
                     </div>
                     <div className={cx(style.sideBlock)}>
                         <div className={cx(style.rowContainer)}>
