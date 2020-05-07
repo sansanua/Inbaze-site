@@ -6,7 +6,7 @@
     "start": "npm-run-all -p start:*",
     "start:backend": "cd backend && yarn develop",
     "start:frontend": "cd frontend && yarn develop",
-    "build": "cd backend && yarn build",
+    "build": "cd backend && npm i yarn && yarn build",
     "build:frontend": "cd frontend && yarn build"
   },
   "dependencies": {
