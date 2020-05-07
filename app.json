@@ -11,15 +11,18 @@
     },
     "CLOUDINARY_CLOUD_NAME": {
       "description": "The 'Cloud name' of your Cloudinary account",
-      "required": true
+      "required": true,
+      "value": "dejzhpjw1"
     },
     "CLOUDINARY_API_KEY": {
       "description": "The 'API Key' of your Cloudinary account",
-      "required": true
+      "required": true,
+      "value": "786251883242641"
     },
     "CLOUDINARY_API_SECRET": {
       "description": "The 'API Secret' of your Cloudinary account",
-      "required": true
+      "required": true,
+      "value": "bKpCyWb10TjKAlXPz5eMTZl-er8"
     }
   },
   "addons": ["heroku-postgresql:hobby-dev"],
