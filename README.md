@@ -1,113 +1,68 @@
-# Strapi Starter React Blog
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-React starter for creating a blog with Strapi.
+## Available Scripts
 
-This starter allows you to try Strapi with React with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. Do not hesitate to add new features etc ...
+In the project directory, you can run:
 
-You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-with-react-strapi-and-apollo)
+### `yarn start`
 
-![screenshot image](/screenshot.png)
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Deploy the backend
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-To deploy this Strapi instance you'll need:
+### `yarn test`
 
-- [A Heroku account](https://signup.heroku.com/) for free
-- [A Cloudinary account for saving images](https://cloudinary.com/users/register/free) for free
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Once you have created these accounts you can deploy your instance by clicking on this button
+### `yarn build`
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-react-blog)
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Deploy the frontend
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-**Netlify**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To deploy this Strapi instance you'll need:
+### `yarn eject`
 
-- [A Netlify account](https://app.netlify.com/signup) for free
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Once you have created your account you can deploy your instance by clicking on this button.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/strapi/strapi-starter-react-blog)
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- Select a repository name and fill the API_URL with your Strapi instance on Heroku (eg: https://your-app.herokuapp.com) without the trailing slash
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Features
+## Learn More
 
-- 2 Content types: Article, Category
-- Permissions set to `true` for article and category
-- 2 Created articles
-- 3 Created categories
-- Apollo integration (GraphQL) for fetching data from strapi
-- Responsive design using UIkit
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Pages
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- "/" display every articles
-- "/article/:id" display one article
-- "/category/:id" display articles depending on the category
+### Code Splitting
 
-### Getting started
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-**Clone the repository and install dependencies**
+### Analyzing the Bundle Size
 
-```bash
-git clone https://github.com/strapi/strapi-starter-react-blog.git
-cd strapi-starter-react-blog
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-# Using yarn
-yarn setup:yarn
+### Making a Progressive Web App
 
-# Using npm
-npm run setup:npm
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Scaffold your project
+### Advanced Configuration
 
-This command will launch both of your backend and frontend servers and do a data migration in your backend server
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-```bash
-# Using yarn
-yarn build:yarn
-yarn develop:yarn
+### Deployment
 
-# Using npm
-npm run build:npm
-npm run develop:npm
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Alternatively, you can still start your servers separately:
+### `yarn build` fails to minify
 
-### Start the backend server
-
-```bash
-cd backend
-
-# Using yarn
-yarn build
-yarn seed
-yarn develop
-
-# Using npm
-npm run build
-npm run seed
-npm run develop
-```
-
-### Start the frontend server
-
-```bash
-cd frontend
-
-# Using yarn
-yarn develop
-
-# Using npm
-npm run develop
-```
-
-React server is running here => [http://localhost:3000](http://localhost:3000)
-Strapi server is running here => [http://localhost:1337](http://localhost:1337)
-
-Enjoy this starter
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
