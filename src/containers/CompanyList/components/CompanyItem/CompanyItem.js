@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
 import Divider from 'components/Divider';
@@ -70,9 +71,12 @@ export default function CompanyItem({
                 </div>
             </div>
 
-            <a href={`/company/${id}`} className={cx(style.arrow)}>
+            <Link className={cx(style.arrow)} to={`/company/${id}`}>
                 <div></div>
-            </a>
+            </Link>
+            {/* <a href={`/company/${id}`} className={cx(style.arrow)}>
+                <div></div>
+            </a> */}
         </div>
     );
 }
