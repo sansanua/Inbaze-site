@@ -1,8 +1,10 @@
+import 'react-tabs/style/react-tabs.css';
+
 import React from 'react';
 import cx from 'classnames';
 import { get } from 'lodash';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import Markdown from 'react-markdown';
 
 import { useMedia } from 'hooks/useMedia';
 import { DYNAMIC_TEXTS } from 'utils/dynamicTexts';
@@ -109,14 +111,17 @@ const structure = [
             {
                 title: 'Закрепление прав между инвестором и компанией:',
                 dataProp: 'documentsSecuringRights',
+                isMarkdown: true,
             },
             {
                 title: 'Документы компании об их деятельности:',
                 dataProp: 'documentsActivities',
+                isMarkdown: true,
             },
             {
                 title: 'Документы, которые потребуются от инвестора:',
                 dataProp: 'documentsFromInvestor',
+                isMarkdown: true,
             },
         ],
     },
@@ -133,6 +138,10 @@ const getContent = (data, block) => {
 
     if (typeof data === 'boolean') {
         return data ? 'Да' : 'Нет';
+    }
+
+    if (block.isMarkdown) {
+        return <Markdown source={data}></Markdown>;
     }
 
     return data;
