@@ -74,9 +74,6 @@ export default function CompanyItem({
             <Link className={cx(style.arrow)} to={`/company/${id}`}>
                 <div></div>
             </Link>
-            {/* <a href={`/company/${id}`} className={cx(style.arrow)}>
-                <div></div>
-            </a> */}
         </div>
     );
 }
