@@ -8,3 +8,25 @@ export const INSTRUMENTS = gql`
         }
     }
 `;
+
+export const INSTRUMENT_BY_SLUG = gql`
+    query instrumentBySlug($slug: String) {
+        instruments(where: { slug: $slug }) {
+            currency {
+                name
+                symbol
+            }
+            complexity
+            description
+            howGenerateIncome
+            mainParameters
+            minusInvestment
+            name
+            plusInvestment
+            profitability
+            risk
+            shortDescription
+            slug
+        }
+    }
+`;

@@ -10,6 +10,7 @@ import Footer from '../Footer';
 import Main from 'Pages/Main';
 import Companies from 'Pages/Companies';
 import Company from 'Pages/Company';
+import Instrument from 'Pages/Instrument';
 
 function App() {
     return (
@@ -22,9 +23,7 @@ function App() {
                 <Route path="/companies" component={Companies} />
                 <Route path="/company/:id" component={Company} />
 
-                {/* <Route path="/articles" component={Articles} exact />
-                <Route path="/article/:id" component={Article} exact />
-                <Route path="/category/:id" component={Category} exact /> */}
+                <Route path="/instrument/:slug" component={Instrument} />
             </Switch>
 
             <Footer />
