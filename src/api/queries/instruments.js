@@ -15,6 +15,7 @@ export const INSTRUMENT_BY_SLUG = gql`
             currency {
                 name
                 symbol
+                slug
             }
             complexity
             description

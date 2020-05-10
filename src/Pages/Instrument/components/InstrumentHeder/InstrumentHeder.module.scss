@@ -1,224 +1,102 @@
 @import 'assets/index.scss';
 
+$paddingTop: 30px;
+
 .base {
     width: 100%;
-    border-radius: 6px;
     margin-bottom: 20px;
     margin-top: 70px;
-
-    @include m {
-        padding: 20px 15px;
-    }
-}
-
-.logoContainer {
-    position: absolute;
-    left: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nameContainer {
-    @include aCenter;
-    margin-bottom: 30px;
+    padding-top: $paddingTop;
+    padding-left: 80px;
 
-    @include m {
-        flex-wrap: wrap;
+    .image {
+        position: absolute;
+        max-width: 100px;
+        max-height: 100px;
+        top: 0;
+        left: 0;
     }
 
     .name {
-        @include font24;
+        @include font30;
+        font-weight: bold;
         color: $primary;
-        font-weight: bold;
-        margin-right: 30px;
-
-        @include m {
-            width: 100%;
-            margin-bottom: 20px;
-        }
+        margin-bottom: 20px;
     }
-
-    .instruments {
-        @include font14;
-        font-weight: bold;
-
-        @include m {
-            width: 100%;
-        }
+    .description {
+        @include font18;
     }
 }
 
 .infoContainer {
-    display: flex;
-    justify-content: space-between;
+    padding-top: $paddingTop;
+    width: 500px;
 
-    @include m {
-        flex-wrap: wrap;
-    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
 
-    & > div {
-        @include m {
-            width: 100%;
-        }
-    }
-
-    .descriptionPart {
-        width: 400px;
-        margin-right: 30px;
-        @include font14;
-
-        @include t {
-            width: 350px;
-            margin-right: 50px;
-        }
-
-        @include m {
-            margin: 0;
-            margin-bottom: 45px;
-        }
-
-        .iconsContainer {
+        .col {
             display: flex;
-            margin-bottom: 20px;
-
-            .risk,
-            .complexity {
-                width: 50%;
-                display: flex;
-                font-weight: bold;
-                color: #333333;
-
-                & > div {
-                    &:first-child {
-                        margin-right: 6px;
-                    }
-                    margin-right: 4px;
-                }
-            }
-
-            .iconRisk {
-                width: 13px;
-                height: 19px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-image: url('/images/flash.svg');
-
-                &.selected {
-                    background-image: url('/images/flash-02.svg');
-                }
-            }
-
-            .iconComplexity {
-                width: 16px;
-                height: 16px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-image: url('/images/puzzle-01.svg');
-
-                &.selected {
-                    background-image: url('/images/puzzle-02.svg');
-                }
-            }
-        }
-
-        .description {
-            color: #666666;
+            font-weight: bold;
+            color: #333333;
+            width: 170px;
+            justify-content: space-between;
         }
     }
 
-    .amountPart {
-        flex: 1;
-        margin-left: 30px;
+    .currency {
+        display: flex;
+        align-items: center;
+
+        .symbol {
+            margin-right: 10px;
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .name {
+            font-weight: 500;
+        }
+    }
+
+    .icons {
         display: flex;
 
-        @include t {
-            flex-wrap: wrap;
+        .icon {
+            margin-left: 8px;
         }
+    }
 
-        @include m {
-            flex-wrap: nowrap;
-            margin: 0;
+    .iconRisk {
+        width: 13px;
+        height: 19px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/flash.svg');
+
+        &.selected {
+            background-image: url('/images/flash-02.svg');
         }
+    }
 
-        .wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-bottom: 30px;
+    .iconComplexity {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/puzzle-01.svg');
 
-            @include t {
-                justify-content: space-between;
-            }
-
-            @include m {
-                flex-wrap: wrap;
-            }
-        }
-
-        .amount,
-        .profitability {
-            width: 50%;
-
-            @include t {
-                width: 100%;
-            }
-
-            @include m {
-                width: 50%;
-            }
-        }
-
-        .amount {
-            margin-right: 20px;
-
-            @include t {
-                margin: 0;
-                margin-bottom: 40px;
-            }
-
-            @include m {
-                margin-bottom: 0;
-            }
-        }
-
-        .title {
-            @include font18;
-
-            width: 120px;
-            margin-right: 20px;
-
-            @include m {
-                width: 100%;
-                margin: 0;
-            }
-        }
-
-        .number {
-            color: $primary;
-            @include font24;
-            font-weight: bold;
-        }
-
-        .liquidity,
-        .typeOfIncome {
-            width: 225px;
-            height: 30px;
-            @include center;
-            border-radius: 6px;
-            margin: 0 auto;
-            color: #666666;
-            font-size: 16px;
-
-            @include m {
-                width: 130px;
-                margin: 0;
-            }
-        }
-
-        .liquidity {
-            background-color: #ecfdfd;
-        }
-
-        .typeOfIncome {
-            background-color: #dce3ff;
+        &.selected {
+            background-image: url('/images/puzzle-02.svg');
         }
     }
 }

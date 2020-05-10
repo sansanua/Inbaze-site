@@ -4,66 +4,9 @@ import cx from 'classnames';
 import Button from '../../components/Button';
 import InstrumentCard from './components/InstrumentCard';
 
-import style from './Main.module.scss';
+import { instrumentsItems as items } from 'utils/instrumentsStructure';
 
-const items = [
-    {
-        name: 'ОВГЗ',
-        description: `Облигация внутреннего государственного займа`,
-        color: '#dce3ff',
-        image: '/images/papka-01.svg',
-        link: '/companies?ovgz',
-    },
-    {
-        name: 'ПИФ',
-        description: 'Паевой инвестиционныйфонд',
-        color: '#dce3ff',
-        image: '/images/diagrama-01.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'НПФ',
-        description: 'Негосударственный пенсионный фонд',
-        color: '#dce3ff',
-        image: '/images/schety-01.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'Депозит',
-        description: 'Банковские вклады',
-        color: '#b2eaea',
-        image: '/images/bank-01.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'Р2Р-кредитование',
-        description: `Кредитование частных и юридических лиц`,
-        color: '#b2eaea',
-        image: '/images/money-01.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'Доверительное управление',
-        description: 'Паевой инвестиционный фонд',
-        color: '#dce3ff',
-        image: '/images/handshake-02.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'Недвижимость',
-        description: 'Акции публичных компаний',
-        color: '#e8e8e8',
-        image: '/images/property-01.svg',
-        link: '/companies?',
-    },
-    {
-        name: 'Бизнес',
-        description: 'Акции публичных компаний',
-        color: '#e8e8e8',
-        image: '/images/papka-01.svg',
-        link: '/companies?',
-    },
-];
+import style from './Main.module.scss';
 
 export default class Main extends Component {
     render() {

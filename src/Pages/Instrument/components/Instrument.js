@@ -29,18 +29,15 @@ export default function InstrumentComponent(props) {
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
-                {/* <InstrumentHeder
+                <InstrumentHeder
                     name={name}
-                    description={description}
-                    instruments={instruments}
+                    slug={slug}
+                    shortDescription={shortDescription}
                     risk={risk}
                     complexity={complexity}
-                    minimumInvestmentAmount={minimumInvestmentAmount}
-                    historicalProfitability={historicalProfitability}
-                    investmentCurrency={investmentCurrency}
-                    liquidity={liquidity}
-                    typeOfIncome={typeOfIncome}
-                ></InstrumentHeder> */}
+                    currency={currency}
+                    profitability={profitability}
+                ></InstrumentHeder>
 
                 <div className={cx(style.content)}>
                     <div className={cx(style.mainBlock)}>
