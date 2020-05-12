@@ -11,6 +11,7 @@ export default function Header() {
 
     useEffect(() => {
         setIsTransparent(location.pathname === '/');
+        setIsMenuOpen(false);
     }, [location]);
 
     const toggleMenu = () => {
