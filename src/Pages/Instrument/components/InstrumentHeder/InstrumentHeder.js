@@ -35,10 +35,14 @@ export default function InstrumentHeder({ name, shortDescription, risk, complexi
                     <div className={cx(style.col)}>
                         <div>Валюта</div>
                         <div className={cx(style.currency)}>
-                            <span className={cx(style.symbol)}>
-                                <img src={currencyIcons[currency.slug]} alt={currency.slug}></img>
-                            </span>
-                            <span className={cx(style.name)}>{currency.name}</span>
+                            {currency && (
+                                <>
+                                    <span className={cx(style.symbol)}>
+                                        <img src={currencyIcons[currency.slug]} alt={currency.slug}></img>
+                                    </span>
+                                    <span className={cx(style.name)}>{currency.name}</span>
+                                </>
+                            )}
                         </div>
                     </div>
 
