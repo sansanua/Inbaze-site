@@ -1,8 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import { getColoredIcon } from 'utils/instrumentsStructure';
 import { currencyIcons } from 'utils/currencyIcons';
+import { FILTERS } from 'utils/filters';
+import { toQuery } from 'utils/query';
+
+import Button from 'components/Button';
 
 import style from './InstrumentHeder.module.scss';
 
@@ -52,6 +57,16 @@ export default function InstrumentHeder({ name, shortDescription, risk, complexi
                         <div>Сложность</div>
                         {renderIcons(style.iconComplexity, complexity)}
                     </div>
+                </div>
+                <div className={cx(style.buttonRow)}>
+                    <Link
+                        to={{
+                            pathname: '/companies',
+                            search: toQuery({ [FILTERS.instruments]: slug }),
+                        }}
+                    >
+                        <Button type="lightBlueBlue">Посмотреть каталог</Button>
+                    </Link>
                 </div>
             </div>
         </div>

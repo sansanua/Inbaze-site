@@ -1,18 +1,33 @@
 @import 'assets/index.scss';
 
 $paddingTop: 30px;
+$paddingLeft: 80px;
 
 .base {
     width: 100%;
-    margin-bottom: 20px;
     margin-top: 70px;
     display: flex;
     justify-content: space-between;
+
+    @include t {
+        flex-wrap: wrap;
+    }
 }
 
 .nameContainer {
     padding-top: $paddingTop;
-    padding-left: 80px;
+    padding-left: $paddingLeft;
+
+    @include t {
+        width: 500px;
+    }
+
+    @include m {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
     .image {
         position: absolute;
@@ -20,6 +35,12 @@ $paddingTop: 30px;
         max-height: 100px;
         top: 0;
         left: 0;
+
+        @include m {
+            position: relative;
+            max-width: 50px;
+            max-height: 50px;
+        }
     }
 
     .name {
@@ -27,9 +48,20 @@ $paddingTop: 30px;
         font-weight: bold;
         color: $primary;
         margin-bottom: 20px;
+
+        @include m {
+            margin-left: 10px;
+            margin-bottom: 0px;
+        }
     }
+
     .description {
         @include font18;
+
+        @include m {
+            margin-top: 20px;
+            width: 100%;
+        }
     }
 }
 
@@ -37,10 +69,31 @@ $paddingTop: 30px;
     padding-top: $paddingTop;
     width: 500px;
 
+    @include t {
+        width: 100%;
+        padding-top: 50px;
+        padding-left: $paddingLeft;
+    }
+
+    @include m {
+        padding-left: 0;
+    }
+
     .row {
         display: flex;
         justify-content: space-between;
         margin-bottom: 25px;
+
+        @include t {
+            width: 500px;
+        }
+
+        @include m {
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
 
         .col {
             display: flex;
@@ -48,6 +101,11 @@ $paddingTop: 30px;
             color: #333333;
             width: 170px;
             justify-content: space-between;
+
+            @include m {
+                width: 210px;
+                margin-bottom: 15px;
+            }
         }
     }
 
@@ -97,6 +155,24 @@ $paddingTop: 30px;
 
         &.selected {
             background-image: url('/images/puzzle-02.svg');
+        }
+    }
+
+    .buttonRow {
+        display: flex;
+        justify-content: flex-end;
+
+        @include t {
+            position: absolute;
+            right: 0;
+            top: -65px;
+        }
+
+        @include m {
+            position: relative;
+            top: inherit;
+            right: initial;
+            margin-top: 60px;
         }
     }
 }

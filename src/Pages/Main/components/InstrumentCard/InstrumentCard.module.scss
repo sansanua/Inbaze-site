@@ -5,6 +5,10 @@
     cursor: pointer;
 }
 
+.disabled {
+    cursor: initial;
+}
+
 .image {
     position: absolute;
     width: 100%;

@@ -60,6 +60,7 @@ export const instrumentsItems = [
         image: '/images/instruments/property-01.svg',
         imageColored: '/images/instruments/property-01-colored.svg',
         link: '/companies?',
+        disabled: true,
     },
     {
         name: 'Бизнес',
@@ -68,6 +69,7 @@ export const instrumentsItems = [
         image: '/images/instruments/papka-01.svg',
         imageColored: '/images/instruments/papka-01-colored.svg',
         link: '/companies?',
+        disabled: true,
     },
 ];
 

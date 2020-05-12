@@ -1,10 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Button from 'components/Button';
-
 import InstrumentHeder from './InstrumentHeder';
-import CompanyMainBlock from './InstrumentMainBlock';
+import InstrumentMainBlock from './InstrumentMainBlock';
 
 import style from './Instrument.module.scss';
 
@@ -41,28 +39,14 @@ export default function InstrumentComponent(props) {
 
                 <div className={cx(style.content)}>
                     <div className={cx(style.mainBlock)}>
-                        {/* <CompanyMainBlock
-                            aboutCompany={aboutCompany}
-                            processOfManagingMoney={processOfManagingMoney}
-                            processOfGeneratingIncome={processOfGeneratingIncome}
-                            investmentCurrency={investmentCurrency}
-                            currencyIncome={currencyIncome}
-                            descriptionOfCooperation={descriptionOfCooperation}
-                            historicalProfitability={historicalProfitability}
-                            typeOfIncome={typeOfIncome}
-                            minimumInvestmentPeriod={minimumInvestmentPeriod}
-                            optimalInvestmentPeriod={optimalInvestmentPeriod}
-                            incomePaymentProcess={incomePaymentProcess}
-                            risksOfLossInvested={risksOfLossInvested}
-                            placeOfStorageFunds={placeOfStorageFunds}
-                            liquidityOfInvestment={liquidityOfInvestment}
-                            companyCommission={companyCommission}
-                            otherServiceCharges={otherServiceCharges}
-                            payingTaxesIncome={payingTaxesIncome}
-                            documentsSecuringRights={documentsSecuringRights}
-                            documentsActivities={documentsActivities}
-                            documentsFromInvestor={documentsFromInvestor}
-                        ></CompanyMainBlock> */}
+                        <InstrumentMainBlock
+                            name={name}
+                            description={description}
+                            howGenerateIncome={howGenerateIncome}
+                            mainParameters={mainParameters}
+                            minusInvestment={minusInvestment}
+                            plusInvestment={plusInvestment}
+                        ></InstrumentMainBlock>
                     </div>
                 </div>
             </div>
