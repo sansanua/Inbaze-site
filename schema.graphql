@@ -1,0 +1,1394 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+union Morph = Companies | CompaniesAggregator | CompaniesAggregatorAvg | CompaniesAggregatorMax | CompaniesAggregatorMin | CompaniesAggregatorSum | CompaniesConnection | CompaniesConnectionAboutCompany | CompaniesConnectionCapital | CompaniesConnectionCompanyCommission | CompaniesConnectionComplexity | CompaniesConnectionCreated_at | CompaniesConnectionDescription | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionDisabled | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionHistoricalProfitability | CompaniesConnectionId | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionLiquidity | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionName | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProfitability | CompaniesConnectionRisk | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionTypeOfIncome | CompaniesConnectionUpdated_at | CompaniesGroupBy | Currencies | CurrenciesAggregator | CurrenciesConnection | CurrenciesConnectionCreated_at | CurrenciesConnectionId | CurrenciesConnectionName | CurrenciesConnectionSlug | CurrenciesConnectionSymbol | CurrenciesConnectionUpdated_at | CurrenciesGroupBy | ForgotPassword | Instruments | InstrumentsAggregator | InstrumentsAggregatorAvg | InstrumentsAggregatorMax | InstrumentsAggregatorMin | InstrumentsAggregatorSum | InstrumentsConnection | InstrumentsConnectionComplexity | InstrumentsConnectionCreated_at | InstrumentsConnectionCurrency | InstrumentsConnectionDescription | InstrumentsConnectionDisabled | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionId | InstrumentsConnectionMainParameters | InstrumentsConnectionMinusInvestment | InstrumentsConnectionName | InstrumentsConnectionPlusInvestment | InstrumentsConnectionProfitability | InstrumentsConnectionRisk | InstrumentsConnectionShortDescription | InstrumentsConnectionSlug | InstrumentsConnectionUpdated_at | InstrumentsGroupBy | Profitability | ProfitabilityAggregator | ProfitabilityConnection | ProfitabilityConnectionCreated_at | ProfitabilityConnectionId | ProfitabilityConnectionName | ProfitabilityConnectionSlug | ProfitabilityConnectionUpdated_at | ProfitabilityGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCompanyPayload | createCurrencyPayload | createFilePayload | createInstrumentPayload | createProfitabilityPayload | createRolePayload | createUserPayload | deleteCompanyPayload | deleteCurrencyPayload | deleteFilePayload | deleteInstrumentPayload | deleteProfitabilityPayload | deleteRolePayload | deleteUserPayload | updateCompanyPayload | updateCurrencyPayload | updateFilePayload | updateInstrumentPayload | updateProfitabilityPayload | updateRolePayload | updateUserPayload
+
+type Companies {
+    aboutCompany: String
+    capital: Int
+    companyCommission: String
+    complexity: Int
+    created_at: DateTime!
+    currencyIncome(limit: Int, sort: String, start: Int, where: JSON): [Currencies]
+    description: String
+    descriptionOfCooperation: String
+    disabled: Boolean
+    documentsActivities: String
+    documentsFromInvestor: String
+    documentsSecuringRights: String
+    historicalProfitability: Int
+    id: ID!
+    incomePaymentProcess: String
+    instruments(limit: Int, sort: String, start: Int, where: JSON): [Instruments]
+    investmentCurrency(limit: Int, sort: String, start: Int, where: JSON): [Currencies]
+    liquidity: ENUM_COMPANIES_LIQUIDITY
+    liquidityOfInvestment: String
+    minimumInvestmentAmount: Int
+    minimumInvestmentPeriod: String
+    name: String
+    numberOfClients: Int
+    onlineInvestmentStatusTracking: Boolean
+    optimalInvestmentPeriod: String
+    otherServiceCharges: String
+    payingTaxesIncome: Boolean
+    placeOfStorageFunds: String
+    processOfGeneratingIncome: String
+    processOfManagingMoney: String
+    profitability: Profitability
+    risk: Int
+    risksOfLossInvested: String
+    site: String
+    startYear: Int
+    typeOfIncome: ENUM_COMPANIES_TYPEOFINCOME
+    updated_at: DateTime!
+}
+
+type CompaniesAggregator {
+    avg: CompaniesAggregatorAvg
+    count: Int
+    max: CompaniesAggregatorMax
+    min: CompaniesAggregatorMin
+    sum: CompaniesAggregatorSum
+    totalCount: Int
+}
+
+type CompaniesAggregatorAvg {
+    capital: Float
+    complexity: Float
+    historicalProfitability: Float
+    minimumInvestmentAmount: Float
+    numberOfClients: Float
+    risk: Float
+    startYear: Float
+}
+
+type CompaniesAggregatorMax {
+    capital: Float
+    complexity: Float
+    historicalProfitability: Float
+    minimumInvestmentAmount: Float
+    numberOfClients: Float
+    risk: Float
+    startYear: Float
+}
+
+type CompaniesAggregatorMin {
+    capital: Float
+    complexity: Float
+    historicalProfitability: Float
+    minimumInvestmentAmount: Float
+    numberOfClients: Float
+    risk: Float
+    startYear: Float
+}
+
+type CompaniesAggregatorSum {
+    capital: Float
+    complexity: Float
+    historicalProfitability: Float
+    minimumInvestmentAmount: Float
+    numberOfClients: Float
+    risk: Float
+    startYear: Float
+}
+
+type CompaniesConnection {
+    aggregate: CompaniesAggregator
+    groupBy: CompaniesGroupBy
+    values: [Companies]
+}
+
+type CompaniesConnectionAboutCompany {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionCapital {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionCompanyCommission {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionComplexity {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionCreated_at {
+    connection: CompaniesConnection
+    key: DateTime
+}
+
+type CompaniesConnectionDescription {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionDescriptionOfCooperation {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionDisabled {
+    connection: CompaniesConnection
+    key: Boolean
+}
+
+type CompaniesConnectionDocumentsActivities {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionDocumentsFromInvestor {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionDocumentsSecuringRights {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionHistoricalProfitability {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionId {
+    connection: CompaniesConnection
+    key: ID
+}
+
+type CompaniesConnectionIncomePaymentProcess {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionLiquidity {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionLiquidityOfInvestment {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionMinimumInvestmentAmount {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionMinimumInvestmentPeriod {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionName {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionNumberOfClients {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionOnlineInvestmentStatusTracking {
+    connection: CompaniesConnection
+    key: Boolean
+}
+
+type CompaniesConnectionOptimalInvestmentPeriod {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionOtherServiceCharges {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionPayingTaxesIncome {
+    connection: CompaniesConnection
+    key: Boolean
+}
+
+type CompaniesConnectionPlaceOfStorageFunds {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionProcessOfGeneratingIncome {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionProcessOfManagingMoney {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionProfitability {
+    connection: CompaniesConnection
+    key: ID
+}
+
+type CompaniesConnectionRisk {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionRisksOfLossInvested {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionSite {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionStartYear {
+    connection: CompaniesConnection
+    key: Int
+}
+
+type CompaniesConnectionTypeOfIncome {
+    connection: CompaniesConnection
+    key: String
+}
+
+type CompaniesConnectionUpdated_at {
+    connection: CompaniesConnection
+    key: DateTime
+}
+
+type CompaniesGroupBy {
+    aboutCompany: [CompaniesConnectionAboutCompany]
+    capital: [CompaniesConnectionCapital]
+    companyCommission: [CompaniesConnectionCompanyCommission]
+    complexity: [CompaniesConnectionComplexity]
+    created_at: [CompaniesConnectionCreated_at]
+    description: [CompaniesConnectionDescription]
+    descriptionOfCooperation: [CompaniesConnectionDescriptionOfCooperation]
+    disabled: [CompaniesConnectionDisabled]
+    documentsActivities: [CompaniesConnectionDocumentsActivities]
+    documentsFromInvestor: [CompaniesConnectionDocumentsFromInvestor]
+    documentsSecuringRights: [CompaniesConnectionDocumentsSecuringRights]
+    historicalProfitability: [CompaniesConnectionHistoricalProfitability]
+    id: [CompaniesConnectionId]
+    incomePaymentProcess: [CompaniesConnectionIncomePaymentProcess]
+    liquidity: [CompaniesConnectionLiquidity]
+    liquidityOfInvestment: [CompaniesConnectionLiquidityOfInvestment]
+    minimumInvestmentAmount: [CompaniesConnectionMinimumInvestmentAmount]
+    minimumInvestmentPeriod: [CompaniesConnectionMinimumInvestmentPeriod]
+    name: [CompaniesConnectionName]
+    numberOfClients: [CompaniesConnectionNumberOfClients]
+    onlineInvestmentStatusTracking: [CompaniesConnectionOnlineInvestmentStatusTracking]
+    optimalInvestmentPeriod: [CompaniesConnectionOptimalInvestmentPeriod]
+    otherServiceCharges: [CompaniesConnectionOtherServiceCharges]
+    payingTaxesIncome: [CompaniesConnectionPayingTaxesIncome]
+    placeOfStorageFunds: [CompaniesConnectionPlaceOfStorageFunds]
+    processOfGeneratingIncome: [CompaniesConnectionProcessOfGeneratingIncome]
+    processOfManagingMoney: [CompaniesConnectionProcessOfManagingMoney]
+    profitability: [CompaniesConnectionProfitability]
+    risk: [CompaniesConnectionRisk]
+    risksOfLossInvested: [CompaniesConnectionRisksOfLossInvested]
+    site: [CompaniesConnectionSite]
+    startYear: [CompaniesConnectionStartYear]
+    typeOfIncome: [CompaniesConnectionTypeOfIncome]
+    updated_at: [CompaniesConnectionUpdated_at]
+}
+
+type Currencies {
+    companies(limit: Int, sort: String, start: Int, where: JSON): [Companies]
+    created_at: DateTime!
+    id: ID!
+    name: String
+    slug: String
+    symbol: String
+    updated_at: DateTime!
+}
+
+type CurrenciesAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type CurrenciesConnection {
+    aggregate: CurrenciesAggregator
+    groupBy: CurrenciesGroupBy
+    values: [Currencies]
+}
+
+type CurrenciesConnectionCreated_at {
+    connection: CurrenciesConnection
+    key: DateTime
+}
+
+type CurrenciesConnectionId {
+    connection: CurrenciesConnection
+    key: ID
+}
+
+type CurrenciesConnectionName {
+    connection: CurrenciesConnection
+    key: String
+}
+
+type CurrenciesConnectionSlug {
+    connection: CurrenciesConnection
+    key: String
+}
+
+type CurrenciesConnectionSymbol {
+    connection: CurrenciesConnection
+    key: String
+}
+
+type CurrenciesConnectionUpdated_at {
+    connection: CurrenciesConnection
+    key: DateTime
+}
+
+type CurrenciesGroupBy {
+    created_at: [CurrenciesConnectionCreated_at]
+    id: [CurrenciesConnectionId]
+    name: [CurrenciesConnectionName]
+    slug: [CurrenciesConnectionSlug]
+    symbol: [CurrenciesConnectionSymbol]
+    updated_at: [CurrenciesConnectionUpdated_at]
+}
+
+type ForgotPassword {
+    ok: Boolean
+}
+
+type Instruments {
+    companies(limit: Int, sort: String, start: Int, where: JSON): [Companies]
+    complexity: Int
+    created_at: DateTime!
+    currency: Currencies
+    description: String
+    disabled: Boolean
+    howGenerateIncome: String
+    id: ID!
+    mainParameters: String
+    minusInvestment: String
+    name: String
+    plusInvestment: String
+    profitability: Int
+    risk: Int
+    shortDescription: String
+    slug: String
+    updated_at: DateTime!
+}
+
+type InstrumentsAggregator {
+    avg: InstrumentsAggregatorAvg
+    count: Int
+    max: InstrumentsAggregatorMax
+    min: InstrumentsAggregatorMin
+    sum: InstrumentsAggregatorSum
+    totalCount: Int
+}
+
+type InstrumentsAggregatorAvg {
+    complexity: Float
+    profitability: Float
+    risk: Float
+}
+
+type InstrumentsAggregatorMax {
+    complexity: Float
+    profitability: Float
+    risk: Float
+}
+
+type InstrumentsAggregatorMin {
+    complexity: Float
+    profitability: Float
+    risk: Float
+}
+
+type InstrumentsAggregatorSum {
+    complexity: Float
+    profitability: Float
+    risk: Float
+}
+
+type InstrumentsConnection {
+    aggregate: InstrumentsAggregator
+    groupBy: InstrumentsGroupBy
+    values: [Instruments]
+}
+
+type InstrumentsConnectionComplexity {
+    connection: InstrumentsConnection
+    key: Int
+}
+
+type InstrumentsConnectionCreated_at {
+    connection: InstrumentsConnection
+    key: DateTime
+}
+
+type InstrumentsConnectionCurrency {
+    connection: InstrumentsConnection
+    key: ID
+}
+
+type InstrumentsConnectionDescription {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionDisabled {
+    connection: InstrumentsConnection
+    key: Boolean
+}
+
+type InstrumentsConnectionHowGenerateIncome {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionId {
+    connection: InstrumentsConnection
+    key: ID
+}
+
+type InstrumentsConnectionMainParameters {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionMinusInvestment {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionName {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionPlusInvestment {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionProfitability {
+    connection: InstrumentsConnection
+    key: Int
+}
+
+type InstrumentsConnectionRisk {
+    connection: InstrumentsConnection
+    key: Int
+}
+
+type InstrumentsConnectionShortDescription {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionSlug {
+    connection: InstrumentsConnection
+    key: String
+}
+
+type InstrumentsConnectionUpdated_at {
+    connection: InstrumentsConnection
+    key: DateTime
+}
+
+type InstrumentsGroupBy {
+    complexity: [InstrumentsConnectionComplexity]
+    created_at: [InstrumentsConnectionCreated_at]
+    currency: [InstrumentsConnectionCurrency]
+    description: [InstrumentsConnectionDescription]
+    disabled: [InstrumentsConnectionDisabled]
+    howGenerateIncome: [InstrumentsConnectionHowGenerateIncome]
+    id: [InstrumentsConnectionId]
+    mainParameters: [InstrumentsConnectionMainParameters]
+    minusInvestment: [InstrumentsConnectionMinusInvestment]
+    name: [InstrumentsConnectionName]
+    plusInvestment: [InstrumentsConnectionPlusInvestment]
+    profitability: [InstrumentsConnectionProfitability]
+    risk: [InstrumentsConnectionRisk]
+    shortDescription: [InstrumentsConnectionShortDescription]
+    slug: [InstrumentsConnectionSlug]
+    updated_at: [InstrumentsConnectionUpdated_at]
+}
+
+type Mutation {
+    changePassword(code: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+    createCompany(input: createCompanyInput): createCompanyPayload
+    createCurrency(input: createCurrencyInput): createCurrencyPayload
+    createInstrument(input: createInstrumentInput): createInstrumentPayload
+    createProfitability(input: createProfitabilityInput): createProfitabilityPayload
+    "Create a new role"
+    createRole(input: createRoleInput): createRolePayload
+    "Create a new user"
+    createUser(input: createUserInput): createUserPayload
+    deleteCompany(input: deleteCompanyInput): deleteCompanyPayload
+    deleteCurrency(input: deleteCurrencyInput): deleteCurrencyPayload
+    deleteInstrument(input: deleteInstrumentInput): deleteInstrumentPayload
+    deleteProfitability(input: deleteProfitabilityInput): deleteProfitabilityPayload
+    "Delete an existing role"
+    deleteRole(input: deleteRoleInput): deleteRolePayload
+    "Delete an existing user"
+    deleteUser(input: deleteUserInput): deleteUserPayload
+    emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+    forgotPassword(email: String!): ForgotPassword
+    login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+    multipleUpload(field: String, files: [Upload]!, ref: String, refId: ID, source: String): [UploadFile]!
+    register(input: UserInput!): UsersPermissionsLoginPayload!
+    updateCompany(input: updateCompanyInput): updateCompanyPayload
+    updateCurrency(input: updateCurrencyInput): updateCurrencyPayload
+    updateInstrument(input: updateInstrumentInput): updateInstrumentPayload
+    updateProfitability(input: updateProfitabilityInput): updateProfitabilityPayload
+    "Update an existing role"
+    updateRole(input: updateRoleInput): updateRolePayload
+    "Update an existing user"
+    updateUser(input: updateUserInput): updateUserPayload
+    upload(field: String, file: Upload!, ref: String, refId: ID, source: String): UploadFile!
+}
+
+type Profitability {
+    companies(limit: Int, sort: String, start: Int, where: JSON): [Companies]
+    created_at: DateTime!
+    id: ID!
+    name: String
+    slug: String
+    updated_at: DateTime!
+}
+
+type ProfitabilityAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type ProfitabilityConnection {
+    aggregate: ProfitabilityAggregator
+    groupBy: ProfitabilityGroupBy
+    values: [Profitability]
+}
+
+type ProfitabilityConnectionCreated_at {
+    connection: ProfitabilityConnection
+    key: DateTime
+}
+
+type ProfitabilityConnectionId {
+    connection: ProfitabilityConnection
+    key: ID
+}
+
+type ProfitabilityConnectionName {
+    connection: ProfitabilityConnection
+    key: String
+}
+
+type ProfitabilityConnectionSlug {
+    connection: ProfitabilityConnection
+    key: String
+}
+
+type ProfitabilityConnectionUpdated_at {
+    connection: ProfitabilityConnection
+    key: DateTime
+}
+
+type ProfitabilityGroupBy {
+    created_at: [ProfitabilityConnectionCreated_at]
+    id: [ProfitabilityConnectionId]
+    name: [ProfitabilityConnectionName]
+    slug: [ProfitabilityConnectionSlug]
+    updated_at: [ProfitabilityConnectionUpdated_at]
+}
+
+type Query {
+    companies(limit: Int, sort: String, start: Int, where: JSON): [Companies]
+    companiesConnection(limit: Int, sort: String, start: Int, where: JSON): CompaniesConnection
+    company(id: ID!): Companies
+    currencies(limit: Int, sort: String, start: Int, where: JSON): [Currencies]
+    currenciesConnection(limit: Int, sort: String, start: Int, where: JSON): CurrenciesConnection
+    currency(id: ID!): Currencies
+    files(limit: Int, sort: String, start: Int, where: JSON): [UploadFile]
+    filesConnection(limit: Int, sort: String, start: Int, where: JSON): UploadFileConnection
+    instrument(id: ID!): Instruments
+    instruments(limit: Int, sort: String, start: Int, where: JSON): [Instruments]
+    instrumentsConnection(limit: Int, sort: String, start: Int, where: JSON): InstrumentsConnection
+    me: UsersPermissionsMe
+    profitabilities(limit: Int, sort: String, start: Int, where: JSON): [Profitability]
+    profitabilitiesConnection(limit: Int, sort: String, start: Int, where: JSON): ProfitabilityConnection
+    profitability(id: ID!): Profitability
+    role(id: ID!): UsersPermissionsRole
+    "Retrieve all the existing roles. You can't apply filters on this query."
+    roles(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsRole]
+    rolesConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsRoleConnection
+    user(id: ID!): UsersPermissionsUser
+    users(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
+    usersConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsUserConnection
+}
+
+type UploadFile {
+    alternativeText: String
+    caption: String
+    created_at: DateTime!
+    ext: String
+    formats: JSON
+    hash: String!
+    height: Int
+    id: ID!
+    mime: String!
+    name: String!
+    previewUrl: String
+    provider: String!
+    provider_metadata: JSON
+    related(limit: Int, sort: String, start: Int, where: JSON): [Morph]
+    size: Float!
+    updated_at: DateTime!
+    url: String!
+    width: Int
+}
+
+type UploadFileAggregator {
+    avg: UploadFileAggregatorAvg
+    count: Int
+    max: UploadFileAggregatorMax
+    min: UploadFileAggregatorMin
+    sum: UploadFileAggregatorSum
+    totalCount: Int
+}
+
+type UploadFileAggregatorAvg {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorMax {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorMin {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorSum {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileConnection {
+    aggregate: UploadFileAggregator
+    groupBy: UploadFileGroupBy
+    values: [UploadFile]
+}
+
+type UploadFileConnectionAlternativeText {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionCaption {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionCreated_at {
+    connection: UploadFileConnection
+    key: DateTime
+}
+
+type UploadFileConnectionExt {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionFormats {
+    connection: UploadFileConnection
+    key: JSON
+}
+
+type UploadFileConnectionHash {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionHeight {
+    connection: UploadFileConnection
+    key: Int
+}
+
+type UploadFileConnectionId {
+    connection: UploadFileConnection
+    key: ID
+}
+
+type UploadFileConnectionMime {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionName {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionPreviewUrl {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionProvider {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionProvider_metadata {
+    connection: UploadFileConnection
+    key: JSON
+}
+
+type UploadFileConnectionSize {
+    connection: UploadFileConnection
+    key: Float
+}
+
+type UploadFileConnectionUpdated_at {
+    connection: UploadFileConnection
+    key: DateTime
+}
+
+type UploadFileConnectionUrl {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionWidth {
+    connection: UploadFileConnection
+    key: Int
+}
+
+type UploadFileGroupBy {
+    alternativeText: [UploadFileConnectionAlternativeText]
+    caption: [UploadFileConnectionCaption]
+    created_at: [UploadFileConnectionCreated_at]
+    ext: [UploadFileConnectionExt]
+    formats: [UploadFileConnectionFormats]
+    hash: [UploadFileConnectionHash]
+    height: [UploadFileConnectionHeight]
+    id: [UploadFileConnectionId]
+    mime: [UploadFileConnectionMime]
+    name: [UploadFileConnectionName]
+    previewUrl: [UploadFileConnectionPreviewUrl]
+    provider: [UploadFileConnectionProvider]
+    provider_metadata: [UploadFileConnectionProvider_metadata]
+    size: [UploadFileConnectionSize]
+    updated_at: [UploadFileConnectionUpdated_at]
+    url: [UploadFileConnectionUrl]
+    width: [UploadFileConnectionWidth]
+}
+
+type UsersPermissionsLoginPayload {
+    jwt: String!
+    user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+    blocked: Boolean
+    confirmed: Boolean
+    email: String!
+    id: ID!
+    role: UsersPermissionsMeRole
+    username: String!
+}
+
+type UsersPermissionsMeRole {
+    description: String
+    id: ID!
+    name: String!
+    type: String
+}
+
+type UsersPermissionsPermission {
+    action: String!
+    controller: String!
+    enabled: Boolean!
+    id: ID!
+    policy: String
+    role: UsersPermissionsRole
+    type: String!
+}
+
+type UsersPermissionsRole {
+    description: String
+    id: ID!
+    name: String!
+    permissions(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsPermission]
+    type: String
+    users(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+    aggregate: UsersPermissionsRoleAggregator
+    groupBy: UsersPermissionsRoleGroupBy
+    values: [UsersPermissionsRole]
+}
+
+type UsersPermissionsRoleConnectionDescription {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleConnectionId {
+    connection: UsersPermissionsRoleConnection
+    key: ID
+}
+
+type UsersPermissionsRoleConnectionName {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleConnectionType {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleGroupBy {
+    description: [UsersPermissionsRoleConnectionDescription]
+    id: [UsersPermissionsRoleConnectionId]
+    name: [UsersPermissionsRoleConnectionName]
+    type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+    blocked: Boolean
+    confirmed: Boolean
+    created_at: DateTime!
+    email: String!
+    id: ID!
+    provider: String
+    role: UsersPermissionsRole
+    updated_at: DateTime!
+    username: String!
+}
+
+type UsersPermissionsUserAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+    aggregate: UsersPermissionsUserAggregator
+    groupBy: UsersPermissionsUserGroupBy
+    values: [UsersPermissionsUser]
+}
+
+type UsersPermissionsUserConnectionBlocked {
+    connection: UsersPermissionsUserConnection
+    key: Boolean
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+    connection: UsersPermissionsUserConnection
+    key: Boolean
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+    connection: UsersPermissionsUserConnection
+    key: DateTime
+}
+
+type UsersPermissionsUserConnectionEmail {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserConnectionId {
+    connection: UsersPermissionsUserConnection
+    key: ID
+}
+
+type UsersPermissionsUserConnectionProvider {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserConnectionRole {
+    connection: UsersPermissionsUserConnection
+    key: ID
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+    connection: UsersPermissionsUserConnection
+    key: DateTime
+}
+
+type UsersPermissionsUserConnectionUsername {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserGroupBy {
+    blocked: [UsersPermissionsUserConnectionBlocked]
+    confirmed: [UsersPermissionsUserConnectionConfirmed]
+    created_at: [UsersPermissionsUserConnectionCreated_at]
+    email: [UsersPermissionsUserConnectionEmail]
+    id: [UsersPermissionsUserConnectionId]
+    provider: [UsersPermissionsUserConnectionProvider]
+    role: [UsersPermissionsUserConnectionRole]
+    updated_at: [UsersPermissionsUserConnectionUpdated_at]
+    username: [UsersPermissionsUserConnectionUsername]
+}
+
+type createCompanyPayload {
+    company: Companies
+}
+
+type createCurrencyPayload {
+    currency: Currencies
+}
+
+type createFilePayload {
+    file: UploadFile
+}
+
+type createInstrumentPayload {
+    instrument: Instruments
+}
+
+type createProfitabilityPayload {
+    profitability: Profitability
+}
+
+type createRolePayload {
+    role: UsersPermissionsRole
+}
+
+type createUserPayload {
+    user: UsersPermissionsUser
+}
+
+type deleteCompanyPayload {
+    company: Companies
+}
+
+type deleteCurrencyPayload {
+    currency: Currencies
+}
+
+type deleteFilePayload {
+    file: UploadFile
+}
+
+type deleteInstrumentPayload {
+    instrument: Instruments
+}
+
+type deleteProfitabilityPayload {
+    profitability: Profitability
+}
+
+type deleteRolePayload {
+    role: UsersPermissionsRole
+}
+
+type deleteUserPayload {
+    user: UsersPermissionsUser
+}
+
+type updateCompanyPayload {
+    company: Companies
+}
+
+type updateCurrencyPayload {
+    currency: Currencies
+}
+
+type updateFilePayload {
+    file: UploadFile
+}
+
+type updateInstrumentPayload {
+    instrument: Instruments
+}
+
+type updateProfitabilityPayload {
+    profitability: Profitability
+}
+
+type updateRolePayload {
+    role: UsersPermissionsRole
+}
+
+type updateUserPayload {
+    user: UsersPermissionsUser
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+enum ENUM_COMPANIES_LIQUIDITY {
+    longExit
+    quickExit
+}
+
+enum ENUM_COMPANIES_TYPEOFINCOME {
+    fixed
+    floating
+}
+
+input CompanyInput {
+    aboutCompany: String
+    capital: Int
+    companyCommission: String
+    complexity: Int
+    currencyIncome: [ID]
+    description: String
+    descriptionOfCooperation: String
+    disabled: Boolean
+    documentsActivities: String
+    documentsFromInvestor: String
+    documentsSecuringRights: String
+    historicalProfitability: Int
+    incomePaymentProcess: String
+    instruments: [ID]
+    investmentCurrency: [ID]
+    liquidity: ENUM_COMPANIES_LIQUIDITY
+    liquidityOfInvestment: String
+    minimumInvestmentAmount: Int
+    minimumInvestmentPeriod: String
+    name: String
+    numberOfClients: Int
+    onlineInvestmentStatusTracking: Boolean
+    optimalInvestmentPeriod: String
+    otherServiceCharges: String
+    payingTaxesIncome: Boolean
+    placeOfStorageFunds: String
+    processOfGeneratingIncome: String
+    processOfManagingMoney: String
+    profitability: ID
+    risk: Int
+    risksOfLossInvested: String
+    site: String
+    startYear: Int
+    typeOfIncome: ENUM_COMPANIES_TYPEOFINCOME
+}
+
+input CurrencyInput {
+    companies: [ID]
+    name: String
+    slug: String
+    symbol: String
+}
+
+input FileInput {
+    alternativeText: String
+    caption: String
+    ext: String
+    formats: JSON
+    hash: String!
+    height: Int
+    mime: String!
+    name: String!
+    previewUrl: String
+    provider: String!
+    provider_metadata: JSON
+    related: [ID]
+    size: Float!
+    url: String!
+    width: Int
+}
+
+input InputID {
+    id: ID!
+}
+
+input InstrumentInput {
+    companies: [ID]
+    complexity: Int
+    currency: ID
+    description: String
+    disabled: Boolean
+    howGenerateIncome: String
+    mainParameters: String
+    minusInvestment: String
+    name: String
+    plusInvestment: String
+    profitability: Int
+    risk: Int
+    shortDescription: String
+    slug: String
+}
+
+input ProfitabilityInput {
+    companies: [ID]
+    name: String
+    slug: String
+}
+
+input RoleInput {
+    description: String
+    name: String!
+    permissions: [ID]
+    type: String
+    users: [ID]
+}
+
+input UserInput {
+    blocked: Boolean
+    confirmed: Boolean
+    email: String!
+    password: String
+    provider: String
+    resetPasswordToken: String
+    role: ID
+    username: String!
+}
+
+input UsersPermissionsLoginInput {
+    identifier: String!
+    password: String!
+    provider: String = "local"
+}
+
+input createCompanyInput {
+    data: CompanyInput
+}
+
+input createCurrencyInput {
+    data: CurrencyInput
+}
+
+input createFileInput {
+    data: FileInput
+}
+
+input createInstrumentInput {
+    data: InstrumentInput
+}
+
+input createProfitabilityInput {
+    data: ProfitabilityInput
+}
+
+input createRoleInput {
+    data: RoleInput
+}
+
+input createUserInput {
+    data: UserInput
+}
+
+input deleteCompanyInput {
+    where: InputID
+}
+
+input deleteCurrencyInput {
+    where: InputID
+}
+
+input deleteFileInput {
+    where: InputID
+}
+
+input deleteInstrumentInput {
+    where: InputID
+}
+
+input deleteProfitabilityInput {
+    where: InputID
+}
+
+input deleteRoleInput {
+    where: InputID
+}
+
+input deleteUserInput {
+    where: InputID
+}
+
+input editCompanyInput {
+    aboutCompany: String
+    capital: Int
+    companyCommission: String
+    complexity: Int
+    currencyIncome: [ID]
+    description: String
+    descriptionOfCooperation: String
+    disabled: Boolean
+    documentsActivities: String
+    documentsFromInvestor: String
+    documentsSecuringRights: String
+    historicalProfitability: Int
+    incomePaymentProcess: String
+    instruments: [ID]
+    investmentCurrency: [ID]
+    liquidity: ENUM_COMPANIES_LIQUIDITY
+    liquidityOfInvestment: String
+    minimumInvestmentAmount: Int
+    minimumInvestmentPeriod: String
+    name: String
+    numberOfClients: Int
+    onlineInvestmentStatusTracking: Boolean
+    optimalInvestmentPeriod: String
+    otherServiceCharges: String
+    payingTaxesIncome: Boolean
+    placeOfStorageFunds: String
+    processOfGeneratingIncome: String
+    processOfManagingMoney: String
+    profitability: ID
+    risk: Int
+    risksOfLossInvested: String
+    site: String
+    startYear: Int
+    typeOfIncome: ENUM_COMPANIES_TYPEOFINCOME
+}
+
+input editCurrencyInput {
+    companies: [ID]
+    name: String
+    slug: String
+    symbol: String
+}
+
+input editFileInput {
+    alternativeText: String
+    caption: String
+    ext: String
+    formats: JSON
+    hash: String
+    height: Int
+    mime: String
+    name: String
+    previewUrl: String
+    provider: String
+    provider_metadata: JSON
+    related: [ID]
+    size: Float
+    url: String
+    width: Int
+}
+
+input editInstrumentInput {
+    companies: [ID]
+    complexity: Int
+    currency: ID
+    description: String
+    disabled: Boolean
+    howGenerateIncome: String
+    mainParameters: String
+    minusInvestment: String
+    name: String
+    plusInvestment: String
+    profitability: Int
+    risk: Int
+    shortDescription: String
+    slug: String
+}
+
+input editProfitabilityInput {
+    companies: [ID]
+    name: String
+    slug: String
+}
+
+input editRoleInput {
+    description: String
+    name: String
+    permissions: [ID]
+    type: String
+    users: [ID]
+}
+
+input editUserInput {
+    blocked: Boolean
+    confirmed: Boolean
+    email: String
+    password: String
+    provider: String
+    resetPasswordToken: String
+    role: ID
+    username: String
+}
+
+input updateCompanyInput {
+    data: editCompanyInput
+    where: InputID
+}
+
+input updateCurrencyInput {
+    data: editCurrencyInput
+    where: InputID
+}
+
+input updateFileInput {
+    data: editFileInput
+    where: InputID
+}
+
+input updateInstrumentInput {
+    data: editInstrumentInput
+    where: InputID
+}
+
+input updateProfitabilityInput {
+    data: editProfitabilityInput
+    where: InputID
+}
+
+input updateRoleInput {
+    data: editRoleInput
+    where: InputID
+}
+
+input updateUserInput {
+    data: editUserInput
+    where: InputID
+}
+
+
+"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar DateTime
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
+
+"A time string with format: HH:mm:ss.SSS"
+scalar Time
+
+"A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar Date
+
+"The `Long` scalar type represents 52-bit integers"
+scalar Long

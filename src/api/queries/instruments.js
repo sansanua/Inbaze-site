@@ -5,6 +5,7 @@ export const INSTRUMENTS = gql`
         instruments {
             name
             slug
+            shortDescription
         }
     }
 `;
