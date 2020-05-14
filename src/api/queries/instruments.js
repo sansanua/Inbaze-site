@@ -6,6 +6,7 @@ export const INSTRUMENTS = gql`
             name
             slug
             shortDescription
+            disabled
         }
     }
 `;

@@ -21,7 +21,7 @@ export default function Main() {
                     <div className={cx(style.imageContent)}>
                         <div className={cx(style.title)}>Поиск и сравнение инвестиционных предложений</div>
                         <div className={cx(style.subtitle)}>
-                            Выберете способ инвестирования,который подходит именно Вам
+                            Выберите способ инвестирования, который подходит именно Вам
                         </div>
                         <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
                             Выбрать предложение

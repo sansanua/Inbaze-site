@@ -25,11 +25,11 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                         <SliderWithTooltip
                             defaultValue={selectedFilter}
                             min={0}
-                            max={1000000}
+                            max={100000}
                             step={500}
                             style={{ height: 50 }}
                             tipProps={{ visible: true, overlayClassName: style.tooltip, placement: 'bottom' }}
-                            tipFormatter={(value) => <nobr>{value} $</nobr>}
+                            tipFormatter={(value) => <nobr>{value} у.е.</nobr>}
                             trackStyle={{
                                 backgroundColor: '#4349ba',
                                 height: 17,

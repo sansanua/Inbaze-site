@@ -29,10 +29,10 @@ export default function Header() {
                         Инструменты
                     </NavLink>
                     <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
-                        Компании
+                        Инвестиционные предложения
                     </NavLink>
                     <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
-                        Персональный советник
+                        Автоматический подбор предложений
                     </NavLink>
                     <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         О нас

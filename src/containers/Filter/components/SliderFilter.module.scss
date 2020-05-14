@@ -1,6 +1,8 @@
 @import '../../../assets/index.scss';
 
 .filterBlokHeder {
+    @include font18;
+
     font-weight: bold;
 }
 

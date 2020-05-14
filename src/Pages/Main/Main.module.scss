@@ -52,6 +52,7 @@
         @include jCenter;
         @include font48;
 
+        font-weight: bold;
         text-align: center;
         color: $primary;
         margin-bottom: $spacingBase;

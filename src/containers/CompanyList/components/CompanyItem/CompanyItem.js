@@ -60,6 +60,7 @@ export default function CompanyItem({
                         <div className={cx(style.title)}>Минимальная сумма</div>
                         <div className={cx(style.number)}>
                             {minimumInvestmentAmount}
+                            {' '}
                             {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
                         </div>
                     </div>
