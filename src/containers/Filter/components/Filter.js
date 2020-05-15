@@ -39,6 +39,7 @@ export default function FilterComponent({
 
             <div className={cx(style.filterBlokes)}>
                 <FilterBlock
+                    showTooltip
                     expanded
                     title="Инструменты"
                     filters={instruments}
