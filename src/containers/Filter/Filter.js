@@ -21,9 +21,11 @@ export default function FilterContainer() {
         toggleFilter(filterName, selectedFilter, isSingleValue);
     };
 
+    const instruments = instrumentsData && instrumentsData.instruments && instrumentsData.instruments.filter(i => !i.disabled)
+
     return (
         <FilterComponent
-            instruments={instrumentsData && instrumentsData.instruments}
+            instruments={instruments}
             selectedInstruments={filters[FILTERS.instruments]}
             currencies={currenciesData && currenciesData.currencies}
             selectedCurrencies={filters[FILTERS.investmentCurrency]}
@@ -34,6 +36,6 @@ export default function FilterContainer() {
             onCurrenciesClick={handleFilterClick(FILTERS.investmentCurrency)}
             onProfitabilitiesClick={handleFilterClick(FILTERS.profitabilities)}
             onMinimumInvestmentAmountChange={handleFilterClick(FILTERS.minimumInvestmentAmount, true)}
-        ></FilterComponent>
+        />
     );
 }
