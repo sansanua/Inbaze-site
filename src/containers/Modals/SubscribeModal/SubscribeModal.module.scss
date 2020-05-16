@@ -1,0 +1,23 @@
+@import 'assets/index.scss';
+
+.base {
+  @include aCenter;
+  flex-wrap: wrap;
+
+  width: 320px;
+}
+
+.text {
+  @include font18;
+  margin-bottom: 20px;
+  color: rgb(37, 36, 67);
+}
+
+.input{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.button {
+
+}

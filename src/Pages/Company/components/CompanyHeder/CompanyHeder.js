@@ -8,17 +8,17 @@ import style from './CompanyHeder.module.scss';
 const icons = [1, 2, 3];
 
 export default function CompanyHeder({
-    name,
-    description,
-    instruments,
-    risk,
-    complexity,
-    minimumInvestmentAmount,
-    historicalProfitability,
-    investmentCurrency,
-    liquidity,
-    typeOfIncome,
-}) {
+                                         name,
+                                         description,
+                                         instruments,
+                                         risk,
+                                         complexity,
+                                         minimumInvestmentAmount,
+                                         historicalProfitability,
+                                         investmentCurrency,
+                                         liquidity,
+                                         typeOfIncome,
+                                     }) {
     return (
         <div className={cx(style.base)}>
             {/* <div className={cx(style.logoContainer)}>logo</div> */}
@@ -38,7 +38,7 @@ export default function CompanyHeder({
                         <div className={cx(style.risk)}>
                             <div>Риск</div>
                             {icons.map((i) => (
-                                <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })}></div>
+                                <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })}/>
                             ))}
                         </div>
 
@@ -48,7 +48,7 @@ export default function CompanyHeder({
                                 <div
                                     key={i}
                                     className={cx(style.iconComplexity, { [style.selected]: i <= complexity })}
-                                ></div>
+                                />
                             ))}
                         </div>
                     </div>

@@ -36,16 +36,15 @@ export const instrumentsItems = [
         imageColored: '/images/instruments/handshake-02-colored.svg',
     },
     {
+        slug: "biznes",
         description: 'Акции публичных компаний',
         image: '/images/instruments/property-01.svg',
         imageColored: '/images/instruments/property-01-colored.svg',
-        disabled: true,
     },
     {
         description: 'Акции публичных компаний',
         image: '/images/instruments/papka-01.svg',
         imageColored: '/images/instruments/papka-01-colored.svg',
-        disabled: true,
     },
 ];
 

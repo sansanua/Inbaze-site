@@ -1,0 +1,19 @@
+@import 'assets/index.scss';
+
+.base {
+
+}
+
+.label {
+  @include font14;
+  width: 100%;
+}
+
+.input {
+  @include font18;
+
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid $grey;
+}

@@ -1,4 +1,4 @@
-import React, {} from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -8,11 +8,21 @@ import Button from '../../components/Button';
 import InstrumentCard from './components/InstrumentCard';
 
 import style from './Main.module.scss';
+import SubscribeModal from '../../containers/Modals/SubscribeModal/SubscribeModal';
+import Modal from '../../containers/Modals/Modal';
 
 export default function Main() {
     const { data } = useQuery(INSTRUMENTS);
-
     const instruments = (data && data.instruments) || null;
+
+    const [open, setOpen] = useState(false);
+    const handleCloseModal = () => {
+        setOpen(false);
+    };
+
+    const handleOpenModal = () => {
+        setOpen(true);
+    };
 
     return (
         <div className={cx(style.base)}>
@@ -41,13 +51,21 @@ export default function Main() {
                         instruments && (
                             <div className={cx(style.items)}>
                                 {instruments.map((instrument) => (
-                                    <InstrumentCard {...instrument} className={cx(style.item)}></InstrumentCard>
+                                    <InstrumentCard
+                                        {...instrument}
+                                        className={cx(style.item)}
+                                        onOpenSubscribeModal={handleOpenModal}
+                                    />
                                 ))}
                             </div>
                         )
                     }
                 </div>
             </div>
+
+            <Modal open={open} handleCloseModal={handleCloseModal}>
+                <SubscribeModal/>
+            </Modal>
         </div>
     );
 }

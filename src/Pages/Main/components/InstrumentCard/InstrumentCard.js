@@ -3,14 +3,14 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { getInstrument } from 'utils/instrumentsStructure';
+import { toQuery } from 'utils/query';
+import { FILTERS } from 'utils/filters';
 
 import style from './InstrumentCard.module.scss';
-import { toQuery } from '../../../../utils/query';
-import { FILTERS } from '../../../../utils/filters';
 
 const disableColor = '#e8e8e8';
 
-export default function InstrumentCard({ name, shortDescription, className, slug, disabled }) {
+export default function InstrumentCard({ name, shortDescription, className, slug, disabled, onOpenSubscribeModal }) {
     const instrument = getInstrument(slug);
 
     if (!instrument) {
@@ -29,9 +29,16 @@ export default function InstrumentCard({ name, shortDescription, className, slug
             </div>
         </>
     );
+
+    const handlePopup = () => {
+        onOpenSubscribeModal()
+    }
+
     return (
         <div className={cx(className, style.base, { [style.disabled]: disabled })}
-             style={{ backgroundColor: !disabled ? color : disableColor }}>
+             style={{ backgroundColor: !disabled ? color : disableColor }}
+             onClick={disabled && handlePopup}
+        >
             {
                 disabled
                     ? content
