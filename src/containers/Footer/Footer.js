@@ -5,6 +5,22 @@ import Divider from '../../components/Divider';
 
 import style from './Footer.module.scss';
 
+const socialLinks = [
+    {
+        name: 'facebook',
+        logo: '/images/logos/facebook.svg',
+        link: 'https://www.facebook.com/',
+    }, {
+        name: 'instagram',
+        logo: '/images/logos/instagram.svg',
+        link: 'https://www.instagram.com/',
+    }, {
+        name: 'telegram',
+        logo: '/images/logos/telegram.svg',
+        link: 'https://telegram.org/',
+    },
+];
+
 export default function Footer() {
     return (
         <div className={cx(style.base)}>
@@ -36,7 +52,14 @@ export default function Footer() {
                     <div className={cx(style.contactsRight)}>
                         <div className={cx(style.subscribe)}>Подписантя</div>
                         <div className={cx(style.socialButtons)}>
-                            <div className={cx(style.socialButton)}>1</div>
+                            {
+                                socialLinks.map(s => (
+                                    <a className={cx(style.socialButton)} href={s.link} target="_blank">
+                                        <img src={s.logo} alt={s.name}/>
+                                    </a>
+                                ))
+                            }
+
                         </div>
                     </div>
                 </div>

@@ -1,128 +1,138 @@
 @import '../../assets/index.scss';
 
 .base {
-    display: flex;
-    background-color: #ced1ec;
-    padding-top: 60px;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    z-index: 10;
+  display: flex;
+  background-color: #ced1ec;
+  padding-top: 60px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  z-index: 10;
 
-    @include m {
-        padding-top: 40px;
-    }
+  @include m {
+    padding-top: 40px;
+  }
 
-    &.transparent {
-        background-color: transparent;
-    }
+  &.transparent {
+    background-color: transparent;
+  }
 }
 
 .container {
-    @include contentWidth;
+  @include contentWidth;
 }
 
 .navigation {
-    display: flex;
-    font-size: 16px;
+  display: flex;
+  font-size: 16px;
 
-    @include t {
-        justify-content: space-between;
-    }
+  @include t {
+    justify-content: space-between;
+  }
 
-    @include m {
-        flex-wrap: wrap;
-    }
+  @include m {
+    flex-wrap: wrap;
+  }
 }
 
 .logo {
-    width: 150px;
-    height: 31px;
-    margin-right: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('/images/logo-blue-01.svg');
+  width: 150px;
+  height: 31px;
+  margin-right: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/images/logo-blue-01.svg');
 
-    @include m {
-        width: 100%;
-        margin-right: 0;
-        background-position: center;
-        margin-bottom: 40px;
-    }
+  @include m {
+    width: 100%;
+    margin-right: 0;
+    background-position: center;
+    margin-bottom: 40px;
+  }
 }
 
 .items {
-    display: flex;
-    align-items: center;
-    flex: 1;
+  display: flex;
+  align-items: center;
+  flex: 1;
 
-    @include t {
-        display: none;
-    }
+  @include t {
+    display: none;
+  }
 
-    .item {
-        margin-right: 40px;
-        padding: 8px;
-        cursor: pointer;
-    }
+  .item {
+    margin-right: 40px;
+    padding: 8px;
+    cursor: pointer;
+  }
 }
 
 .navigationLeftPart {
-    // display: none;
+  // display: none;
 
-    @include m {
-        @include jCenter;
+  @include m {
+    @include jCenter;
 
-        width: 100%;
-    }
+    width: 100%;
+  }
 }
 
 .contacts {
-    @include font18;
+  @include font18;
 
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 .contactsLeft {
+  display: flex;
+
+  @include m {
+    width: 50%;
+    width: 50%;
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  & > div {
+    margin-right: 30px;
 
     @include m {
-        width: 50%;
-        width: 50%;
-        display: flex;
-        flex-wrap: wrap;
+      width: 100%;
+      margin-right: 8px;
+      margin-bottom: 8px;
     }
-
-    & > div {
-        margin-right: 30px;
-
-        @include m {
-            width: 100%;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-    }
+  }
 }
 
 .contactsRight {
+  display: flex;
+  align-items: center;
+
+  @include m {
+    width: 50%;
+    width: 50%;
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  & > div {
+    margin-left: 30px;
 
     @include m {
-        width: 50%;
-        width: 50%;
-        display: flex;
-        flex-wrap: wrap;
+      width: 100%;
+      margin-left: 8px;
+      margin-bottom: 8px;
     }
+  }
 
-    & > div {
-        margin-left: 30px;
-
-        @include m {
-            width: 100%;
-            margin-left: 8px;
-            margin-bottom: 8px;
-        }
+  .socialButtons {
+    .socialButton {
+      margin: 0 4px;
+      img {
+        width: 28px;
+      }
     }
+  }
 }
