@@ -222,3 +222,21 @@
         }
     }
 }
+
+.backArrow {
+    cursor: pointer;
+    position: absolute;
+    top: -50px;
+    padding: 10px;
+    padding-left: 0;
+    left: 0;
+
+    & > div {
+        width: 10px;
+        height: 14px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/arrow-gray.svg');
+        transform: rotate(-90deg);
+    }
+}
