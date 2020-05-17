@@ -60,7 +60,7 @@ export default function CompanyComponent(props) {
                     investmentCurrency={investmentCurrency}
                     liquidity={liquidity}
                     typeOfIncome={typeOfIncome}
-                ></CompanyHeder>
+                />
 
                 <div className={cx(style.content)}>
                     <div className={cx(style.mainBlock)}>
@@ -85,14 +85,16 @@ export default function CompanyComponent(props) {
                             documentsSecuringRights={documentsSecuringRights}
                             documentsActivities={documentsActivities}
                             documentsFromInvestor={documentsFromInvestor}
-                        ></CompanyMainBlock>
+                        />
                     </div>
                     <div className={cx(style.sideBlock)}>
                         <div className={cx(style.rowContainer)}>
                             <div className={cx(style.row)}>
                                 <div className={cx(style.col)}>
                                     <div className={cx(style.title)}>Сайт</div>
-                                    <div className={cx(style.value)}>{site}</div>
+                                    <div className={cx(style.value)}>
+                                        <a href={site}>Перейти</a>
+                                    </div>
                                 </div>
                                 <div className={cx(style.col)}>
                                     <div className={cx(style.title)}>Год основания</div>
@@ -110,7 +112,7 @@ export default function CompanyComponent(props) {
                                 </div>
                             </div>
                             <div className={cx(style.row)}>
-                                <div className={cx(style.col)}>
+                                <div className={cx(style.col, style.colFullWidth)}>
                                     <div className={cx(style.title)}>Отслеживание статуса инвестиций онлайн</div>
                                     <div className={cx(style.value)}>
                                         {onlineInvestmentStatusTracking ? 'Да' : 'Нет'}

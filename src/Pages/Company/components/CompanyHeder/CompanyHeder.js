@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { useHistory } from 'react-router-dom';
+import numeral from 'numeral'
 
 import { DYNAMIC_TEXTS } from 'utils/dynamicTexts';
 
@@ -67,7 +68,8 @@ export default function CompanyHeder({
                         <div className={cx(style.wrapper)}>
                             <div className={cx(style.title)}>Минимальная сумма</div>
                             <div className={cx(style.number)}>
-                                {minimumInvestmentAmount}
+                                {numeral(minimumInvestmentAmount).format("0,0")}
+                                {' '}
                                 {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
                             </div>
                         </div>
