@@ -17,6 +17,7 @@
 
     .blockTitle {
         @include font18;
+        font-weight: bold;
         margin-bottom: 15px;
     }
 
@@ -35,10 +36,17 @@
     .react-tabs__tab {
         font-size: 16px;
         padding: 0 20px 15px;
+        margin: 0 4px;
+        opacity: 0.7;
+
+        &:hover{
+            opacity: 1;
+        }
     }
 
     .react-tabs__tab--selected {
         border: none;
         border-bottom: 3px solid $primary;
+        font-weight: bold;
     }
 }

@@ -54,7 +54,7 @@ export default function Footer() {
                         <div className={cx(style.socialButtons)}>
                             {
                                 socialLinks.map(s => (
-                                    <a className={cx(style.socialButton)} href={s.link} target="_blank">
+                                    <a className={cx(style.socialButton)} href={s.link} target="_blank" rel="noopener noreferrer">
                                         <img src={s.logo} alt={s.name}/>
                                     </a>
                                 ))

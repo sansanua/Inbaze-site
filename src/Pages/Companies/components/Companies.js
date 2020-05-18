@@ -52,9 +52,6 @@ export default function CompaniesComponent() {
                                 <Filter/>
                             </div>
                         </StickyBox>
-                        // <div className={cx(style.filters)}>
-                        //     <Filter/>
-                        // </div>
                     )}
 
                     <div className={cx(style.list)}>

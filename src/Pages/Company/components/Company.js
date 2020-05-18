@@ -93,7 +93,7 @@ export default function CompanyComponent(props) {
                                 <div className={cx(style.col)}>
                                     <div className={cx(style.title)}>Сайт</div>
                                     <div className={cx(style.value)}>
-                                        <a href={site}>Перейти</a>
+                                        <a href={site} target="_blank" rel="noopener noreferrer">Перейти</a>
                                     </div>
                                 </div>
                                 <div className={cx(style.col)}>

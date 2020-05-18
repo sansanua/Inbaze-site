@@ -141,7 +141,7 @@ const getContent = (data, block) => {
     }
 
     if (block.isMarkdown) {
-        return <Markdown source={data}></Markdown>;
+        return <Markdown source={data}/>;
     }
 
     return data;
@@ -172,7 +172,7 @@ export default function CompanyMainBlock(props) {
                         classNameHeader={cx(style.collapseHeader)}
                         header={<div className={cx(style.tabHeader)}>{tab.header}</div>}
                         content={<>{tab.blocks.map((block) => renderBlock(block))}</>}
-                    ></Collapse>
+                    />
                 ))}
             </div>
         );
