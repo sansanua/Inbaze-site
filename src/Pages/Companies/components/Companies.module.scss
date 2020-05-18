@@ -82,9 +82,8 @@ $desktopFilterWidth: 300px;
 }
 
 .list {
-  margin-left: $desktopFilterWidth;
-
   @include d {
+    margin-left: $desktopFilterWidth;
     width: $desktopWidth - $desktopFilterWidth;
   }
 }
