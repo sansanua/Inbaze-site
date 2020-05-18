@@ -29,7 +29,7 @@ export default function FilterBlock({ expanded, showTooltip, title, filters, sel
                                         key={filter.slug}
                                         onClick={onClick(filter.slug)}
                                     >
-                                        <Checkbox inline checked={selectedFilters.includes(filter.slug)}></Checkbox>
+                                        <Checkbox inline checked={selectedFilters.includes(filter.slug)}/>
                                         <span data-tip data-for={filter.slug}>
                                             {filter.name}
                                         </span>
@@ -60,7 +60,7 @@ export default function FilterBlock({ expanded, showTooltip, title, filters, sel
                         })}
                     </div>
                 }
-            ></Collapse>
+            />
         </div>
     );
 }

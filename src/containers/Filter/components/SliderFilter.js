@@ -30,6 +30,10 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                 header={<div className={cx(style.filterBlokHeder)}>{title}</div>}
                 content={
                     <div className={cx(style.filterBlokContent)}>
+                        <div className={cx(style.titles)}>
+                            <div>{min} грн</div>
+                            <div>{max} грн</div>
+                        </div>
                         <SliderWithTooltip
                             defaultValue={selectedFilter}
                             min={min}

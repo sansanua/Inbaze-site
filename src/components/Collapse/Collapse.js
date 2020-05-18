@@ -39,7 +39,7 @@ const Collapse = ({
                 <div className={cx(style.header)}>{header}</div>
 
                 <div className={cx(style.chevron)}>
-                    <div className={cx(style.icon, { [style.up]: isExpanded })}></div>
+                    <div className={cx(style.icon, { [style.up]: isExpanded })}/>
                 </div>
             </div>
 
