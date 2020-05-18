@@ -1,8 +1,12 @@
 import 'rc-slider/assets/index.css';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 import Slider, { createSliderWithTooltip } from 'rc-slider';
+import numeral from 'numeral';
+
+
+import { GlobalDataContext } from 'contexts';
 
 import Collapse from 'components/Collapse';
 
@@ -10,10 +14,14 @@ import style from './SliderFilter.module.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-export default function SliderFilter({ title, selectedFilter, expanded = false, min = 500, max = 1000000, onSelect }) {
+export default function SliderFilter({ title, selectedFilter, expanded = false, min = 500, max = 135000, onSelect }) {
+    const { dollarExchangeRate } = useContext(GlobalDataContext);
+
     const handleBlur = (_value) => {
         onSelect(_value);
     };
+
+    const formatValue = (value) => <nobr>{value} грн (~{numeral(value / dollarExchangeRate).format('0')} $)</nobr>
 
     return (
         <div className={cx(style.filterBlok)}>
@@ -24,12 +32,12 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                     <div className={cx(style.filterBlokContent)}>
                         <SliderWithTooltip
                             defaultValue={selectedFilter}
-                            min={0}
-                            max={100000}
+                            min={min}
+                            max={max}
                             step={500}
                             style={{ height: 50 }}
                             tipProps={{ visible: true, overlayClassName: style.tooltip, placement: 'bottom' }}
-                            tipFormatter={(value) => <nobr>{value} у.е.</nobr>}
+                            tipFormatter={formatValue}
                             trackStyle={{
                                 backgroundColor: '#4349ba',
                                 height: 17,
@@ -46,10 +54,10 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                             }}
                             railStyle={{ backgroundColor: 'transparent', height: 17, border: '1px solid #4349ba' }}
                             onAfterChange={handleBlur}
-                        ></SliderWithTooltip>
+                        />
                     </div>
                 }
-            ></Collapse>
+            />
         </div>
     );
 }

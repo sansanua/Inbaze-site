@@ -5,7 +5,7 @@ schema {
     mutation: Mutation
 }
 
-union Morph = Companies | CompaniesAggregator | CompaniesAggregatorAvg | CompaniesAggregatorMax | CompaniesAggregatorMin | CompaniesAggregatorSum | CompaniesConnection | CompaniesConnectionAboutCompany | CompaniesConnectionCapital | CompaniesConnectionCompanyCommission | CompaniesConnectionComplexity | CompaniesConnectionCreated_at | CompaniesConnectionDescription | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionDisabled | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionHistoricalProfitability | CompaniesConnectionId | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionLiquidity | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionName | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProfitability | CompaniesConnectionRisk | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionTypeOfIncome | CompaniesConnectionUpdated_at | CompaniesGroupBy | Currencies | CurrenciesAggregator | CurrenciesConnection | CurrenciesConnectionCreated_at | CurrenciesConnectionId | CurrenciesConnectionName | CurrenciesConnectionSlug | CurrenciesConnectionSymbol | CurrenciesConnectionUpdated_at | CurrenciesGroupBy | ForgotPassword | Instruments | InstrumentsAggregator | InstrumentsAggregatorAvg | InstrumentsAggregatorMax | InstrumentsAggregatorMin | InstrumentsAggregatorSum | InstrumentsConnection | InstrumentsConnectionComplexity | InstrumentsConnectionCreated_at | InstrumentsConnectionCurrency | InstrumentsConnectionDescription | InstrumentsConnectionDisabled | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionId | InstrumentsConnectionMainParameters | InstrumentsConnectionMinusInvestment | InstrumentsConnectionName | InstrumentsConnectionPlusInvestment | InstrumentsConnectionProfitability | InstrumentsConnectionRisk | InstrumentsConnectionShortDescription | InstrumentsConnectionSlug | InstrumentsConnectionUpdated_at | InstrumentsGroupBy | Profitability | ProfitabilityAggregator | ProfitabilityConnection | ProfitabilityConnectionCreated_at | ProfitabilityConnectionId | ProfitabilityConnectionName | ProfitabilityConnectionSlug | ProfitabilityConnectionUpdated_at | ProfitabilityGroupBy | SubscribeUsers | SubscribeUsersAggregator | SubscribeUsersConnection | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionEmail | SubscribeUsersConnectionId | SubscribeUsersConnectionUpdated_at | SubscribeUsersGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCompanyPayload | createCurrencyPayload | createFilePayload | createInstrumentPayload | createProfitabilityPayload | createRolePayload | createSubscribeUserPayload | createUserPayload | deleteCompanyPayload | deleteCurrencyPayload | deleteFilePayload | deleteInstrumentPayload | deleteProfitabilityPayload | deleteRolePayload | deleteSubscribeUserPayload | deleteUserPayload | updateCompanyPayload | updateCurrencyPayload | updateFilePayload | updateInstrumentPayload | updateProfitabilityPayload | updateRolePayload | updateSubscribeUserPayload | updateUserPayload
+union Morph = Companies | CompaniesAggregator | CompaniesAggregatorAvg | CompaniesAggregatorMax | CompaniesAggregatorMin | CompaniesAggregatorSum | CompaniesConnection | CompaniesConnectionAboutCompany | CompaniesConnectionCapital | CompaniesConnectionCompanyCommission | CompaniesConnectionComplexity | CompaniesConnectionCreated_at | CompaniesConnectionDescription | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionDisabled | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionHistoricalProfitability | CompaniesConnectionId | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionLiquidity | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionName | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProfitability | CompaniesConnectionRisk | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionTypeOfIncome | CompaniesConnectionUpdated_at | CompaniesGroupBy | Currencies | CurrenciesAggregator | CurrenciesConnection | CurrenciesConnectionCreated_at | CurrenciesConnectionId | CurrenciesConnectionName | CurrenciesConnectionSlug | CurrenciesConnectionSymbol | CurrenciesConnectionUpdated_at | CurrenciesGroupBy | ForgotPassword | Global | Instruments | InstrumentsAggregator | InstrumentsAggregatorAvg | InstrumentsAggregatorMax | InstrumentsAggregatorMin | InstrumentsAggregatorSum | InstrumentsConnection | InstrumentsConnectionComplexity | InstrumentsConnectionCreated_at | InstrumentsConnectionCurrency | InstrumentsConnectionDescription | InstrumentsConnectionDisabled | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionId | InstrumentsConnectionMainParameters | InstrumentsConnectionMinusInvestment | InstrumentsConnectionName | InstrumentsConnectionPlusInvestment | InstrumentsConnectionProfitability | InstrumentsConnectionRisk | InstrumentsConnectionShortDescription | InstrumentsConnectionSlug | InstrumentsConnectionUpdated_at | InstrumentsGroupBy | Profitability | ProfitabilityAggregator | ProfitabilityConnection | ProfitabilityConnectionCreated_at | ProfitabilityConnectionId | ProfitabilityConnectionName | ProfitabilityConnectionSlug | ProfitabilityConnectionUpdated_at | ProfitabilityGroupBy | SubscribeUsers | SubscribeUsersAggregator | SubscribeUsersConnection | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionEmail | SubscribeUsersConnectionId | SubscribeUsersConnectionUpdated_at | SubscribeUsersGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCompanyPayload | createCurrencyPayload | createFilePayload | createInstrumentPayload | createProfitabilityPayload | createRolePayload | createSubscribeUserPayload | createUserPayload | deleteCompanyPayload | deleteCurrencyPayload | deleteFilePayload | deleteGlobalPayload | deleteInstrumentPayload | deleteProfitabilityPayload | deleteRolePayload | deleteSubscribeUserPayload | deleteUserPayload | updateCompanyPayload | updateCurrencyPayload | updateFilePayload | updateGlobalPayload | updateInstrumentPayload | updateProfitabilityPayload | updateRolePayload | updateSubscribeUserPayload | updateUserPayload
 
 type Companies {
     aboutCompany: String
@@ -373,6 +373,13 @@ type ForgotPassword {
     ok: Boolean
 }
 
+type Global {
+    created_at: DateTime!
+    dollarExchangeRate: Float
+    id: ID!
+    updated_at: DateTime!
+}
+
 type Instruments {
     companies(limit: Int, sort: String, start: Int, where: JSON): [Companies]
     complexity: Int
@@ -544,6 +551,7 @@ type Mutation {
     createUser(input: createUserInput): createUserPayload
     deleteCompany(input: deleteCompanyInput): deleteCompanyPayload
     deleteCurrency(input: deleteCurrencyInput): deleteCurrencyPayload
+    deleteGlobal: deleteGlobalPayload
     deleteInstrument(input: deleteInstrumentInput): deleteInstrumentPayload
     deleteProfitability(input: deleteProfitabilityInput): deleteProfitabilityPayload
     "Delete an existing role"
@@ -558,6 +566,7 @@ type Mutation {
     register(input: UserInput!): UsersPermissionsLoginPayload!
     updateCompany(input: updateCompanyInput): updateCompanyPayload
     updateCurrency(input: updateCurrencyInput): updateCurrencyPayload
+    updateGlobal(input: updateGlobalInput): updateGlobalPayload
     updateInstrument(input: updateInstrumentInput): updateInstrumentPayload
     updateProfitability(input: updateProfitabilityInput): updateProfitabilityPayload
     "Update an existing role"
@@ -630,6 +639,7 @@ type Query {
     currency(id: ID!): Currencies
     files(limit: Int, sort: String, start: Int, where: JSON): [UploadFile]
     filesConnection(limit: Int, sort: String, start: Int, where: JSON): UploadFileConnection
+    global: Global
     instrument(id: ID!): Instruments
     instruments(limit: Int, sort: String, start: Int, where: JSON): [Instruments]
     instrumentsConnection(limit: Int, sort: String, start: Int, where: JSON): InstrumentsConnection
@@ -1061,6 +1071,10 @@ type deleteFilePayload {
     file: UploadFile
 }
 
+type deleteGlobalPayload {
+    global: Global
+}
+
 type deleteInstrumentPayload {
     instrument: Instruments
 }
@@ -1091,6 +1105,10 @@ type updateCurrencyPayload {
 
 type updateFilePayload {
     file: UploadFile
+}
+
+type updateGlobalPayload {
+    global: Global
 }
 
 type updateInstrumentPayload {
@@ -1188,6 +1206,10 @@ input FileInput {
     size: Float!
     url: String!
     width: Int
+}
+
+input GlobalInput {
+    dollarExchangeRate: Float
 }
 
 input InputID {
@@ -1372,6 +1394,10 @@ input editFileInput {
     width: Int
 }
 
+input editGlobalInput {
+    dollarExchangeRate: Float
+}
+
 input editInstrumentInput {
     companies: [ID]
     complexity: Int
@@ -1431,6 +1457,10 @@ input updateCurrencyInput {
 input updateFileInput {
     data: editFileInput
     where: InputID
+}
+
+input updateGlobalInput {
+    data: editGlobalInput
 }
 
 input updateInstrumentInput {

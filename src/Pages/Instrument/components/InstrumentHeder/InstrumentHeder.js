@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { getColoredIcon } from 'utils/instrumentsStructure';
-import { currencyIcons } from 'utils/currencyIcons';
+import { CURRENCY_ICONS } from 'utils/currencyIcons';
 import { FILTERS } from 'utils/filters';
 import { toQuery } from 'utils/query';
 
@@ -38,7 +38,7 @@ export default function InstrumentHeder({ name, shortDescription, risk, complexi
                             {currency && (
                                 <>
                                     <span className={cx(style.symbol)}>
-                                        <img src={currencyIcons[currency.slug]} alt={currency.slug}></img>
+                                        <img src={CURRENCY_ICONS[currency.slug]} alt={currency.slug}></img>
                                     </span>
                                     <span className={cx(style.name)}>{currency.name}</span>
                                 </>

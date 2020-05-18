@@ -7,18 +7,18 @@ import FilterBlock from './FilterBlock';
 import style from './Filter.module.scss';
 
 export default function FilterComponent({
-    instruments = [],
-    selectedInstruments = [],
-    currencies = [],
-    selectedCurrencies = [],
-    profitabilities = [],
-    selectedProfitabilities = [],
-    selectedMinimumInvestmentAmount,
-    onInstrumentClick,
-    onMinimumInvestmentAmountChange,
-    onCurrenciesClick,
-    onProfitabilitiesClick,
-}) {
+                                            instruments = [],
+                                            selectedInstruments = [],
+                                            currencies = [],
+                                            selectedCurrencies = [],
+                                            profitabilities = [],
+                                            selectedProfitabilities = [],
+                                            selectedMinimumInvestmentAmount,
+                                            onInstrumentClick,
+                                            onMinimumInvestmentAmountChange,
+                                            onCurrenciesClick,
+                                            onProfitabilitiesClick,
+                                        }) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
     };
@@ -67,11 +67,11 @@ export default function FilterComponent({
                         selectedFilter={
                             selectedMinimumInvestmentAmount && selectedMinimumInvestmentAmount.length
                                 ? selectedMinimumInvestmentAmount[0]
-                                : 500
+                                : 100000
                         }
                         title="Минимальная суммаинвестирования"
                         onSelect={handleMinimumInvestmentAmount}
-                    ></SliderFilter>
+                    />
                 </div>
             </div>
         </div>
