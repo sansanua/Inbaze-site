@@ -53,7 +53,7 @@
 
 .items {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex: 1;
 
   @include t {
@@ -62,14 +62,11 @@
 
   .item {
     margin-right: 40px;
-    padding: 8px;
     cursor: pointer;
   }
 }
 
 .navigationLeftPart {
-  // display: none;
-
   @include m {
     @include jCenter;
 

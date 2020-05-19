@@ -4,6 +4,7 @@ import cx from 'classnames';
 import Divider from '../../components/Divider';
 
 import style from './Footer.module.scss';
+import { NavLink } from 'react-router-dom';
 
 const socialLinks = [
     {
@@ -29,11 +30,9 @@ export default function Footer() {
                     <div className={cx(style.logo)}/>
 
                     <div className={cx(style.items)}>
-                        <div className={cx(style.item)}>Инструменты</div>
                         <a href="/companies" className={cx(style.item)}>
-                            Компании
+                            Инвестиционные предложения
                         </a>
-                        <div className={cx(style.item)}>Персональный советник</div>
                         <div className={cx(style.item)}>О нас</div>
                     </div>
 
