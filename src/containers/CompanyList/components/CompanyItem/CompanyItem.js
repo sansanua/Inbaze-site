@@ -22,8 +22,8 @@ export default function CompanyItem({
                                         image,
                                     }) {
     return (
-        <div className={cx(style.base)}>
-            <Link to={`/company/${id}`}>
+        <Link to={`/company/${id}`}>
+            <div className={cx(style.base)}>
                 <div className={cx(style.logoContainer)}>
                     {image ? <img src={image.url} alt=""/> : <div className={cx(style.noImage)}/>}
                 </div>
@@ -80,7 +80,7 @@ export default function CompanyItem({
 
 
                 <div className={cx(style.arrow)}/>
-            </Link>
-        </div>
+            </div>
+        </Link>
     );
 }

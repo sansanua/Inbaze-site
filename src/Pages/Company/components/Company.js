@@ -7,6 +7,7 @@ import CompanyHeder from './CompanyHeder';
 import CompanyMainBlock from './CompanyMainBlock';
 
 import style from './Company.module.scss';
+import CompanySideBlock from './CompanySideBlock/CompanySideBlock';
 
 export default function CompanyComponent(props) {
     //#region props
@@ -88,41 +89,12 @@ export default function CompanyComponent(props) {
                         />
                     </div>
                     <div className={cx(style.sideBlock)}>
-                        <div className={cx(style.rowContainer)}>
-                            <div className={cx(style.row)}>
-                                <div className={cx(style.col)}>
-                                    <div className={cx(style.title)}>Сайт</div>
-                                    <div className={cx(style.value)}>
-                                        <a href={site} target="_blank" rel="noopener noreferrer">Перейти</a>
-                                    </div>
-                                </div>
-                                <div className={cx(style.col)}>
-                                    <div className={cx(style.title)}>Год основания</div>
-                                    <div className={cx(style.value)}>{startYear}</div>
-                                </div>
-                            </div>
-                            <div className={cx(style.row)}>
-                                <div className={cx(style.col)}>
-                                    <div className={cx(style.title)}>Капитал</div>
-                                    <div className={cx(style.value)}>{capital}</div>
-                                </div>
-                                <div className={cx(style.col)}>
-                                    <div className={cx(style.title)}>Количество-клиентов</div>
-                                    <div className={cx(style.value)}>{numberOfClients}</div>
-                                </div>
-                            </div>
-                            <div className={cx(style.row)}>
-                                <div className={cx(style.col, style.colFullWidth)}>
-                                    <div className={cx(style.title)}>Отслеживание статуса инвестиций онлайн</div>
-                                    <div className={cx(style.value)}>
-                                        {onlineInvestmentStatusTracking ? 'Да' : 'Нет'}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={cx(style.button)}>
-                            <Button type="lightBlueBlue">Оставить заявку</Button>
-                        </div>
+                        <CompanySideBlock
+                            site={site}
+                            startYear={startYear}
+                            capital={capital}
+                            numberOfClients={numberOfClients}
+                            onlineInvestmentStatusTracking={onlineInvestmentStatusTracking}/>
                     </div>
                 </div>
             </div>

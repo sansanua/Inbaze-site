@@ -26,7 +26,7 @@ export default function Footer() {
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
                 <div className={cx(style.navigation)}>
-                    <div className={cx(style.logo)}></div>
+                    <div className={cx(style.logo)}/>
 
                     <div className={cx(style.items)}>
                         <div className={cx(style.item)}>Инструменты</div>
@@ -42,7 +42,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <Divider></Divider>
+                <Divider/>
 
                 <div className={cx(style.contacts)}>
                     <div className={cx(style.contactsLeft)}>

@@ -1,0 +1,72 @@
+@import 'assets/index.scss';
+
+.base{
+
+}
+
+.rowContainer {
+  @include t {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  @include m {
+    margin-right: 70px;
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 40px;
+
+    @include t {
+      margin-bottom: 20px;
+    }
+
+    .col {
+      width: 50%;
+
+      &.colFullWidth {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+
+      @include t {
+        margin-bottom: 10px;
+      }
+    }
+
+    .value {
+      font-size: 14px;
+
+      a{
+        color: $primary;
+      }
+    }
+  }
+}
+
+.button {
+  @include t {
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  @include m {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    width: 100%;
+
+    @include m {
+      width: 220px;
+    }
+  }
+}

@@ -40,9 +40,11 @@ $desktopFilterWidth: 300px;
 .filters {
   position: absolute;
   width: $desktopFilterWidth;
-  min-width: $desktopFilterWidth;
-  max-width: $desktopFilterWidth;
+  //min-width: $desktopFilterWidth;
+  //max-width: $desktopFilterWidth;
+  max-height: calc(100vh - #{$desktopFooterHeight});
   padding-right: 20px;
+  overflow-y: auto;
 
   @include t {
     display: none;
