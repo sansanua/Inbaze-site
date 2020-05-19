@@ -16,6 +16,9 @@ export const COMPANIES_FILTERED = gql`
             }
         ) {
             id
+            image{
+                url
+            }
             complexity
             description
             historicalProfitability
@@ -39,6 +42,9 @@ export const COMPANY = gql`
     query company($id: ID!) {
         company(id: $id) {
             id
+            image {
+                url
+            }
             aboutCompany
             capital
             companyCommission

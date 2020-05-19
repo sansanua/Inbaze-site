@@ -29,6 +29,10 @@ export default function CompanyList({ onFilterOpen }) {
     const companies = (data && data.companies) || [];
     const filteredCompanies = minimumAmount
         ? companies.filter(c => {
+            if(!c.investmentCurrency[0]){
+                return false
+            }
+
             if (c.investmentCurrency[0].slug === CURRENCY.USD) {
                 return c.minimumInvestmentAmount <= minimumAmount / globalData.dollarExchangeRate;
             }

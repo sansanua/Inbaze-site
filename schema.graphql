@@ -5,7 +5,7 @@ schema {
     mutation: Mutation
 }
 
-union Morph = Companies | CompaniesAggregator | CompaniesAggregatorAvg | CompaniesAggregatorMax | CompaniesAggregatorMin | CompaniesAggregatorSum | CompaniesConnection | CompaniesConnectionAboutCompany | CompaniesConnectionCapital | CompaniesConnectionCompanyCommission | CompaniesConnectionComplexity | CompaniesConnectionCreated_at | CompaniesConnectionDescription | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionDisabled | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionHistoricalProfitability | CompaniesConnectionId | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionLiquidity | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionName | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProfitability | CompaniesConnectionRisk | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionTypeOfIncome | CompaniesConnectionUpdated_at | CompaniesGroupBy | Currencies | CurrenciesAggregator | CurrenciesConnection | CurrenciesConnectionCreated_at | CurrenciesConnectionId | CurrenciesConnectionName | CurrenciesConnectionSlug | CurrenciesConnectionSymbol | CurrenciesConnectionUpdated_at | CurrenciesGroupBy | ForgotPassword | Global | Instruments | InstrumentsAggregator | InstrumentsAggregatorAvg | InstrumentsAggregatorMax | InstrumentsAggregatorMin | InstrumentsAggregatorSum | InstrumentsConnection | InstrumentsConnectionComplexity | InstrumentsConnectionCreated_at | InstrumentsConnectionCurrency | InstrumentsConnectionDescription | InstrumentsConnectionDisabled | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionId | InstrumentsConnectionMainParameters | InstrumentsConnectionMinusInvestment | InstrumentsConnectionName | InstrumentsConnectionPlusInvestment | InstrumentsConnectionProfitability | InstrumentsConnectionRisk | InstrumentsConnectionShortDescription | InstrumentsConnectionSlug | InstrumentsConnectionUpdated_at | InstrumentsGroupBy | Profitability | ProfitabilityAggregator | ProfitabilityConnection | ProfitabilityConnectionCreated_at | ProfitabilityConnectionId | ProfitabilityConnectionName | ProfitabilityConnectionSlug | ProfitabilityConnectionUpdated_at | ProfitabilityGroupBy | SubscribeUsers | SubscribeUsersAggregator | SubscribeUsersConnection | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionEmail | SubscribeUsersConnectionId | SubscribeUsersConnectionUpdated_at | SubscribeUsersGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCompanyPayload | createCurrencyPayload | createFilePayload | createInstrumentPayload | createProfitabilityPayload | createRolePayload | createSubscribeUserPayload | createUserPayload | deleteCompanyPayload | deleteCurrencyPayload | deleteFilePayload | deleteGlobalPayload | deleteInstrumentPayload | deleteProfitabilityPayload | deleteRolePayload | deleteSubscribeUserPayload | deleteUserPayload | updateCompanyPayload | updateCurrencyPayload | updateFilePayload | updateGlobalPayload | updateInstrumentPayload | updateProfitabilityPayload | updateRolePayload | updateSubscribeUserPayload | updateUserPayload
+union Morph = Companies | CompaniesAggregator | CompaniesAggregatorAvg | CompaniesAggregatorMax | CompaniesAggregatorMin | CompaniesAggregatorSum | CompaniesConnection | CompaniesConnectionAboutCompany | CompaniesConnectionCapital | CompaniesConnectionCompanyCommission | CompaniesConnectionComplexity | CompaniesConnectionCreated_at | CompaniesConnectionDescription | CompaniesConnectionDescriptionOfCooperation | CompaniesConnectionDisabled | CompaniesConnectionDocumentsActivities | CompaniesConnectionDocumentsFromInvestor | CompaniesConnectionDocumentsSecuringRights | CompaniesConnectionHistoricalProfitability | CompaniesConnectionId | CompaniesConnectionImage | CompaniesConnectionIncomePaymentProcess | CompaniesConnectionLiquidity | CompaniesConnectionLiquidityOfInvestment | CompaniesConnectionMinimumInvestmentAmount | CompaniesConnectionMinimumInvestmentPeriod | CompaniesConnectionName | CompaniesConnectionNumberOfClients | CompaniesConnectionOnlineInvestmentStatusTracking | CompaniesConnectionOptimalInvestmentPeriod | CompaniesConnectionOtherServiceCharges | CompaniesConnectionPayingTaxesIncome | CompaniesConnectionPlaceOfStorageFunds | CompaniesConnectionProcessOfGeneratingIncome | CompaniesConnectionProcessOfManagingMoney | CompaniesConnectionProfitability | CompaniesConnectionRisk | CompaniesConnectionRisksOfLossInvested | CompaniesConnectionSite | CompaniesConnectionStartYear | CompaniesConnectionTypeOfIncome | CompaniesConnectionUpdated_at | CompaniesGroupBy | Currencies | CurrenciesAggregator | CurrenciesConnection | CurrenciesConnectionCreated_at | CurrenciesConnectionId | CurrenciesConnectionName | CurrenciesConnectionSlug | CurrenciesConnectionSymbol | CurrenciesConnectionUpdated_at | CurrenciesGroupBy | ForgotPassword | Global | Instruments | InstrumentsAggregator | InstrumentsAggregatorAvg | InstrumentsAggregatorMax | InstrumentsAggregatorMin | InstrumentsAggregatorSum | InstrumentsConnection | InstrumentsConnectionComplexity | InstrumentsConnectionCreated_at | InstrumentsConnectionCurrency | InstrumentsConnectionDescription | InstrumentsConnectionDisabled | InstrumentsConnectionHowGenerateIncome | InstrumentsConnectionId | InstrumentsConnectionMainParameters | InstrumentsConnectionMinusInvestment | InstrumentsConnectionName | InstrumentsConnectionPlusInvestment | InstrumentsConnectionProfitability | InstrumentsConnectionRisk | InstrumentsConnectionShortDescription | InstrumentsConnectionSlug | InstrumentsConnectionUpdated_at | InstrumentsGroupBy | Profitability | ProfitabilityAggregator | ProfitabilityConnection | ProfitabilityConnectionCreated_at | ProfitabilityConnectionId | ProfitabilityConnectionName | ProfitabilityConnectionSlug | ProfitabilityConnectionUpdated_at | ProfitabilityGroupBy | SubscribeUsers | SubscribeUsersAggregator | SubscribeUsersConnection | SubscribeUsersConnectionCreated_at | SubscribeUsersConnectionEmail | SubscribeUsersConnectionId | SubscribeUsersConnectionUpdated_at | SubscribeUsersGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCompanyPayload | createCurrencyPayload | createFilePayload | createInstrumentPayload | createProfitabilityPayload | createRolePayload | createSubscribeUserPayload | createUserPayload | deleteCompanyPayload | deleteCurrencyPayload | deleteFilePayload | deleteGlobalPayload | deleteInstrumentPayload | deleteProfitabilityPayload | deleteRolePayload | deleteSubscribeUserPayload | deleteUserPayload | updateCompanyPayload | updateCurrencyPayload | updateFilePayload | updateGlobalPayload | updateInstrumentPayload | updateProfitabilityPayload | updateRolePayload | updateSubscribeUserPayload | updateUserPayload
 
 type Companies {
     aboutCompany: String
@@ -22,12 +22,13 @@ type Companies {
     documentsSecuringRights: String
     historicalProfitability: Int
     id: ID!
+    image: UploadFile
     incomePaymentProcess: String
     instruments(limit: Int, sort: String, start: Int, where: JSON): [Instruments]
     investmentCurrency(limit: Int, sort: String, start: Int, where: JSON): [Currencies]
     liquidity: ENUM_COMPANIES_LIQUIDITY
     liquidityOfInvestment: String
-    minimumInvestmentAmount: Int
+    minimumInvestmentAmount: Int!
     minimumInvestmentPeriod: String
     name: String
     numberOfClients: Int
@@ -167,6 +168,11 @@ type CompaniesConnectionId {
     key: ID
 }
 
+type CompaniesConnectionImage {
+    connection: CompaniesConnection
+    key: ID
+}
+
 type CompaniesConnectionIncomePaymentProcess {
     connection: CompaniesConnection
     key: String
@@ -286,6 +292,7 @@ type CompaniesGroupBy {
     documentsSecuringRights: [CompaniesConnectionDocumentsSecuringRights]
     historicalProfitability: [CompaniesConnectionHistoricalProfitability]
     id: [CompaniesConnectionId]
+    image: [CompaniesConnectionImage]
     incomePaymentProcess: [CompaniesConnectionIncomePaymentProcess]
     liquidity: [CompaniesConnectionLiquidity]
     liquidityOfInvestment: [CompaniesConnectionLiquidityOfInvestment]
@@ -1159,12 +1166,13 @@ input CompanyInput {
     documentsFromInvestor: String
     documentsSecuringRights: String
     historicalProfitability: Int
+    image: ID
     incomePaymentProcess: String
     instruments: [ID]
     investmentCurrency: [ID]
     liquidity: ENUM_COMPANIES_LIQUIDITY
     liquidityOfInvestment: String
-    minimumInvestmentAmount: Int
+    minimumInvestmentAmount: Int!
     minimumInvestmentPeriod: String
     name: String
     numberOfClients: Int
@@ -1345,6 +1353,7 @@ input editCompanyInput {
     documentsFromInvestor: String
     documentsSecuringRights: String
     historicalProfitability: Int
+    image: ID
     incomePaymentProcess: String
     instruments: [ID]
     investmentCurrency: [ID]
