@@ -7,18 +7,18 @@ import FilterBlock from './FilterBlock';
 import style from './Filter.module.scss';
 
 export default function FilterComponent({
-                                            instruments = [],
-                                            selectedInstruments = [],
-                                            currencies = [],
-                                            selectedCurrencies = [],
-                                            profitabilities = [],
-                                            selectedProfitabilities = [],
-                                            selectedMinimumInvestmentAmount,
-                                            onInstrumentClick,
-                                            onMinimumInvestmentAmountChange,
-                                            onCurrenciesClick,
-                                            onProfitabilitiesClick,
-                                        }) {
+    instruments = [],
+    selectedInstruments = [],
+    currencies = [],
+    selectedCurrencies = [],
+    profitabilities = [],
+    selectedProfitabilities = [],
+    selectedMinimumInvestmentAmount,
+    onInstrumentClick,
+    onMinimumInvestmentAmountChange,
+    onCurrenciesClick,
+    onProfitabilitiesClick,
+}) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
     };
@@ -48,6 +48,7 @@ export default function FilterComponent({
                 />
 
                 <FilterBlock
+                    expanded
                     title="Доходность"
                     filters={profitabilities}
                     selectedFilters={selectedProfitabilities}
@@ -55,6 +56,7 @@ export default function FilterComponent({
                 />
 
                 <FilterBlock
+                    expanded
                     title="Валюта инвестирования"
                     filters={currencies}
                     selectedFilters={selectedCurrencies}

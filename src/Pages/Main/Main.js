@@ -47,24 +47,22 @@ export default function Main() {
                         Ознакомьтесь с видами инвестиционных инструметови узнайте особенности работы с ними
                     </div>
 
-                    {
-                        instruments && (
-                            <div className={cx(style.items)}>
-                                {instruments.map((instrument) => (
-                                    <InstrumentCard
-                                        {...instrument}
-                                        className={cx(style.item)}
-                                        onOpenSubscribeModal={handleOpenModal}
-                                    />
-                                ))}
-                            </div>
-                        )
-                    }
+                    {instruments && (
+                        <div className={cx(style.items)}>
+                            {instruments.map((instrument) => (
+                                <InstrumentCard
+                                    {...instrument}
+                                    className={cx(style.item)}
+                                    onOpenSubscribeModal={handleOpenModal}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
 
             <Modal open={open} handleCloseModal={handleCloseModal}>
-                <SubscribeModal/>
+                <SubscribeModal />
             </Modal>
         </div>
     );
