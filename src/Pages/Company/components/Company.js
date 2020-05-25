@@ -94,7 +94,8 @@ export default function CompanyComponent(props) {
                             startYear={startYear}
                             capital={capital}
                             numberOfClients={numberOfClients}
-                            onlineInvestmentStatusTracking={onlineInvestmentStatusTracking}/>
+                            onlineInvestmentStatusTracking={onlineInvestmentStatusTracking}
+                        />
                     </div>
                 </div>
             </div>

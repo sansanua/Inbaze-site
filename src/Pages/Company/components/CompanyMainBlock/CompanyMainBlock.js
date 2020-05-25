@@ -128,8 +128,8 @@ const structure = [
 ];
 
 const getContent = (data, block) => {
-    if (Array.isArray(data)) {
-        return data.map((c) => get(c, block.innerDataProp)).join(', ');
+    if (block.innerDataProp) {
+        return get(data, block.innerDataProp);
     }
 
     if (block.isDynamicText) {
@@ -140,11 +140,11 @@ const getContent = (data, block) => {
         return data ? 'Да' : 'Нет';
     }
 
-    if (block.isMarkdown) {
-        return <Markdown source={data} />;
+    if (!data) {
+        return '';
     }
 
-    return <Markdown source={data} />;
+    return <Markdown source={String(data)} />;
 };
 
 export default function CompanyMainBlock(props) {

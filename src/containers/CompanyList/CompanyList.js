@@ -28,33 +28,31 @@ export default function CompanyList({ onFilterOpen }) {
 
     const companies = (data && data.companies) || [];
     const filteredCompanies = minimumAmount
-        ? companies.filter(c => {
-            if(!c.investmentCurrency[0]){
-                return false
-            }
+        ? companies.filter((c) => {
+              if (!c.investmentCurrency) {
+                  return false;
+              }
 
-            if (c.investmentCurrency[0].slug === CURRENCY.USD) {
-                return c.minimumInvestmentAmount <= minimumAmount / globalData.dollarExchangeRate;
-            }
+              if (c.investmentCurrency.slug === CURRENCY.USD) {
+                  return c.minimumInvestmentAmount <= minimumAmount / globalData.dollarExchangeRate;
+              }
 
-            return c.minimumInvestmentAmount <= minimumAmount;
-        })
+              return c.minimumInvestmentAmount <= minimumAmount;
+          })
         : companies;
 
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.titlePanel)}>
                 <div className={cx(style.count)}>{filteredCompanies.length} инвестиционных компаний</div>
-                <div className={cx(style.filterButton, { [style.selected]: isFilterSelected })}
-                     onClick={onFilterOpen}
-                >
+                <div className={cx(style.filterButton, { [style.selected]: isFilterSelected })} onClick={onFilterOpen}>
                     Фильтр
                 </div>
                 <div className={cx(style.sortButton)}>Сортировать</div>
             </div>
 
             {filteredCompanies.map((company) => (
-                <CompanyItem {...company} key={company.id}/>
+                <CompanyItem {...company} key={company.id} />
             ))}
         </div>
     );

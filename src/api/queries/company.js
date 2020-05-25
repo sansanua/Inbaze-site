@@ -11,12 +11,12 @@ export const COMPANIES_FILTERED = gql`
             where: {
                 instruments: { slug_in: $instruments }
                 minimumInvestmentAmount_gte: $minimumInvestmentAmount
-                investmentCurrency: { slug_in: $investmentCurrency }
+                investmentCurrency: { slug: $investmentCurrency }
                 profitability: { slug: $profitabilities }
             }
         ) {
             id
-            image{
+            image {
                 url
             }
             complexity

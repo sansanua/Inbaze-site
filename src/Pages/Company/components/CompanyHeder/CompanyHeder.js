@@ -1,28 +1,27 @@
 import React from 'react';
 import cx from 'classnames';
 import { useHistory } from 'react-router-dom';
-import numeral from 'numeral'
+import numeral from 'numeral';
 
 import { DYNAMIC_TEXTS } from 'utils/dynamicTexts';
 
 import style from './CompanyHeder.module.scss';
 
-
 const icons = [1, 2, 3];
 
 export default function CompanyHeder({
-                                         name,
-                                         description,
-                                         instruments,
-                                         risk,
-                                         complexity,
-                                         minimumInvestmentAmount,
-                                         historicalProfitability,
-                                         investmentCurrency,
-                                         liquidity,
-                                         typeOfIncome,
-                                     }) {
-    const history = useHistory()
+    name,
+    description,
+    instruments,
+    risk,
+    complexity,
+    minimumInvestmentAmount,
+    historicalProfitability,
+    investmentCurrency,
+    liquidity,
+    typeOfIncome,
+}) {
+    const history = useHistory();
 
     return (
         <div className={cx(style.base)}>
@@ -46,7 +45,7 @@ export default function CompanyHeder({
                         <div className={cx(style.risk)}>
                             <div>Риск</div>
                             {icons.map((i) => (
-                                <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })}/>
+                                <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })} />
                             ))}
                         </div>
 
@@ -68,9 +67,8 @@ export default function CompanyHeder({
                         <div className={cx(style.wrapper)}>
                             <div className={cx(style.title)}>Минимальная сумма</div>
                             <div className={cx(style.number)}>
-                                {numeral(minimumInvestmentAmount).format("0,0")}
-                                {' '}
-                                {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
+                                {numeral(minimumInvestmentAmount).format('0,0')}{' '}
+                                {investmentCurrency && investmentCurrency.symbol}
                             </div>
                         </div>
 

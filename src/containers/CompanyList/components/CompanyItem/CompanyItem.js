@@ -10,22 +10,22 @@ import style from './CompanyItem.module.scss';
 const icons = [1, 2, 3];
 
 export default function CompanyItem({
-                                        id,
-                                        complexity,
-                                        description,
-                                        historicalProfitability,
-                                        instruments,
-                                        investmentCurrency,
-                                        minimumInvestmentAmount,
-                                        name,
-                                        risk,
-                                        image,
-                                    }) {
+    id,
+    complexity,
+    description,
+    historicalProfitability,
+    instruments,
+    investmentCurrency,
+    minimumInvestmentAmount,
+    name,
+    risk,
+    image,
+}) {
     return (
         <Link to={`/company/${id}`}>
             <div className={cx(style.base)}>
                 <div className={cx(style.logoContainer)}>
-                    {image ? <img src={image.url} alt=""/> : <div className={cx(style.noImage)}/>}
+                    {image ? <img src={image.url} alt="" /> : <div className={cx(style.noImage)} />}
                 </div>
 
                 <div className={cx(style.nameContainer)}>
@@ -43,7 +43,7 @@ export default function CompanyItem({
                             <div className={cx(style.risk)}>
                                 <div>Риск</div>
                                 {icons.map((i) => (
-                                    <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })}/>
+                                    <div key={i} className={cx(style.iconRisk, { [style.selected]: i <= risk })} />
                                 ))}
                             </div>
 
@@ -65,12 +65,11 @@ export default function CompanyItem({
                         <div className={cx(style.amount)}>
                             <div className={cx(style.title)}>Минимальная сумма</div>
                             <div className={cx(style.number)}>
-                                {numeral(minimumInvestmentAmount).format('0,0')}
-                                {' '}
-                                {investmentCurrency && investmentCurrency.length && investmentCurrency[0].symbol}
+                                {numeral(minimumInvestmentAmount).format('0,0')}{' '}
+                                {investmentCurrency && investmentCurrency.symbol}
                             </div>
                         </div>
-                        <Divider color="#b2eaea" margin={15}/>
+                        <Divider color="#b2eaea" margin={15} />
                         <div className={cx(style.profitability)}>
                             <div className={cx(style.title)}>Историческая доходность</div>
                             <div className={cx(style.number)}>{historicalProfitability}%</div>
@@ -78,8 +77,7 @@ export default function CompanyItem({
                     </div>
                 </div>
 
-
-                <div className={cx(style.arrow)}/>
+                <div className={cx(style.arrow)} />
             </div>
         </Link>
     );
