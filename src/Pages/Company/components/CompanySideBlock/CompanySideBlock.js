@@ -4,15 +4,18 @@ import cx from 'classnames';
 import style from './CompanySideBlock.module.scss';
 import Button from '../../../../components/Button/Button';
 
-
 export default function CompanySideBlock({
-                                             site,
-                                             startYear,
-                                             capital,
-                                             numberOfClients,
-                                             onlineInvestmentStatusTracking,
-                                         }) {
-    const url = new URL(site)
+    site,
+    startYear,
+    capital,
+    numberOfClients,
+    onlineInvestmentStatusTracking,
+}) {
+    let url = '';
+
+    try {
+        url = new URL(site);
+    } catch (e) {}
 
     return (
         <div className={style.base}>
@@ -44,9 +47,7 @@ export default function CompanySideBlock({
                 <div className={cx(style.row)}>
                     <div className={cx(style.col, style.colFullWidth)}>
                         <div className={cx(style.title)}>Отслеживание статуса инвестиций онлайн</div>
-                        <div className={cx(style.value)}>
-                            {onlineInvestmentStatusTracking ? 'Да' : 'Нет'}
-                        </div>
+                        <div className={cx(style.value)}>{onlineInvestmentStatusTracking ? 'Да' : 'Нет'}</div>
                     </div>
                 </div>
             </div>

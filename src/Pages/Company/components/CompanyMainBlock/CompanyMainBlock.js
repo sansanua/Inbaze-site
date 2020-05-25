@@ -141,10 +141,10 @@ const getContent = (data, block) => {
     }
 
     if (block.isMarkdown) {
-        return <Markdown source={data}/>;
+        return <Markdown source={data} />;
     }
 
-    return data;
+    return <Markdown source={data} />;
 };
 
 export default function CompanyMainBlock(props) {
