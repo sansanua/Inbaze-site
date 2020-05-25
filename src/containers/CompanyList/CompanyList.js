@@ -12,6 +12,28 @@ import CompanyItem from './components/CompanyItem';
 import style from './CompanyList.module.scss';
 import { CURRENCY } from '../../utils/currencyIcons';
 
+const amountFilter = (company, minimumAmount, globalData) => {
+    if (!company.investmentCurrency) {
+        return false;
+    }
+
+    const availableMinAmount = [];
+
+    if (company.investmentCurrency.slug === CURRENCY.USD) {
+        availableMinAmount.push(company.minimumInvestmentAmount * globalData.dollarExchangeRate);
+    } else {
+        availableMinAmount.push(company.minimumInvestmentAmount);
+    }
+
+    if (company.secondInvestmentCurrency && company.secondInvestmentCurrency.slug === CURRENCY.USD) {
+        availableMinAmount.push(company.secondMinimumInvestmentAmount * globalData.dollarExchangeRate);
+    } else {
+        availableMinAmount.push(company.secondMinimumInvestmentAmount);
+    }
+
+    return availableMinAmount.some((a) => a <= minimumAmount);
+};
+
 export default function CompanyList({ onFilterOpen }) {
     const globalData = useContext(GlobalDataContext);
 
@@ -28,17 +50,7 @@ export default function CompanyList({ onFilterOpen }) {
 
     const companies = (data && data.companies) || [];
     const filteredCompanies = minimumAmount
-        ? companies.filter((c) => {
-              if (!c.investmentCurrency) {
-                  return false;
-              }
-
-              if (c.investmentCurrency.slug === CURRENCY.USD) {
-                  return c.minimumInvestmentAmount <= minimumAmount / globalData.dollarExchangeRate;
-              }
-
-              return c.minimumInvestmentAmount <= minimumAmount;
-          })
+        ? companies.filter((company) => amountFilter(company, minimumAmount, globalData))
         : companies;
 
     return (

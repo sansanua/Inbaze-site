@@ -14,9 +14,12 @@ export default function CompanyItem({
     complexity,
     description,
     historicalProfitability,
+    secondHistoricalProfitability,
     instruments,
     investmentCurrency,
+    secondInvestmentCurrency,
     minimumInvestmentAmount,
+    secondMinimumInvestmentAmount,
     name,
     risk,
     image,
@@ -65,14 +68,38 @@ export default function CompanyItem({
                         <div className={cx(style.amount)}>
                             <div className={cx(style.title)}>Минимальная сумма</div>
                             <div className={cx(style.number)}>
-                                {numeral(minimumInvestmentAmount).format('0,0')}{' '}
-                                {investmentCurrency && investmentCurrency.symbol}
+                                <nobr>
+                                    {numeral(minimumInvestmentAmount).format('0,0')}{' '}
+                                    {investmentCurrency && investmentCurrency.symbol}
+                                </nobr>
                             </div>
+                            {secondInvestmentCurrency && (
+                                <div className={cx(style.number)}>
+                                    <span>/</span>
+                                    <nobr>
+                                        {numeral(secondMinimumInvestmentAmount).format('0,0')}{' '}
+                                        {secondInvestmentCurrency && secondInvestmentCurrency.symbol}
+                                    </nobr>
+                                </div>
+                            )}
                         </div>
+
                         <Divider color="#b2eaea" margin={15} />
+
                         <div className={cx(style.profitability)}>
                             <div className={cx(style.title)}>Историческая доходность</div>
-                            <div className={cx(style.number)}>{historicalProfitability}%</div>
+                            <nobr>
+                                <div className={cx(style.number)}>{historicalProfitability}%</div>
+                            </nobr>
+                            {secondInvestmentCurrency && (
+                                <div className={cx(style.number)}>
+                                    <span> / </span>
+                                    <nobr>
+                                        {secondHistoricalProfitability}
+                                        <span>%</span>
+                                    </nobr>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

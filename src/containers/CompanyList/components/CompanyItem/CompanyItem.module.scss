@@ -1,181 +1,181 @@
 @import 'assets/index.scss';
 
 .base {
-  width: 100%;
-  padding: 25px 89px 30px 116px;
-  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.3);
-  border-radius: 6px;
-  margin-bottom: 20px;
+    width: 100%;
+    padding: 25px 89px 30px 116px;
+    box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.3);
+    border-radius: 6px;
+    margin-bottom: 20px;
 
-  &:hover {
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
-  }
+    &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+    }
 
-  @include m {
-    padding: 20px 15px;
-  }
+    @include m {
+        padding: 20px 15px;
+    }
 }
 
 .logoContainer {
-  position: absolute;
-  left: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 6px;
-  overflow: hidden;
+    position: absolute;
+    left: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 6px;
+    overflow: hidden;
 
-  .noImage {
-    width: 100%;
-    height: 100%;
-    background-color: #999999;
-  }
+    .noImage {
+        width: 100%;
+        height: 100%;
+        background-color: #999999;
+    }
 
-  img {
-    width: 100%;
-  }
+    img {
+        width: 100%;
+    }
 }
 
 .nameContainer {
-  @include aCenter;
-  margin-bottom: 30px;
-
-  @include m {
-    flex-wrap: wrap;
-    margin-left: 80px;
-  }
-
-  .name {
-    @include font24;
-    color: $primary;
-    font-weight: bold;
-    margin-right: 30px;
+    @include aCenter;
+    margin-bottom: 30px;
 
     @include m {
-      width: 100%;
-      margin-bottom: 20px;
+        flex-wrap: wrap;
+        margin-left: 80px;
     }
-  }
 
-  .instruments {
-    @include font14;
-    font-weight: bold;
+    .name {
+        @include font24;
+        color: $primary;
+        font-weight: bold;
+        margin-right: 30px;
 
-    @include m {
-      width: 100%;
+        @include m {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
-  }
+
+    .instruments {
+        @include font14;
+        font-weight: bold;
+
+        @include m {
+            width: 100%;
+        }
+    }
 }
 
 .infoContainer {
-  display: flex;
-  justify-content: space-between;
-
-  @include m {
-    flex-wrap: wrap;
-  }
-
-  & > div {
-    width: 50%;
+    display: flex;
+    justify-content: space-between;
 
     @include m {
-      width: 100%;
-    }
-  }
-
-  .descriptionPart {
-    margin-right: 30px;
-    @include font14;
-
-    @include m {
-      margin: 0;
-      margin-bottom: 45px;
+        flex-wrap: wrap;
     }
 
-    .iconsContainer {
-      display: flex;
-      margin-bottom: 20px;
-
-      .risk,
-      .complexity {
+    & > div {
         width: 50%;
-        display: flex;
-        font-weight: bold;
-        color: #333333;
 
-        & > div {
-          &:first-child {
-            margin-right: 6px;
-          }
-
-          margin-right: 4px;
+        @include m {
+            width: 100%;
         }
-      }
+    }
 
-      .iconRisk {
-        width: 13px;
-        height: 19px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url('/images/flash.svg');
+    .descriptionPart {
+        margin-right: 30px;
+        @include font14;
 
-        &.selected {
-          background-image: url('/images/flash-02.svg');
+        @include m {
+            margin: 0;
+            margin-bottom: 45px;
         }
-      }
 
-      .iconComplexity {
-        width: 16px;
-        height: 16px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url('/images/puzzle-01.svg');
+        .iconsContainer {
+            display: flex;
+            margin-bottom: 20px;
 
-        &.selected {
-          background-image: url('/images/puzzle-02.svg');
+            .risk,
+            .complexity {
+                width: 50%;
+                display: flex;
+                font-weight: bold;
+                color: #333333;
+
+                & > div {
+                    &:first-child {
+                        margin-right: 6px;
+                    }
+
+                    margin-right: 4px;
+                }
+            }
+
+            .iconRisk {
+                width: 13px;
+                height: 19px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('/images/flash.svg');
+
+                &.selected {
+                    background-image: url('/images/flash-02.svg');
+                }
+            }
+
+            .iconComplexity {
+                width: 16px;
+                height: 16px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('/images/puzzle-01.svg');
+
+                &.selected {
+                    background-image: url('/images/puzzle-02.svg');
+                }
+            }
         }
-      }
+
+        .description {
+            color: #666666;
+        }
     }
 
-    .description {
-      color: #666666;
+    .amountPart {
+        margin-left: 30px;
+
+        @include m {
+            margin: 0;
+        }
+
+        .amount,
+        .profitability {
+            display: flex;
+
+            .title {
+                @include font18;
+                width: 140px;
+                font-weight: bold;
+            }
+
+            .number {
+                color: $primary;
+                @include font20;
+                font-weight: bold;
+            }
+        }
     }
-  }
-
-  .amountPart {
-    margin-left: 30px;
-
-    @include m {
-      margin: 0;
-    }
-
-    .amount,
-    .profitability {
-      display: flex;
-
-      .title {
-        @include font18;
-        width: 140px;
-        font-weight: bold;
-      }
-
-      .number {
-        color: $primary;
-        @include font24;
-        font-weight: bold;
-      }
-    }
-  }
 }
 
 .arrow {
-  cursor: pointer;
-  position: absolute;
-  top: 23px;
-  right: 20px;
-  width: 10px;
-  height: 14px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url('/images/arrow-gray.svg');
-  transform: rotate(90deg);
+    cursor: pointer;
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    width: 10px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/arrow-gray.svg');
+    transform: rotate(90deg);
 }

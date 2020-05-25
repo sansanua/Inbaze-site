@@ -22,7 +22,9 @@ export const COMPANIES_FILTERED = gql`
             complexity
             description
             historicalProfitability
+            secondHistoricalProfitability
             minimumInvestmentAmount
+            secondMinimumInvestmentAmount
             name
             risk
             instruments {
@@ -30,6 +32,11 @@ export const COMPANIES_FILTERED = gql`
                 slug
             }
             investmentCurrency {
+                name
+                slug
+                symbol
+            }
+            secondInvestmentCurrency {
                 name
                 slug
                 symbol
@@ -61,6 +68,7 @@ export const COMPANY = gql`
             documentsFromInvestor
             documentsSecuringRights
             historicalProfitability
+            secondHistoricalProfitability
             incomePaymentProcess
             instruments {
                 name
@@ -71,9 +79,15 @@ export const COMPANY = gql`
                 slug
                 symbol
             }
+            secondInvestmentCurrency {
+                name
+                slug
+                symbol
+            }
             liquidity
             liquidityOfInvestment
             minimumInvestmentAmount
+            secondMinimumInvestmentAmount
             minimumInvestmentPeriod
             name
             numberOfClients
