@@ -146,6 +146,18 @@ $paddingLeft: 80px;
         }
     }
 
+    .iconProfitability {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/profitability-01.svg');
+
+        &.selected {
+            background-image: url('/images/profitability-02.svg');
+        }
+    }
+
     .iconComplexity {
         width: 16px;
         height: 16px;

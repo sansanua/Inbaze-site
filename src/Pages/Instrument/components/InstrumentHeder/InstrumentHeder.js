@@ -48,7 +48,7 @@ export default function InstrumentHeder({ name, shortDescription, risk, complexi
 
                     <div className={cx(style.col)}>
                         <div>Доходность</div>
-                        {renderIcons(style.iconRisk, profitability)}
+                        {renderIcons(style.iconProfitability, profitability)}
                     </div>
                 </div>
                 <div className={cx(style.row)}>

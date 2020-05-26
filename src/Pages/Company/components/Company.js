@@ -42,6 +42,7 @@ export default function CompanyComponent(props) {
         site,
         startYear,
         typeOfIncome,
+        image,
     } = props;
     //#endregion
 
@@ -59,6 +60,7 @@ export default function CompanyComponent(props) {
                     investmentCurrency={investmentCurrency}
                     liquidity={liquidity}
                     typeOfIncome={typeOfIncome}
+                    image={image}
                 />
 
                 <div className={cx(style.content)}>

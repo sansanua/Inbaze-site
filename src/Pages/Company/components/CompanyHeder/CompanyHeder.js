@@ -20,14 +20,18 @@ export default function CompanyHeder({
     investmentCurrency,
     liquidity,
     typeOfIncome,
+    image,
 }) {
     const history = useHistory();
 
     return (
         <div className={cx(style.base)}>
-            {/* <div className={cx(style.logoContainer)}>logo</div> */}
             <div className={cx(style.backArrow)} onClick={history.goBack}>
                 <div></div>
+            </div>
+
+            <div className={cx(style.logoContainer)}>
+                {image ? <img src={image.url} alt="" /> : <div className={cx(style.noImage)} />}
             </div>
 
             <div className={cx(style.nameContainer)}>
