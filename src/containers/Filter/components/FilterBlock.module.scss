@@ -17,10 +17,11 @@
     }
 }
 
-.tooltip{
+.tooltip {
     max-width: 150px;
+    z-index: 20;
 
-    .tooltipLink{
+    .tooltipLink {
         font-weight: bold;
         color: #4349ba;
     }

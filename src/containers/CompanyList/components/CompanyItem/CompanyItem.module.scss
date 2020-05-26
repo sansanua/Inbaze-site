@@ -23,6 +23,7 @@
     height: 52px;
     border-radius: 6px;
     overflow: hidden;
+    z-index: -1;
 
     .noImage {
         width: 100%;

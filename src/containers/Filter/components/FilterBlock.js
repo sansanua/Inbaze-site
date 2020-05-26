@@ -3,7 +3,6 @@ import cx from 'classnames';
 import ReactTooltip from 'react-tooltip';
 import { Link } from 'react-router-dom';
 
-
 import Collapse from 'components/Collapse';
 import Checkbox from 'components/Checkbox';
 
@@ -29,33 +28,29 @@ export default function FilterBlock({ expanded, showTooltip, title, filters, sel
                                         key={filter.slug}
                                         onClick={onClick(filter.slug)}
                                     >
-                                        <Checkbox inline checked={selectedFilters.includes(filter.slug)}/>
+                                        <Checkbox inline checked={selectedFilters.includes(filter.slug)} />
                                         <span data-tip data-for={filter.slug}>
                                             {filter.name}
                                         </span>
                                     </div>
-                                    {
-                                        showTooltip &&
+                                    {showTooltip && (
                                         <ReactTooltip
                                             clickable
                                             className={style.tooltip}
                                             id={filter.slug}
-                                            effect='solid'
-                                            place='right'
+                                            effect="solid"
+                                            place="right"
                                             delayHide={50}
                                             backgroundColor={'#b2eaea'}
                                             textColor={'#666666'}
                                         >
-                                            <p>
-                                                {filter.shortDescription}
-                                            </p>
+                                            <p>{filter.shortDescription}</p>
                                             <Link className={cx(style.tooltipLink)} to={`instrument/${filter.slug}`}>
                                                 Подробнее >
                                             </Link>
                                         </ReactTooltip>
-                                    }
+                                    )}
                                 </>
-
                             );
                         })}
                     </div>
