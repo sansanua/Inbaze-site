@@ -1,8 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Button from 'components/Button';
-
 import CompanyHeder from './CompanyHeder';
 import CompanyMainBlock from './CompanyMainBlock';
 

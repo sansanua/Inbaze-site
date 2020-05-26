@@ -4,18 +4,20 @@ import cx from 'classnames';
 import Divider from '../../components/Divider';
 
 import style from './Footer.module.scss';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 const socialLinks = [
     {
         name: 'facebook',
         logo: '/images/logos/facebook.svg',
         link: 'https://www.facebook.com/',
-    }, {
+    },
+    {
         name: 'instagram',
         logo: '/images/logos/instagram.svg',
         link: 'https://www.instagram.com/',
-    }, {
+    },
+    {
         name: 'telegram',
         logo: '/images/logos/telegram.svg',
         link: 'https://telegram.org/',
@@ -27,7 +29,7 @@ export default function Footer() {
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
                 <div className={cx(style.navigation)}>
-                    <div className={cx(style.logo)}/>
+                    <div className={cx(style.logo)} />
 
                     <div className={cx(style.items)}>
                         <a href="/companies" className={cx(style.item)}>
@@ -41,7 +43,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <Divider/>
+                <Divider />
 
                 <div className={cx(style.contacts)}>
                     <div className={cx(style.contactsLeft)}>
@@ -51,14 +53,16 @@ export default function Footer() {
                     <div className={cx(style.contactsRight)}>
                         <div className={cx(style.subscribe)}>Подписантя</div>
                         <div className={cx(style.socialButtons)}>
-                            {
-                                socialLinks.map(s => (
-                                    <a className={cx(style.socialButton)} href={s.link} target="_blank" rel="noopener noreferrer">
-                                        <img src={s.logo} alt={s.name}/>
-                                    </a>
-                                ))
-                            }
-
+                            {socialLinks.map((s) => (
+                                <a
+                                    className={cx(style.socialButton)}
+                                    href={s.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={s.logo} alt={s.name} />
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -3,89 +3,86 @@
 $desktopFilterWidth: 300px;
 
 .base {
-  @include jCenter;
-  min-height: calc(100vh - #{$headerHeight});
+    @include jCenter;
+    min-height: calc(100vh - #{$headerHeight});
 }
 
 .container {
-  @include contentWidth;
+    @include contentWidth;
 }
 
 .header {
-  @include jCenter;
-  flex-wrap: wrap;
-  margin: 70px 0;
+    @include jCenter;
+    flex-wrap: wrap;
+    margin: 70px 0;
 
-  .headerTitle {
-    @include font48;
+    .headerTitle {
+        @include font48;
 
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: $spacingBase;
-    color: $primary;
-  }
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: $spacingBase;
+        color: $primary;
+    }
 
-  .headerSubtitle {
-    @include font20;
+    .headerSubtitle {
+        @include font20;
 
-    width: 100%;
-    text-align: center;
-  }
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .content {
+    display: flex;
+    align-items: flex-start;
 }
 
 .filters {
-  position: absolute;
-  width: $desktopFilterWidth;
-  //min-width: $desktopFilterWidth;
-  //max-width: $desktopFilterWidth;
-  max-height: calc(100vh - #{$desktopFooterHeight});
-  padding-right: 20px;
-  overflow-y: auto;
+    width: $desktopFilterWidth;
+    padding-right: 20px;
+    overflow-y: auto;
 
-  @include t {
-    display: none;
-  }
+    @include t {
+        display: none;
+    }
 }
 
 .filtersMobileContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 20;
-  display: none;
-
-  &.open {
-    display: block;
-  }
-
-  .filtersMobile {
-    min-width: 300px;
-    width: 300px;
-    height: 100%;
-    background-color: $wight;
-    padding: 20px;
-    z-index: 1;
-  }
-
-  .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.5);
-  }
+    width: 100%;
+    z-index: 20;
+    display: none;
+
+    &.open {
+        display: block;
+    }
+
+    .filtersMobile {
+        min-width: 300px;
+        width: 300px;
+        height: 100%;
+        background-color: $wight;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
 }
 
 .list {
-  @include d {
-    margin-left: $desktopFilterWidth;
-    width: $desktopWidth - $desktopFilterWidth;
-  }
+    @include d {
+        width: $desktopWidth - $desktopFilterWidth;
+    }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import ScrollArea from 'react-scrollbar';
-import StickyBox from "react-sticky-box";
+import StickyBox from 'react-sticky-box';
 
 import { useMedia } from 'hooks/useMedia';
 
@@ -30,10 +30,10 @@ export default function CompaniesComponent() {
             {isTab && (
                 <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
                     <ScrollArea className={cx(style.filtersMobile)}>
-                        <Filter/>
+                        <Filter />
                     </ScrollArea>
 
-                    <div className={cx(style.overlay)} onClick={handleToggleFilter}/>
+                    <div className={cx(style.overlay)} onClick={handleToggleFilter} />
                 </div>
             )}
 
@@ -49,13 +49,13 @@ export default function CompaniesComponent() {
                     {!isTab && (
                         <StickyBox>
                             <div className={cx(style.filters)}>
-                                <Filter/>
+                                <Filter />
                             </div>
                         </StickyBox>
                     )}
 
                     <div className={cx(style.list)}>
-                        <CompanyList onFilterOpen={handleToggleFilter}/>
+                        <CompanyList onFilterOpen={handleToggleFilter} />
                     </div>
                 </div>
             </div>
