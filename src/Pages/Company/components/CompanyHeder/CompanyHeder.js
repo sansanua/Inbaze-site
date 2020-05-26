@@ -3,8 +3,6 @@ import cx from 'classnames';
 import { useHistory } from 'react-router-dom';
 import numeral from 'numeral';
 
-import { DYNAMIC_TEXTS } from 'utils/dynamicTexts';
-
 import style from './CompanyHeder.module.scss';
 
 const icons = [1, 2, 3];
@@ -18,8 +16,8 @@ export default function CompanyHeder({
     minimumInvestmentAmount,
     historicalProfitability,
     investmentCurrency,
-    liquidity,
-    typeOfIncome,
+    // liquidity,
+    // typeOfIncome,
     image,
 }) {
     const history = useHistory();
@@ -76,7 +74,7 @@ export default function CompanyHeder({
                             </div>
                         </div>
 
-                        <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS[liquidity]}</div>
+                        {/* <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS[liquidity]}</div> */}
                     </div>
 
                     <div className={cx(style.profitability)}>
@@ -85,7 +83,7 @@ export default function CompanyHeder({
                             <div className={cx(style.number)}>{historicalProfitability}%</div>
                         </div>
 
-                        <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS[typeOfIncome]}</div>
+                        {/* <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS[typeOfIncome]}</div> */}
                     </div>
                 </div>
             </div>
