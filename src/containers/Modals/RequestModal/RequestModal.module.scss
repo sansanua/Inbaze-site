@@ -1,0 +1,25 @@
+@import 'assets/index.scss';
+
+.base {
+    @include center;
+    flex-wrap: wrap;
+
+    width: 600px;
+    padding: 70px 100px;
+}
+
+.text {
+    @include font30;
+    font-weight: bold;
+    color: $primary;
+    margin-bottom: 60px;
+}
+
+.input {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.button {
+    margin-top: 40px;
+}

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 
+import Button from 'components/Button/Button';
+import RequestModal from 'containers/Modals/RequestModal';
+import Modal from 'containers/Modals/Modal';
+
 import style from './CompanySideBlock.module.scss';
-import Button from '../../../../components/Button/Button';
 
 export default function CompanySideBlock({
     site,
@@ -11,6 +14,15 @@ export default function CompanySideBlock({
     numberOfClients,
     onlineInvestmentStatusTracking,
 }) {
+    const [open, setOpen] = useState(false);
+    const handleCloseModal = () => {
+        setOpen(false);
+    };
+
+    const handleOpenModal = () => {
+        setOpen(true);
+    };
+
     let url = '';
 
     try {
@@ -52,8 +64,14 @@ export default function CompanySideBlock({
                 </div>
             </div>
             <div className={cx(style.button)}>
-                <Button type="lightBlueBlue">Оставить заявку</Button>
+                <Button type="lightBlueBlue" onClick={handleOpenModal}>
+                    Оставить заявку
+                </Button>
             </div>
+
+            <Modal open={open} handleCloseModal={handleCloseModal}>
+                <RequestModal />
+            </Modal>
         </div>
     );
 }

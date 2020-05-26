@@ -6,10 +6,10 @@ import { INSTRUMENTS } from 'api/queries/instruments';
 
 import Button from '../../components/Button';
 import InstrumentCard from './components/InstrumentCard';
+import SubscribeModal from 'containers/Modals/SubscribeModal/SubscribeModal';
+import Modal from 'containers/Modals/Modal';
 
 import style from './Main.module.scss';
-import SubscribeModal from '../../containers/Modals/SubscribeModal/SubscribeModal';
-import Modal from '../../containers/Modals/Modal';
 
 export default function Main() {
     const { data } = useQuery(INSTRUMENTS);

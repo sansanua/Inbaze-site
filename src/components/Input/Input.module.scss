@@ -1,19 +1,19 @@
 @import 'assets/index.scss';
 
 .base {
-
 }
 
 .label {
-  @include font14;
-  width: 100%;
+    @include font18;
+    width: 100%;
+    color: $primary;
 }
 
 .input {
-  @include font18;
+    @include font18;
 
-  width: 100%;
-  height: 30px;
-  border: none;
-  border-bottom: 1px solid $grey;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid $blue;
 }
