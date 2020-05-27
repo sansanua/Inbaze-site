@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
+// import { NavLink } from 'react-router-dom';
 
-import Divider from '../../components/Divider';
+import { CREATE_SUBSCRIBE_NEWS_USER } from 'api/mutations/subscribeNewsUsers';
+
+import Divider from 'components/Divider';
+import Button from 'components/Button/Button';
+import Input from 'components/Input';
 
 import style from './Footer.module.scss';
-// import { NavLink } from 'react-router-dom';
 
 const socialLinks = [
     {
@@ -25,6 +30,14 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+    const [email, setEmail] = useState('');
+
+    const [createSubscribeNewsUser] = useMutation(CREATE_SUBSCRIBE_NEWS_USER);
+
+    const handleClick = () => {
+        createSubscribeNewsUser({ variables: { email } });
+    };
+
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
@@ -39,7 +52,23 @@ export default function Footer() {
                     </div>
 
                     <div className={cx(style.navigationLeftPart)}>
-                        <div>Есть вопрос?</div>
+                        <div className={cx(style.text)}>
+                            Вас интересуют деньги? А инвестиции ? Если да, тогда поделитесь своим email и мы будем
+                            отправлять вам подборки материалов о том, как нужно копить и вкладывать, чтобы в будущем
+                            можно было жить без плохих мыслей о деньгах и работе.
+                        </div>
+                        <div className={cx(style.inputContainer)}>
+                            <Input
+                                label="Email"
+                                className={cx(style.input)}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+
+                            <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
+                                Подписаться
+                            </Button>
+                        </div>
                     </div>
                 </div>
 

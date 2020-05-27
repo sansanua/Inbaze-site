@@ -3,9 +3,11 @@ import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
 
 import { CREATE_SUBSCRIBE_USER } from '../../../api/mutations/subscribeUsers';
+
 import Button from '../../../components/Button/Button';
-import style from './SubscribeModal.module.scss';
 import Input from '../../../components/Input';
+
+import style from './SubscribeModal.module.scss';
 
 const SubscribeModal = ({ onCloseModal }) => {
     const [email, setEmail] = useState('');
