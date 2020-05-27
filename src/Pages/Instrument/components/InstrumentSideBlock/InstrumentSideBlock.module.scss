@@ -1,0 +1,136 @@
+@import 'assets/index.scss';
+
+$paddingTop: 30px;
+
+.base {
+    width: 100%;
+}
+
+.infoContainer {
+    padding-top: $paddingTop;
+
+    @include t {
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    @include m {
+        padding-left: 0;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        @include d {
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        @include m {
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+
+        .col {
+            display: flex;
+            font-weight: bold;
+            color: #333333;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            @include t {
+                width: 170px;
+                margin-bottom: 0;
+            }
+
+            @include m {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .currency {
+        display: flex;
+        align-items: center;
+
+        .symbol {
+            margin-right: 10px;
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .name {
+            font-weight: 500;
+        }
+    }
+
+    .icons {
+        display: flex;
+
+        .icon {
+            margin-left: 8px;
+        }
+    }
+
+    .iconRisk {
+        width: 13px;
+        height: 19px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/flash.svg');
+
+        &.selected {
+            background-image: url('/images/flash-02.svg');
+        }
+    }
+
+    .iconProfitability {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/profitability-01.svg');
+
+        &.selected {
+            background-image: url('/images/profitability-02.svg');
+        }
+    }
+
+    .iconComplexity {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/puzzle-01.svg');
+
+        &.selected {
+            background-image: url('/images/puzzle-02.svg');
+        }
+    }
+
+    .buttonRow {
+        display: flex;
+        justify-content: flex-end;
+
+        @include t {
+            // position: absolute;
+            // right: 0;
+            // top: -65px;
+        }
+
+        @include m {
+            position: relative;
+            top: inherit;
+            right: initial;
+            margin-top: 60px;
+        }
+    }
+}
