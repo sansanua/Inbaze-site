@@ -1,23 +1,51 @@
 @import 'assets/index.scss';
 
 .base {
-  @include aCenter;
-  flex-wrap: wrap;
+    @include aCenter;
+    flex-wrap: wrap;
+    width: 600px;
+    padding: 50px 70px;
 
-  width: 320px;
+    @include m {
+        width: 280px;
+        padding: 20px 30px;
+    }
 }
 
 .text {
-  @include font18;
-  margin-bottom: 20px;
-  color: rgb(37, 36, 67);
+    @include font24;
+    margin-bottom: 60px;
+    color: rgb(37, 36, 67);
+    text-align: center;
+
+    @include m {
+        margin-bottom: 30px;
+    }
 }
 
-.input{
-  margin-bottom: 20px;
-  width: 100%;
+.inputContainer {
+    display: flex;
+    width: 100%;
+
+    @include m {
+        flex-wrap: wrap;
+    }
+}
+
+.input {
+    flex: 1;
+
+    @include m {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .button {
+    margin-left: 20px;
 
+    @include m {
+        margin: 0 auto;
+        width: 100%;
+    }
 }

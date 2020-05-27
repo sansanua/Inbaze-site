@@ -3,9 +3,13 @@
 .base {
     @include center;
     flex-wrap: wrap;
-
     width: 600px;
     padding: 70px 100px;
+
+    @include m {
+        width: 280px;
+        padding: 20px 30px;
+    }
 }
 
 .text {

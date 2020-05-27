@@ -7,7 +7,6 @@ import Button from '../../../components/Button/Button';
 import style from './SubscribeModal.module.scss';
 import Input from '../../../components/Input';
 
-
 const SubscribeModal = ({ onCloseModal }) => {
     const [email, setEmail] = useState('');
 
@@ -21,25 +20,23 @@ const SubscribeModal = ({ onCloseModal }) => {
 
     return (
         <div className={cx(style.base)}>
-
             <div className={style.text}>
-                Мы еще не добавляли эти инструменты на нашу платформу. Но если вы хотите знать, когда они появтся - оставьте свой email и мы вас обязательно оповестим
+                Мы еще не добавляли эти инструменты на нашу платформу. Но если вы хотите знать, когда они появтся -
+                оставьте свой email и мы вас обязательно оповестим
             </div>
 
-            <Input
-                label="Email"
-                className={cx(style.input)}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+            <div className={cx(style.inputContainer)}>
+                <Input
+                    label="Email"
+                    className={cx(style.input)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
 
-            <Button
-                className={cx(style.button)}
-                type="lightBlueBlue"
-                onClick={handleClick}
-            >
-                Оставить заявку
-            </Button>
+                <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
+                    Подписаться
+                </Button>
+            </div>
         </div>
     );
 };

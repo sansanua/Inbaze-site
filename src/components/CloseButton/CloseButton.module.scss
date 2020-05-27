@@ -8,10 +8,17 @@
     height: 32px;
     opacity: 0.5;
     cursor: pointer;
+
+    @include m {
+        top: 0;
+        right: 0;
+    }
 }
+
 .close:hover {
     opacity: 1;
 }
+
 .close:before,
 .close:after {
     position: absolute;
@@ -21,9 +28,11 @@
     width: 2px;
     background-color: $primary;
 }
+
 .close:before {
     transform: rotate(45deg);
 }
+
 .close:after {
     transform: rotate(-45deg);
 }
