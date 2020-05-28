@@ -1,7 +1,6 @@
-import 'react-tabs/style/react-tabs.css';
-
 import React from 'react';
 import cx from 'classnames';
+import Markdown from 'react-markdown';
 
 import style from './InstrumentMainBlock.module.scss';
 
@@ -35,7 +34,9 @@ export default function InstrumentMainBlock(props) {
                 {structure.map((block) => (
                     <div className={cx(style.block)}>
                         <div className={cx(style.header)}>{block.header(props.name)}</div>
-                        <div className={cx(style.text)}>{props[block.dataProp]}</div>
+                        <div className={cx(style.text)}>
+                            <Markdown source={String(props[block.dataProp])} />
+                        </div>
                     </div>
                 ))}
             </div>

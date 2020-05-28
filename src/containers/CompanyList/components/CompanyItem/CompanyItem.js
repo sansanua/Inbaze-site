@@ -75,7 +75,7 @@ export default function CompanyItem({
                             </div>
                             {secondInvestmentCurrency && (
                                 <div className={cx(style.number)}>
-                                    <span>/</span>
+                                    <span>&nbsp;/&nbsp;</span>
                                     <nobr>
                                         {numeral(secondMinimumInvestmentAmount).format('0,0')}{' '}
                                         {secondInvestmentCurrency && secondInvestmentCurrency.symbol}
@@ -93,7 +93,7 @@ export default function CompanyItem({
                             </nobr>
                             {secondInvestmentCurrency && (
                                 <div className={cx(style.number)}>
-                                    <span> / </span>
+                                    <span>&nbsp;/&nbsp;</span>
                                     <nobr>
                                         {secondHistoricalProfitability}
                                         <span>%</span>

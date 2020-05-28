@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const INSTRUMENTS = gql`
     query instruments {
-        instruments {
+        instruments(sort: "id:asc") {
             name
             slug
             shortDescription

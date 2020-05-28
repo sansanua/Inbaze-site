@@ -72,7 +72,7 @@ export default function FilterComponent({
                                 ? selectedMinimumInvestmentAmount[0]
                                 : 100000
                         }
-                        title="Минимальная суммаинвестирования"
+                        title="Минимальная сумма&nbsp;инвестирования"
                         onSelect={handleMinimumInvestmentAmount}
                     />
                 </div>

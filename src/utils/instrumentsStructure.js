@@ -36,22 +36,23 @@ export const instrumentsItems = [
         imageColored: '/images/instruments/handshake-02-colored.svg',
     },
     {
-        slug: "biznes",
-        description: 'Акции публичных компаний',
-        image: '/images/instruments/property-01.svg',
-        imageColored: '/images/instruments/property-01-colored.svg',
+        slug: 'biznes',
+        color: '#dce3ff',
+        image: '/images/instruments/case-01.svg',
+        imageColored: '/images/instruments/case-01-colored.svg',
     },
     {
-        description: 'Акции публичных компаний',
-        image: '/images/instruments/papka-01.svg',
-        imageColored: '/images/instruments/papka-01-colored.svg',
+        slug: 'nedvizhimost',
+        color: '#dce3ff',
+        image: '/images/instruments/property-01.svg',
+        imageColored: '/images/instruments/property-01-colored.svg',
     },
 ];
 
 export const getInstrument = (slug) => {
     const instrument = instrumentsItems.filter((i) => i.slug === slug) || null;
     return instrument && instrument[0];
-}
+};
 
 export const getColoredIcon = (slug) => {
     const instrument = instrumentsItems.filter((i) => i.slug === slug) || null;

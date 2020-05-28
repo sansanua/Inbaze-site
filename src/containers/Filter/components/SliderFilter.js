@@ -5,7 +5,6 @@ import cx from 'classnames';
 import Slider, { createSliderWithTooltip } from 'rc-slider';
 import numeral from 'numeral';
 
-
 import { GlobalDataContext } from 'contexts';
 
 import Collapse from 'components/Collapse';
@@ -21,7 +20,11 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
         onSelect(_value);
     };
 
-    const formatValue = (value) => <nobr>{value} грн (~{numeral(value / dollarExchangeRate).format('0')} $)</nobr>
+    const formatValue = (value) => (
+        <nobr>
+            {numeral(value).format('0,0')} грн (~{numeral(value / dollarExchangeRate).format('0')} $)
+        </nobr>
+    );
 
     return (
         <div className={cx(style.filterBlok)}>
