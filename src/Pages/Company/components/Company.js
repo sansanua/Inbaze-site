@@ -93,6 +93,7 @@ export default function CompanyComponent(props) {
                             site={site}
                             startYear={startYear}
                             capital={capital}
+                            investmentCurrency={investmentCurrency}
                             numberOfClients={numberOfClients}
                             onlineInvestmentStatusTracking={onlineInvestmentStatusTracking}
                         />

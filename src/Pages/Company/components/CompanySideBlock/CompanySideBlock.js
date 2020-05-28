@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import numeral from 'numeral';
 
 import Button from 'components/Button/Button';
 import RequestModal from 'containers/Modals/RequestModal';
@@ -12,6 +13,7 @@ export default function CompanySideBlock({
     startYear,
     capital,
     numberOfClients,
+    investmentCurrency,
     onlineInvestmentStatusTracking,
 }) {
     const [open, setOpen] = useState(false);
@@ -49,7 +51,9 @@ export default function CompanySideBlock({
                 <div className={cx(style.row)}>
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Капитал</div>
-                        <div className={cx(style.value)}>{capital}</div>
+                        <div className={cx(style.value)}>
+                            {numeral(capital).format('0,0')} {investmentCurrency.symbol}
+                        </div>
                     </div>
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Количество-клиентов</div>
