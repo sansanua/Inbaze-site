@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { INSTRUMENT_BY_SLUG } from 'api/queries/instruments';
 
 import Instrument from './components/Instrument';
+import Loader from 'components/Loader';
 
 export default function CompanyPage() {
     const { slug } = useParams();
@@ -17,7 +18,7 @@ export default function CompanyPage() {
     const instrument = (data && data.instruments && data.instruments.length && data.instruments[0]) || null;
 
     if (loading) {
-        return null;
+        return <Loader></Loader>;
     }
     console.log(instrument);
     if (!loading && !instrument) {

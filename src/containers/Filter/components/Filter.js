@@ -14,6 +14,7 @@ export default function FilterComponent({
     profitabilities = [],
     selectedProfitabilities = [],
     selectedMinimumInvestmentAmount,
+    bottomContent,
     onInstrumentClick,
     onMinimumInvestmentAmountChange,
     onCurrenciesClick,
@@ -75,6 +76,8 @@ export default function FilterComponent({
                         onSelect={handleMinimumInvestmentAmount}
                     />
                 </div>
+
+                <div className={style.bottomContent}>{bottomContent}</div>
             </div>
         </div>
     );

@@ -10,7 +10,7 @@ import { FILTERS } from 'utils/filters';
 
 import FilterComponent from './components/Filter';
 
-export default function FilterContainer() {
+export default function FilterContainer({ bottomContent }) {
     const { data: instrumentsData } = useQuery(INSTRUMENTS);
     const { data: currenciesData } = useQuery(CURRENCIES);
     const { data: profitabilitiesData } = useQuery(PROFITABILITIES);
@@ -21,7 +21,8 @@ export default function FilterContainer() {
         toggleFilter(filterName, selectedFilter, isSingleValue);
     };
 
-    const instruments = instrumentsData && instrumentsData.instruments && instrumentsData.instruments.filter(i => !i.disabled)
+    const instruments =
+        instrumentsData && instrumentsData.instruments && instrumentsData.instruments.filter((i) => !i.disabled);
 
     return (
         <FilterComponent
@@ -32,6 +33,7 @@ export default function FilterContainer() {
             profitabilities={profitabilitiesData && profitabilitiesData.profitabilities}
             selectedProfitabilities={filters[FILTERS.profitabilities]}
             selectedMinimumInvestmentAmount={filters[FILTERS.minimumInvestmentAmount]}
+            bottomContent={bottomContent}
             onInstrumentClick={handleFilterClick(FILTERS.instruments)}
             onCurrenciesClick={handleFilterClick(FILTERS.investmentCurrency)}
             onProfitabilitiesClick={handleFilterClick(FILTERS.profitabilities)}

@@ -8,6 +8,8 @@ import { useMedia } from 'hooks/useMedia';
 import Filter from 'containers/Filter';
 import CompanyList from 'containers/CompanyList';
 
+import Button from 'components/Button/Button';
+
 import style from './Companies.module.scss';
 
 export default function CompaniesComponent() {
@@ -30,7 +32,17 @@ export default function CompaniesComponent() {
             {isTab && (
                 <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
                     <ScrollArea className={cx(style.filtersMobile)}>
-                        <Filter />
+                        <Filter
+                            bottomContent={
+                                <Button
+                                    className={cx(style.applyButton)}
+                                    type="lightBlueBlue"
+                                    onClick={handleToggleFilter}
+                                >
+                                    Применить
+                                </Button>
+                            }
+                        />
                     </ScrollArea>
 
                     <div className={cx(style.overlay)} onClick={handleToggleFilter} />

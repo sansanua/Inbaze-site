@@ -2,15 +2,16 @@ import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import cx from 'classnames';
 
+import { GlobalDataContext } from 'contexts';
 import { COMPANIES_FILTERED } from '../../api/queries/company';
 
 import { useFilter } from '../../hooks/useFilter';
-
-import { GlobalDataContext } from 'contexts';
+import { CURRENCY } from '../../utils/currencyIcons';
 
 import CompanyItem from './components/CompanyItem';
+import Loader from 'components/Loader';
+
 import style from './CompanyList.module.scss';
-import { CURRENCY } from '../../utils/currencyIcons';
 
 const amountFilter = (company, minimumAmount, globalData) => {
     if (!company.investmentCurrency) {
@@ -38,7 +39,7 @@ export default function CompanyList({ onFilterOpen }) {
     const globalData = useContext(GlobalDataContext);
 
     const { instruments, minimumInvestmentAmount, investmentCurrency, profitabilities, isFilterSelected } = useFilter();
-    const { data } = useQuery(COMPANIES_FILTERED, {
+    const { data, loading } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
             investmentCurrency,
@@ -52,6 +53,10 @@ export default function CompanyList({ onFilterOpen }) {
     const filteredCompanies = minimumAmount
         ? companies.filter((company) => amountFilter(company, minimumAmount, globalData))
         : companies;
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
         <div className={cx(style.base)}>

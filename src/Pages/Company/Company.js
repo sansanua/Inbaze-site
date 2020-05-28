@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { COMPANY } from 'api/queries/company';
 
 import Company from './components/Company';
+import Loader from 'components/Loader';
 
 export default function CompanyPage() {
     const { id } = useParams();
@@ -17,7 +18,7 @@ export default function CompanyPage() {
     const company = (data && data.company) || null;
 
     if (loading) {
-        return null;
+        return <Loader></Loader>;
     }
 
     if (!loading && !company) {
