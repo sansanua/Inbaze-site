@@ -1,10 +1,7 @@
 /* eslint react/jsx-no-bind: 0 */
 
 import React, { memo, useState, useEffect } from 'react';
-import Expander from 'animakit-expander';
 import cx from 'classnames';
-
-// import Icon from 'components/ui/Icon';
 
 import style from './Collapse.module.scss';
 
@@ -39,14 +36,14 @@ const Collapse = ({
                 <div className={cx(style.header)}>{header}</div>
 
                 <div className={cx(style.chevron)}>
-                    <div className={cx(style.icon, { [style.up]: isExpanded })}/>
+                    <div className={cx(style.icon, { [style.up]: isExpanded })} />
                 </div>
             </div>
 
             <div className={cx(classNameContent, style.content)}>
-                <Expander expanded={isExpanded} duration={300}>
-                    <div className={cx(style.expanderContent)}>{content}</div>
-                </Expander>
+                <div className={cx(style.expanderContent)} style={{ height: isExpanded ? 'inherit' : 0 }}>
+                    {content}
+                </div>
             </div>
         </div>
     );
