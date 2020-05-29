@@ -13,6 +13,7 @@
 }
 
 .block {
+    width: 100%;
     margin-bottom: 40px;
 
     .blockTitle {
@@ -23,6 +24,7 @@
     }
 
     .blockContent {
+        width: 100%;
         @include font14;
         font-weight: 400;
     }

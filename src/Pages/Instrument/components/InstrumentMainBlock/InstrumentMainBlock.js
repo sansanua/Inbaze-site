@@ -35,7 +35,11 @@ export default function InstrumentMainBlock(props) {
                     <div className={cx(style.block)}>
                         <div className={cx(style.header)}>{block.header(props.name)}</div>
                         <div className={cx(style.text)}>
-                            <Markdown source={String(props[block.dataProp])} />
+                            <Markdown
+                                className="markdown"
+                                source={String(props[block.dataProp])}
+                                linkTarget="_target"
+                            />
                         </div>
                     </div>
                 ))}

@@ -144,7 +144,7 @@ const getContent = (data, block) => {
         return '';
     }
 
-    return <Markdown source={String(data)} />;
+    return <Markdown className="markdown" source={String(data)} linkTarget="_target" />;
 };
 
 export default function CompanyMainBlock(props) {
