@@ -14,6 +14,9 @@ import Loader from 'components/Loader';
 import style from './CompanyList.module.scss';
 
 const amountFilter = (company, minimumAmount, globalData) => {
+    if (!minimumAmount) {
+        return true;
+    }
     if (!company.investmentCurrency) {
         return false;
     }
@@ -35,6 +38,17 @@ const amountFilter = (company, minimumAmount, globalData) => {
     return availableMinAmount.some((a) => a <= minimumAmount);
 };
 
+const currencyFilter = (company, investmentCurrency) => {
+    if (!investmentCurrency || !investmentCurrency.length) {
+        return true;
+    }
+
+    return (
+        investmentCurrency.includes(company.investmentCurrency.slug) ||
+        investmentCurrency.includes(company.secondInvestmentCurrency && company.secondInvestmentCurrency.slug)
+    );
+};
+
 export default function CompanyList({ onFilterOpen }) {
     const globalData = useContext(GlobalDataContext);
 
@@ -42,7 +56,7 @@ export default function CompanyList({ onFilterOpen }) {
     const { data, loading } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
-            investmentCurrency,
+            // investmentCurrency,
             profitabilities,
         },
     });
@@ -50,9 +64,9 @@ export default function CompanyList({ onFilterOpen }) {
     const minimumAmount = minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined;
 
     const companies = (data && data.companies) || [];
-    const filteredCompanies = minimumAmount
-        ? companies.filter((company) => amountFilter(company, minimumAmount, globalData))
-        : companies;
+    const filteredCompanies = companies
+        .filter((company) => amountFilter(company, minimumAmount, globalData))
+        .filter((company) => currencyFilter(company, investmentCurrency));
 
     if (loading) {
         return <Loader />;

@@ -3,15 +3,15 @@ import gql from 'graphql-tag';
 export const COMPANIES_FILTERED = gql`
     query companiesFilteredBySlug(
         $instruments: [String]
-        $minimumInvestmentAmount: Int
-        $investmentCurrency: [String]
+        # $minimumInvestmentAmount: Int
+        # $investmentCurrency: [String]
         $profitabilities: [String]
     ) {
         companies(
             where: {
                 instruments: { slug_in: $instruments }
-                minimumInvestmentAmount_gte: $minimumInvestmentAmount
-                investmentCurrency: { slug: $investmentCurrency }
+                # minimumInvestmentAmount_gte: $minimumInvestmentAmount
+                # investmentCurrency: { slug: $investmentCurrency }
                 profitability: { slug: $profitabilities }
             }
         ) {
