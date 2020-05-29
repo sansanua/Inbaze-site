@@ -9,14 +9,14 @@ import CloseButton from 'components/CloseButton';
 
 import style from './RequestModal.module.scss';
 
-const RequestModal = ({ onCloseModal }) => {
+const RequestModal = ({ companyName, onCloseModal }) => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
 
     const [createRequestUser] = useMutation(CREATE_REQUEST_USER);
 
     const handleClick = () => {
-        createRequestUser({ variables: { email, name } }).then(() => {
+        createRequestUser({ variables: { email, name, companyName } }).then(() => {
             onCloseModal();
         });
     };

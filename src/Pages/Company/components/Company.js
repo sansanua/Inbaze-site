@@ -50,51 +50,52 @@ export default function CompanyComponent(props) {
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
                 <CompanyHeder
-                    name={name}
-                    description={description}
-                    instruments={instruments}
-                    risk={risk}
                     complexity={complexity}
-                    minimumInvestmentAmount={minimumInvestmentAmount}
+                    description={description}
                     historicalProfitability={historicalProfitability}
+                    image={image}
+                    instruments={instruments}
                     investmentCurrency={investmentCurrency}
                     liquidity={liquidity}
+                    minimumInvestmentAmount={minimumInvestmentAmount}
+                    name={name}
+                    risk={risk}
                     typeOfIncome={typeOfIncome}
-                    image={image}
                 />
 
                 <div className={cx(style.content)}>
                     <div className={cx(style.mainBlock)}>
                         <CompanyMainBlock
                             aboutCompany={aboutCompany}
-                            processOfManagingMoney={processOfManagingMoney}
-                            processOfGeneratingIncome={processOfGeneratingIncome}
-                            investmentCurrency={investmentCurrency}
+                            companyCommission={companyCommission}
                             currencyIncome={currencyIncome}
                             descriptionOfCooperation={descriptionOfCooperation}
-                            historicalProfitability={historicalProfitability}
-                            typeOfIncome={typeOfIncome}
-                            minimumInvestmentPeriod={minimumInvestmentPeriod}
-                            optimalInvestmentPeriod={optimalInvestmentPeriod}
-                            incomePaymentProcess={incomePaymentProcess}
-                            risksOfLossInvested={risksOfLossInvested}
-                            placeOfStorageFunds={placeOfStorageFunds}
-                            liquidityOfInvestment={liquidityOfInvestment}
-                            companyCommission={companyCommission}
-                            otherServiceCharges={otherServiceCharges}
-                            payingTaxesIncome={payingTaxesIncome}
-                            documentsSecuringRights={documentsSecuringRights}
                             documentsActivities={documentsActivities}
                             documentsFromInvestor={documentsFromInvestor}
+                            documentsSecuringRights={documentsSecuringRights}
+                            historicalProfitability={historicalProfitability}
+                            incomePaymentProcess={incomePaymentProcess}
+                            investmentCurrency={investmentCurrency}
+                            liquidityOfInvestment={liquidityOfInvestment}
+                            minimumInvestmentPeriod={minimumInvestmentPeriod}
+                            optimalInvestmentPeriod={optimalInvestmentPeriod}
+                            otherServiceCharges={otherServiceCharges}
+                            payingTaxesIncome={payingTaxesIncome}
+                            placeOfStorageFunds={placeOfStorageFunds}
+                            processOfGeneratingIncome={processOfGeneratingIncome}
+                            processOfManagingMoney={processOfManagingMoney}
+                            risksOfLossInvested={risksOfLossInvested}
+                            typeOfIncome={typeOfIncome}
                         />
                     </div>
                     <div className={cx(style.sideBlock)}>
                         <CompanySideBlock
-                            site={site}
-                            startYear={startYear}
                             capital={capital}
                             investmentCurrency={investmentCurrency}
+                            name={name}
                             numberOfClients={numberOfClients}
+                            site={site}
+                            startYear={startYear}
                             onlineInvestmentStatusTracking={onlineInvestmentStatusTracking}
                         />
                     </div>

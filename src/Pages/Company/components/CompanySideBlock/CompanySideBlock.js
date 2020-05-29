@@ -14,6 +14,7 @@ export default function CompanySideBlock({
     capital,
     numberOfClients,
     investmentCurrency,
+    name,
     onlineInvestmentStatusTracking,
 }) {
     const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function CompanySideBlock({
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Капитал</div>
                         <div className={cx(style.value)}>
-                            {numeral(capital).format('0,0')} {investmentCurrency.symbol}
+                            {numeral(capital).format('0,0')} {investmentCurrency && investmentCurrency.symbol}
                         </div>
                     </div>
                     <div className={cx(style.col)}>
@@ -74,7 +75,7 @@ export default function CompanySideBlock({
             </div>
 
             <Modal open={open} handleCloseModal={handleCloseModal}>
-                <RequestModal />
+                <RequestModal companyName={name} />
             </Modal>
         </div>
     );
