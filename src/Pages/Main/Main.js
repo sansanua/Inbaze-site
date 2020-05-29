@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { useQuery } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 
 import { INSTRUMENTS } from 'api/queries/instruments';
 
@@ -33,9 +34,11 @@ export default function Main() {
                         <div className={cx(style.subtitle)}>
                             Выберите способ инвестирования, который подходит именно Вам
                         </div>
-                        <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
-                            Выбрать предложение
-                        </Button>
+                        <Link to={{ pathname: '/companies' }}>
+                            <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
+                                Выбрать предложение
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
