@@ -10,7 +10,7 @@ import { FILTERS } from 'utils/filters';
 
 import FilterComponent from './components/Filter';
 
-export default function FilterContainer({ bottomContent, onStartSlide, onEndSlide }) {
+export default function FilterContainer({ bottomContent }) {
     const { data: instrumentsData } = useQuery(INSTRUMENTS);
     const { data: currenciesData } = useQuery(CURRENCIES);
     const { data: profitabilitiesData } = useQuery(PROFITABILITIES);
@@ -38,8 +38,6 @@ export default function FilterContainer({ bottomContent, onStartSlide, onEndSlid
             onCurrenciesClick={handleFilterClick(FILTERS.investmentCurrency)}
             onProfitabilitiesClick={handleFilterClick(FILTERS.profitabilities)}
             onMinimumInvestmentAmountChange={handleFilterClick(FILTERS.minimumInvestmentAmount, true)}
-            onStartSlide={onStartSlide}
-            onEndSlide={onEndSlide}
         />
     );
 }
