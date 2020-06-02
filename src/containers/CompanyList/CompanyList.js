@@ -79,7 +79,7 @@ export default function CompanyList({ onFilterOpen }) {
                 <div className={cx(style.filterButton, { [style.selected]: isFilterSelected })} onClick={onFilterOpen}>
                     Фильтр
                 </div>
-                <div className={cx(style.sortButton)}>Сортировать</div>
+                {/* <div className={cx(style.sortButton)}>Сортировать</div> */}
             </div>
 
             {filteredCompanies.map((company) => (

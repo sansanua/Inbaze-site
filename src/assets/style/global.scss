@@ -39,3 +39,15 @@
         width: $mob;
     }
 }
+
+@mixin height($des, $tab, $mob) {
+    height: $des;
+
+    @include t {
+        height: $tab;
+    }
+
+    @include m {
+        height: $mob;
+    }
+}

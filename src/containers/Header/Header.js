@@ -25,15 +25,9 @@ export default function Header() {
                     <div className={cx(style.logo)}></div>
                 </a>
                 <div className={cx(style.items, { [style.menuOpen]: isMenuOpen })}>
-                    {/*<NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>*/}
-                    {/*    Инструменты*/}
-                    {/*</NavLink>*/}
                     <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Инвестиционные предложения
                     </NavLink>
-                    {/*<NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>*/}
-                    {/*    Автоматический подбор предложений*/}
-                    {/*</NavLink>*/}
                     <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         О нас
                     </NavLink>

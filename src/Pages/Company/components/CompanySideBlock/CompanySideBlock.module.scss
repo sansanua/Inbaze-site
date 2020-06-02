@@ -1,72 +1,100 @@
 @import 'assets/index.scss';
 
-.base{
-
+.base {
 }
 
 .rowContainer {
-  @include t {
-    flex: 1;
-    margin-right: 10px;
-  }
-
-  @include m {
-    margin-right: 70px;
-  }
-
-  .row {
-    display: flex;
-    margin-bottom: 40px;
-
     @include t {
-      margin-bottom: 20px;
+        flex: 1;
+        margin-right: 10px;
     }
 
-    .col {
-      width: 50%;
-
-      &.colFullWidth {
-        width: 100%;
-      }
+    @include m {
+        margin-right: 70px;
     }
 
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 16px;
+    .row {
+        display: flex;
+        margin-bottom: 40px;
 
-      @include t {
-        margin-bottom: 10px;
-      }
+        @include t {
+            margin-bottom: 20px;
+        }
+
+        .col {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &.colFullWidth {
+                width: 100%;
+            }
+        }
+
+        .title {
+            font-size: 16px;
+            font-family: 'NobelWGLBook';
+            margin-bottom: 16px;
+
+            @include t {
+                margin-bottom: 10px;
+            }
+        }
+
+        .value {
+            font-size: 14px;
+
+            @include m {
+                color: #666666;
+            }
+        }
     }
-
-    .value {
-      font-size: 14px;
-
-      a{
-        color: $primary;
-      }
-    }
-  }
 }
 
 .button {
-  @include t {
-    flex: 1;
-    margin-left: 10px;
-  }
-
-  @include m {
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  button {
-    width: 100%;
+    @include t {
+        position: absolute;
+        right: -290px;
+        top: 61px;
+    }
 
     @include m {
-      width: 220px;
+        position: initial;
+        top: initial;
+        left: initial;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
     }
-  }
+
+    button {
+        width: 100%;
+
+        @include m {
+            width: 220px;
+        }
+    }
+}
+
+.arrowImage {
+    @include width(87px, 87px, 54px);
+    @include height(87px, 87px, 54px);
+
+    position: absolute;
+    left: 221px;
+    bottom: -55px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/arrow-send.svg');
+
+    @include t {
+        left: 518px;
+        bottom: 28px;
+    }
+
+    @include m {
+        left: 34px;
+        bottom: 4px;
+    }
 }

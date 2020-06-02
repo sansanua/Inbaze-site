@@ -16,6 +16,12 @@
     background-size: cover;
     background-position: 65% bottom;
     background-repeat: no-repeat;
+
+    @include m {
+        background-image: url('/images/mainMob.jpg');
+        height: 540px;
+        background-position: 65% 0;
+    }
 }
 
 .imageContent {

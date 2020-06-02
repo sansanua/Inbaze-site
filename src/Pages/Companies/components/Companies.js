@@ -53,7 +53,7 @@ export default function CompaniesComponent() {
                 <div className={cx(style.header)}>
                     <div className={cx(style.headerTitle)}>Инструменты для инвестирования</div>
                     <div className={cx(style.headerSubtitle)}>
-                        Ознакомьтесь с видами инвестиционных инструментови узнайте особенности работы с ними
+                        Ознакомьтесь с видами инвестиционных инструментов и узнайте особенности работы с ними
                     </div>
                 </div>
 

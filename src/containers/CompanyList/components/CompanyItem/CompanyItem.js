@@ -32,12 +32,12 @@ export default function CompanyItem({
                 </div>
 
                 <div className={cx(style.nameContainer)}>
-                    <div className={cx(style.name)}>{name}</div>
                     <div className={cx(style.instruments)}>
                         {instruments.map((i) => (
                             <div key={i.slug}>{i.name}</div>
                         ))}
                     </div>
+                    <div className={cx(style.name)}>{name}</div>
                 </div>
 
                 <div className={cx(style.infoContainer)}>

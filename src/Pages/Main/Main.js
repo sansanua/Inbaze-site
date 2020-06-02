@@ -47,7 +47,7 @@ export default function Main() {
                 <div className={cx(style.container)}>
                     <div className={cx(style.title)}>Инструменты для инвестирования</div>
                     <div className={cx(style.subtitle)}>
-                        Ознакомьтесь с видами инвестиционных инструметови узнайте особенности работы с ними
+                        Ознакомьтесь с видами инвестиционных инструметов и узнайте особенности работы с ними
                     </div>
 
                     {instruments && (

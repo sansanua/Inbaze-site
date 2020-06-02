@@ -73,6 +73,7 @@ export default function CompanySideBlock({
                     Оставить заявку
                 </Button>
             </div>
+            <div className={cx(style.arrowImage)}></div>
 
             <Modal open={open} handleCloseModal={handleCloseModal}>
                 <RequestModal companyName={name} />

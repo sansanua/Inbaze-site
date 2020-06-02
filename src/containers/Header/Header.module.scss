@@ -21,9 +21,7 @@
     display: flex;
     align-items: center;
 
-    @include t {
-        justify-content: space-between;
-    }
+    justify-content: space-between;
 }
 
 .logo {
@@ -41,27 +39,24 @@
     height: 31px;
 
     @include t {
+        @include font20;
         display: none;
-
-        &.menuOpen {
-            display: flex;
-            height: 220px;
-        }
-    }
-
-    @include t {
         position: absolute;
         top: -20px;
         right: 0;
         width: 250px;
         flex-wrap: wrap;
-        padding: 60px 25px 30px;
+        padding: 20px 40px 20px 20px;
         background-color: #1f2581;
         border-radius: 14px;
-
-        @include font20;
+        align-items: flex-start;
         font-weight: bold;
         color: rgba($color: #ffffff, $alpha: 0.6);
+
+        &.menuOpen {
+            display: block;
+            height: inherit;
+        }
     }
 
     .item {
@@ -74,6 +69,8 @@
 
         @include t {
             margin-right: 0;
+            margin-bottom: 20px;
+            display: inline-block;
 
             &:hover {
                 color: rgba($color: #ffffff, $alpha: 1);
