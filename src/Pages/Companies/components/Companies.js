@@ -15,6 +15,7 @@ import style from './Companies.module.scss';
 export default function CompaniesComponent() {
     const { isTab } = useMedia();
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [isShowScroll, setIsShowScroll] = useState(true);
 
     useEffect(() => {
         document.body.style.overflow = isMobileFilterOpen ? 'hidden' : 'visible';
@@ -27,11 +28,14 @@ export default function CompaniesComponent() {
         setIsMobileFilterOpen(!isMobileFilterOpen);
     };
 
+    const hideScroll = () => setIsShowScroll(false);
+    const showScroll = () => setIsShowScroll(true);
+
     return (
         <div className={cx(style.base)}>
             {isTab && (
                 <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
-                    <ScrollArea className={cx(style.filtersMobile)}>
+                    <ScrollArea className={cx(style.filtersMobile)} vertical={isShowScroll}>
                         <Filter
                             bottomContent={
                                 <Button
@@ -42,6 +46,8 @@ export default function CompaniesComponent() {
                                     Применить
                                 </Button>
                             }
+                            onStartSlide={hideScroll}
+                            onEndSlide={showScroll}
                         />
                     </ScrollArea>
 

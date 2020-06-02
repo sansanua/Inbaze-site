@@ -13,11 +13,21 @@ import style from './SliderFilter.module.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-export default function SliderFilter({ title, selectedFilter, expanded = false, min = 500, max = 135000, onSelect }) {
+export default function SliderFilter({
+    title,
+    selectedFilter,
+    expanded = false,
+    min = 500,
+    max = 135000,
+    onSelect,
+    onStartSlide,
+    onEndSlide,
+}) {
     const { dollarExchangeRate } = useContext(GlobalDataContext);
 
     const handleBlur = (_value) => {
         onSelect(_value);
+        onEndSlide();
     };
 
     const formatValue = (value) => (
@@ -43,7 +53,11 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                             max={max}
                             step={500}
                             style={{ height: 80 }}
-                            tipProps={{ visible: true, overlayClassName: style.tooltip, placement: 'bottom' }}
+                            tipProps={{
+                                visible: true,
+                                overlayClassName: style.tooltip,
+                                placement: 'bottom',
+                            }}
                             tipFormatter={formatValue}
                             trackStyle={{
                                 backgroundColor: '#4349ba',
@@ -59,8 +73,13 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                                 border: 'none',
                                 borderRadius: 0,
                             }}
-                            railStyle={{ backgroundColor: 'transparent', height: 17, border: '1px solid #4349ba' }}
+                            railStyle={{
+                                backgroundColor: 'transparent',
+                                height: 17,
+                                border: '1px solid #4349ba',
+                            }}
                             onAfterChange={handleBlur}
+                            onBeforeChange={onStartSlide}
                         />
                     </div>
                 }
