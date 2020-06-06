@@ -10,7 +10,6 @@ import style from './Instrument.module.scss';
 export default function InstrumentComponent(props) {
     //#region props
     const {
-        currency,
         complexity,
         description,
         howGenerateIncome,
@@ -47,7 +46,6 @@ export default function InstrumentComponent(props) {
                             slug={slug}
                             risk={risk}
                             complexity={complexity}
-                            currency={currency}
                             profitability={profitability}
                         ></InstrumentSideBlock>
                     </div>
