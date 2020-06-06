@@ -53,21 +53,25 @@ export default function Footer() {
 
                     <div className={cx(style.navigationLeftPart)}>
                         <div className={cx(style.text)}>
-                            Вас интересуют деньги? А инвестиции ? Если да, тогда поделитесь своим email и мы будем
-                            отправлять вам подборки материалов о том, как нужно копить и вкладывать, чтобы в будущем
-                            можно было жить без плохих мыслей о деньгах и работе.
+                            <div className={cx(style.title)}>Вас интересуют инвестиции ?</div>
+                            <div className={cx(style.subtitle)}>
+                                Оставьте свой email и мы будем отправлять подборки материалов о том, как правильно
+                                копить и вкладывать
+                            </div>
                         </div>
                         <div className={cx(style.inputContainer)}>
                             <Input
-                                label="Email"
+                                placeholder="E-mail"
                                 className={cx(style.input)}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
 
-                            <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
-                                Подписаться
-                            </Button>
+                            <div className={cx(style.buttonWrapper)}>
+                                <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
+                                    Подписаться
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>

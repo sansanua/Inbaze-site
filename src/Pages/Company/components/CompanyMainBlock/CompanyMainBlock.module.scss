@@ -30,6 +30,14 @@
     }
 }
 
+.tabHeaderMobile {
+    @include aCenter;
+    .icon {
+        width: 20px;
+        margin-right: 8px;
+    }
+}
+
 :global {
     .react-tabs__tab-list {
         border-bottom: 1px solid #b2eaea;

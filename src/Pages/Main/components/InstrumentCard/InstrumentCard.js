@@ -31,29 +31,31 @@ export default function InstrumentCard({ name, shortDescription, className, slug
     );
 
     const handlePopup = () => {
-        onOpenSubscribeModal()
-    }
+        onOpenSubscribeModal();
+    };
 
     return (
-        <div className={cx(className, style.base, { [style.disabled]: disabled })}
-             style={{ backgroundColor: !disabled ? color : disableColor }}
-             onClick={disabled && handlePopup}
+        <div
+            className={cx(className, style.base, { [style.disabled]: disabled })}
+            style={{ backgroundColor: !disabled ? color : disableColor }}
+            onClick={disabled ? handlePopup : null}
         >
-            {
-                disabled
-                    ? content
-                    : <Link
-                        to={
-                            disabled
-                                ? null
-                                : {
-                                    pathname: '/companies',
-                                    search: toQuery({ [FILTERS.instruments]: slug }),
-                                }
-                        }>
-                        {content}
-                    </Link>
-            }
+            {disabled ? (
+                content
+            ) : (
+                <Link
+                    to={
+                        disabled
+                            ? null
+                            : {
+                                  pathname: '/companies',
+                                  search: toQuery({ [FILTERS.instruments]: slug }),
+                              }
+                    }
+                >
+                    {content}
+                </Link>
+            )}
         </div>
     );
 }

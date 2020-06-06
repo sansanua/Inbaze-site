@@ -16,6 +16,7 @@ import style from './CompanyMainBlock.module.scss';
 const structure = [
     {
         header: 'Суть',
+        icon: '/images/company/1.svg',
         blocks: [
             {
                 title: 'О компании',
@@ -47,6 +48,7 @@ const structure = [
     },
     {
         header: 'Доходность',
+        icon: '/images/company/2.svg',
         blocks: [
             {
                 title: 'Историческая доходность:',
@@ -73,6 +75,7 @@ const structure = [
     },
     {
         header: 'Безопасность/гарантия',
+        icon: '/images/company/3.svg',
         blocks: [
             {
                 title: 'Риски потери инвестированных средств:',
@@ -90,6 +93,7 @@ const structure = [
     },
     {
         header: 'Комиссии',
+        icon: '/images/company/4.svg',
         blocks: [
             {
                 title: 'Комиссия компании:',
@@ -107,6 +111,7 @@ const structure = [
     },
     {
         header: 'Документы',
+        icon: '/images/company/5.svg',
         blocks: [
             {
                 title: 'Закрепление прав между инвестором и компанией:',
@@ -170,7 +175,12 @@ export default function CompanyMainBlock(props) {
                         key={tab.header}
                         className={cx(style.collapse)}
                         classNameHeader={cx(style.collapseHeader)}
-                        header={<div className={cx(style.tabHeader)}>{tab.header}</div>}
+                        header={
+                            <div className={cx(style.tabHeaderMobile)}>
+                                <img className={cx(style.icon)} src={tab.icon} alt="" />
+                                <div className={cx(style.mobileHeader)}>{tab.header}</div>
+                            </div>
+                        }
                         content={<>{tab.blocks.map((block) => renderBlock(block))}</>}
                     />
                 ))}
