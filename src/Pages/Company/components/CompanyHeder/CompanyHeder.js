@@ -19,6 +19,9 @@ export default function CompanyHeder({
     // liquidity,
     // typeOfIncome,
     image,
+    secondHistoricalProfitability,
+    secondMinimumInvestmentAmount,
+    secondInvestmentCurrency,
 }) {
     const history = useHistory();
 
@@ -69,9 +72,20 @@ export default function CompanyHeder({
                         <div className={cx(style.wrapper)}>
                             <div className={cx(style.title)}>Минимальная сумма</div>
                             <div className={cx(style.number)}>
-                                {numeral(minimumInvestmentAmount).format('0,0')}{' '}
-                                {investmentCurrency && investmentCurrency.symbol}
+                                <nobr>
+                                    {numeral(minimumInvestmentAmount).format('0,0')}{' '}
+                                    {investmentCurrency && investmentCurrency.symbol}
+                                </nobr>
                             </div>
+                            {secondInvestmentCurrency && (
+                                <div className={cx(style.number)}>
+                                    <span>&nbsp;/&nbsp;</span>
+                                    <nobr>
+                                        {numeral(secondMinimumInvestmentAmount).format('0,0')}{' '}
+                                        {secondInvestmentCurrency && secondInvestmentCurrency.symbol}
+                                    </nobr>
+                                </div>
+                            )}
                         </div>
 
                         {/* <div className={cx(style.liquidity)}>{DYNAMIC_TEXTS[liquidity]}</div> */}
@@ -80,7 +94,20 @@ export default function CompanyHeder({
                     <div className={cx(style.profitability)}>
                         <div className={cx(style.wrapper)}>
                             <div className={cx(style.title)}>Историческая доходность</div>
-                            <div className={cx(style.number)}>{historicalProfitability}%</div>
+                            <div className={style.numberWrapper}>
+                                <nobr>
+                                    <div className={cx(style.number)}>{historicalProfitability}%</div>
+                                </nobr>
+                                {secondInvestmentCurrency && (
+                                    <div className={cx(style.number)}>
+                                        <span>&nbsp;/&nbsp;</span>
+                                        <nobr>
+                                            {secondHistoricalProfitability}
+                                            <span>%</span>
+                                        </nobr>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {/* <div className={cx(style.typeOfIncome)}>{DYNAMIC_TEXTS[typeOfIncome]}</div> */}

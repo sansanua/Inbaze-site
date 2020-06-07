@@ -33,6 +33,7 @@ const structure = [
             {
                 title: 'Валюта инвестиций:',
                 dataProp: 'investmentCurrency',
+                additionalDataProp: ['secondInvestmentCurrency'],
                 innerDataProp: 'name',
             },
             {
@@ -132,7 +133,11 @@ const structure = [
     },
 ];
 
-const getContent = (data, block) => {
+const getContextText = (data, block) => {
+    if (Array.isArray(data)) {
+        return data.map((c) => get(c, block.innerDataProp)).join(', ');
+    }
+
     if (block.innerDataProp) {
         return get(data, block.innerDataProp);
     }
@@ -152,12 +157,27 @@ const getContent = (data, block) => {
     return <Markdown className="markdown" source={String(data)} linkTarget="_target" />;
 };
 
+const getContent = (data, block, additionalData = []) => {
+    const content = getContextText(data, block);
+
+    if (additionalData.length) {
+        const additionalContent = additionalData.map((aData) => getContextText(aData, block)).join(', ');
+
+        return [content, ', ', additionalContent];
+    }
+
+    return content;
+};
+
 export default function CompanyMainBlock(props) {
     const { isMobile } = useMedia();
 
     const renderBlock = (block) => {
         const data = get(props, block.dataProp);
-        let content = getContent(data, block);
+        const additionalData = block.additionalDataProp
+            ? block.additionalDataProp.map((additionalProp) => get(props, additionalProp))
+            : [];
+        let content = getContent(data, block, additionalData);
 
         return (
             <div className={cx(style.block)} key={block.title}>

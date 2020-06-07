@@ -43,6 +43,9 @@ export default function CompanyComponent(props) {
         startYear,
         typeOfIncome,
         image,
+        secondHistoricalProfitability,
+        secondInvestmentCurrency,
+        secondMinimumInvestmentAmount,
     } = props;
     //#endregion
 
@@ -61,6 +64,9 @@ export default function CompanyComponent(props) {
                     name={name}
                     risk={risk}
                     typeOfIncome={typeOfIncome}
+                    secondHistoricalProfitability={secondHistoricalProfitability}
+                    secondInvestmentCurrency={secondInvestmentCurrency}
+                    secondMinimumInvestmentAmount={secondMinimumInvestmentAmount}
                 />
 
                 <div className={cx(style.content)}>
@@ -86,6 +92,7 @@ export default function CompanyComponent(props) {
                             processOfManagingMoney={processOfManagingMoney}
                             risksOfLossInvested={risksOfLossInvested}
                             typeOfIncome={typeOfIncome}
+                            secondInvestmentCurrency={secondInvestmentCurrency}
                         />
                     </div>
                     <div className={cx(style.sideBlock)}>

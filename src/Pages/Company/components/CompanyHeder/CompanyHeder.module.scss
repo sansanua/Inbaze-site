@@ -215,7 +215,9 @@
                 font-family: 'NobelWGLBook';
             }
         }
-
+        .numberWrapper {
+            display: flex;
+        }
         .number {
             color: $primary;
             @include font24;
