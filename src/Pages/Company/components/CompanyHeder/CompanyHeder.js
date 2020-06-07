@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { useHistory } from 'react-router-dom';
 import numeral from 'numeral';
 
 import style from './CompanyHeder.module.scss';
@@ -23,14 +22,8 @@ export default function CompanyHeder({
     secondMinimumInvestmentAmount,
     secondInvestmentCurrency,
 }) {
-    const history = useHistory();
-
     return (
         <div className={cx(style.base)}>
-            <div className={cx(style.backArrow)} onClick={history.goBack}>
-                <div></div>
-            </div>
-
             <div className={cx(style.logoContainer)}>
                 {image ? <img src={image.url} alt="" /> : <div className={cx(style.noImage)} />}
             </div>

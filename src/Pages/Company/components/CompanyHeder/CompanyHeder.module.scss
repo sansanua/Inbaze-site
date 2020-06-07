@@ -253,25 +253,3 @@
         }
     }
 }
-
-.backArrow {
-    cursor: pointer;
-    position: absolute;
-    top: 3px;
-    padding: 10px;
-    padding-left: 0;
-    left: -20px;
-
-    @include m {
-        left: -8px;
-    }
-
-    & > div {
-        width: 10px;
-        height: 14px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url('/images/arrow-gray.svg');
-        transform: rotate(-90deg);
-    }
-}

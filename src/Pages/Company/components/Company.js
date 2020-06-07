@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import CompanyHeder from './CompanyHeder';
 import CompanyMainBlock from './CompanyMainBlock';
@@ -52,6 +53,14 @@ export default function CompanyComponent(props) {
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
+                <div className={cx(style.navigation)}>
+                    <Link to={'/'}>Главная</Link>
+                    <span className={style.arrow}>></span>
+                    <Link to={'/companies'}>Предложения</Link>
+                    <span className={style.arrow}>></span>
+                    <span>{name}</span>
+                </div>
+
                 <CompanyHeder
                     complexity={complexity}
                     description={description}
