@@ -100,8 +100,9 @@ export default function CompanyComponent(props) {
                             processOfGeneratingIncome={processOfGeneratingIncome}
                             processOfManagingMoney={processOfManagingMoney}
                             risksOfLossInvested={risksOfLossInvested}
-                            typeOfIncome={typeOfIncome}
+                            secondHistoricalProfitability={secondHistoricalProfitability}
                             secondInvestmentCurrency={secondInvestmentCurrency}
+                            typeOfIncome={typeOfIncome}
                         />
                     </div>
                     <div className={cx(style.sideBlock)}>

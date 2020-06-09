@@ -121,6 +121,7 @@ $bgColor: #ced1ec;
             background-color: #dddff2;
             padding: 10px;
             border-radius: 6px 0 0 6px;
+            margin-right: -5px;
 
             input {
                 opacity: 0.5;
@@ -139,12 +140,10 @@ $bgColor: #ced1ec;
             .button {
                 height: 100%;
                 padding: 0 20px;
-                margin-left: -5px;
 
                 @include m {
                     margin: 0 auto;
                     width: 100%;
-                    padding: 20px;
                 }
             }
         }
@@ -166,10 +165,17 @@ $bgColor: #ced1ec;
     display: flex;
 
     @include m {
+        margin-top: 15px;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .email {
+        @include m {
+            font-size: 20px;
+        }
     }
 }
 
@@ -191,6 +197,10 @@ $bgColor: #ced1ec;
             margin: 0 4px;
             img {
                 width: 28px;
+
+                @include m {
+                    width: 18px;
+                }
             }
         }
     }

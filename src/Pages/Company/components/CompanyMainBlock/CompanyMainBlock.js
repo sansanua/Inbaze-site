@@ -54,6 +54,9 @@ const structure = [
             {
                 title: 'Историческая доходность:',
                 dataProp: 'historicalProfitability',
+                additionalDataProp: ['secondHistoricalProfitability'],
+                isMarkdown: false,
+                formatter: (first, second) => `${first}% / ${second}%`,
             },
             {
                 title: 'Тип доходности:',
@@ -75,7 +78,7 @@ const structure = [
         ],
     },
     {
-        header: 'Безопасность/гарантия',
+        header: 'Безопасность / гарантия',
         icon: '/images/company/3.svg',
         blocks: [
             {
@@ -97,15 +100,15 @@ const structure = [
         icon: '/images/company/4.svg',
         blocks: [
             {
-                title: 'Комиссия компании:',
+                title: 'Комиссии компании:',
                 dataProp: 'companyCommission',
             },
             {
-                title: 'Прочие тарифы по обслуживанию (опционально):',
+                title: 'Прочие тарифы по обслуживанию:',
                 dataProp: 'otherServiceCharges',
             },
             {
-                title: 'Уплата налогов с вашего дохода:',
+                title: 'Автоматическая уплата налогов с вашего дохода:',
                 dataProp: 'payingTaxesIncome',
             },
         ],
@@ -117,17 +120,14 @@ const structure = [
             {
                 title: 'Закрепление прав между инвестором и компанией:',
                 dataProp: 'documentsSecuringRights',
-                isMarkdown: true,
             },
             {
                 title: 'Документы компании об их деятельности:',
                 dataProp: 'documentsActivities',
-                isMarkdown: true,
             },
             {
                 title: 'Документы, которые потребуются от инвестора:',
                 dataProp: 'documentsFromInvestor',
-                isMarkdown: true,
             },
         ],
     },
@@ -150,6 +150,10 @@ const getContextText = (data, block) => {
         return data ? 'Да' : 'Нет';
     }
 
+    if (!block.isMarkdown) {
+        return data;
+    }
+
     if (!data) {
         return '';
     }
@@ -161,9 +165,8 @@ const getContent = (data, block, additionalData = []) => {
     const content = getContextText(data, block);
 
     if (additionalData.length) {
-        const additionalContent = additionalData.map((aData) => getContextText(aData, block)).join(', ');
-
-        return [content, ', ', additionalContent];
+        const additionalContent = additionalData.map((aData) => getContextText(aData, block));
+        return block.formatter ? block.formatter(content, ...additionalContent) : [content, ', ', additionalContent];
     }
 
     return content;
@@ -174,6 +177,11 @@ export default function CompanyMainBlock(props) {
 
     const renderBlock = (block) => {
         const data = get(props, block.dataProp);
+
+        if (!data || !data.length) {
+            return null;
+        }
+
         const additionalData = block.additionalDataProp
             ? block.additionalDataProp.map((additionalProp) => get(props, additionalProp))
             : [];

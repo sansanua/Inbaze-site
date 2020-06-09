@@ -1,6 +1,6 @@
 export const DYNAMIC_TEXTS = {
     quickExit: 'Быстрый выход',
     longExit: 'Длительный выход',
-    fixed: 'Фиксированный',
-    floating: 'Плавающий',
+    fixed: 'Фиксированный процент дохода',
+    floating: 'Плавающий процент дохода',
 };
