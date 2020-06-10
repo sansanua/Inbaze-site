@@ -2,7 +2,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import React from 'react';
 import cx from 'classnames';
-import { get } from 'lodash';
+import { get, isNil } from 'lodash';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Markdown from 'react-markdown';
 
@@ -56,7 +56,7 @@ const structure = [
                 dataProp: 'historicalProfitability',
                 additionalDataProp: ['secondHistoricalProfitability'],
                 isMarkdown: false,
-                formatter: (first, second) => `${first}% / ${second}%`,
+                formatter: (first, second) => (first && second ? `${first}% / ${second}%` : `${first}%`),
             },
             {
                 title: 'Тип доходности:',
@@ -150,7 +150,7 @@ const getContextText = (data, block) => {
         return data ? 'Да' : 'Нет';
     }
 
-    if (!block.isMarkdown) {
+    if (block.isMarkdown === false) {
         return data;
     }
 
@@ -178,7 +178,7 @@ export default function CompanyMainBlock(props) {
     const renderBlock = (block) => {
         const data = get(props, block.dataProp);
 
-        if (!data || !data.length) {
+        if (isNil(data) || (Array.isArray(data) && data.length)) {
             return null;
         }
 

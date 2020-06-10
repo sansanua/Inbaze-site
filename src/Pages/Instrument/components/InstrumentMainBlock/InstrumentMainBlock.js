@@ -6,23 +6,23 @@ import style from './InstrumentMainBlock.module.scss';
 
 const structure = [
     {
-        header: () => 'Описание инструмента',
+        header: () => 'Описание:',
         dataProp: 'description',
     },
     {
-        header: (name) => `Основные параметры ${name}`,
+        header: () => `Основные параметры инструмента:`,
         dataProp: 'mainParameters',
     },
     {
-        header: (name) => `Как ${name} приносит доход`,
+        header: () => `Как данный инструмент приносит доход:`,
         dataProp: 'howGenerateIncome',
     },
     {
-        header: () => `Плюсы инвестиций в облигации`,
+        header: (name) => `Плюсы инвестиций в ${name.toLowerCase()}:`,
         dataProp: 'plusInvestment',
     },
     {
-        header: () => `Минусы инвестиций в облигации`,
+        header: (name) => `Минусы инвестиций в ${name.toLowerCase()}:`,
         dataProp: 'minusInvestment',
     },
 ];
