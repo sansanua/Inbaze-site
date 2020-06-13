@@ -21,6 +21,7 @@ export const COMPANIES_FILTERED = gql`
             }
             complexity
             description
+            disabled
             historicalProfitability
             secondHistoricalProfitability
             minimumInvestmentAmount

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import cx from 'classnames';
+import { isNil } from 'lodash';
 
 import { GlobalDataContext } from 'contexts';
 import { COMPANIES_FILTERED } from '../../api/queries/company';
@@ -56,7 +57,6 @@ export default function CompanyList({ onFilterOpen }) {
     const { data, loading } = useQuery(COMPANIES_FILTERED, {
         variables: {
             instruments,
-            // investmentCurrency,
             profitabilities,
         },
     });
@@ -65,6 +65,9 @@ export default function CompanyList({ onFilterOpen }) {
 
     const companies = (data && data.companies) || [];
     const filteredCompanies = companies
+        .filter((company) => {
+            return isNil(company.disabled) || company.disabled === false;
+        })
         .filter((company) => amountFilter(company, minimumAmount, globalData))
         .filter((company) => currencyFilter(company, investmentCurrency));
 
