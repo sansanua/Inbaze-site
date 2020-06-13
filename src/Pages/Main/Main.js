@@ -30,13 +30,13 @@ export default function Main() {
             <div className={cx(style.imageContainer)}>
                 <div className={cx(style.container)}>
                     <div className={cx(style.imageContent)}>
-                        <div className={cx(style.title)}>Поиск и сравнение инвестиционных предложений</div>
+                        <div className={cx(style.title)}>Все доступные инвестиционные предложения в Украине</div>
                         <div className={cx(style.subtitle)}>
-                            Выберите способ инвестирования, который подходит именно Вам
+                            Изучайте и выбирайте предложения, в которые можно вложить деньги
                         </div>
                         <Link to={{ pathname: '/companies' }}>
                             <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
-                                Выбрать предложение
+                                Перейти к предложениям
                             </Button>
                         </Link>
                     </div>
@@ -47,7 +47,7 @@ export default function Main() {
                 <div className={cx(style.container)}>
                     <div className={cx(style.title)}>Инструменты для инвестирования</div>
                     <div className={cx(style.subtitle)}>
-                        Ознакомьтесь с видами инвестиционных инструметов и узнайте особенности работы с ними
+                        Выбирайте инструменты, в которые можно инвестировать, и ознакомьтесь с доступными предложениями
                     </div>
 
                     {instruments && (

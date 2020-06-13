@@ -178,7 +178,7 @@ export default function CompanyMainBlock(props) {
     const renderBlock = (block) => {
         const data = get(props, block.dataProp);
 
-        if (isNil(data) || (Array.isArray(data) && data.length)) {
+        if (isNil(data) || (Array.isArray(data) && !data.length)) {
             return null;
         }
 

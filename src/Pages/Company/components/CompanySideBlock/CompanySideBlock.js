@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import numeral from 'numeral';
+import { isNil } from 'lodash';
 
 import Button from 'components/Button/Button';
 import RequestModal from 'containers/Modals/RequestModal';
 import Modal from 'containers/Modals/Modal';
 
 import style from './CompanySideBlock.module.scss';
+
+const EMPTY_TEXT = 'Информация отсутствует';
 
 export default function CompanySideBlock({
     site,
@@ -39,32 +42,48 @@ export default function CompanySideBlock({
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Сайт</div>
                         <div className={cx(style.value)}>
-                            <a href={site} target="_blank" rel="noopener noreferrer">
-                                {url.hostname || 'Перейти'}
-                            </a>
+                            {url ? (
+                                <a href={site} target="_blank" rel="noopener noreferrer">
+                                    {url.hostname || 'Перейти'}
+                                </a>
+                            ) : (
+                                EMPTY_TEXT
+                            )}
                         </div>
                     </div>
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Год основания</div>
-                        <div className={cx(style.value)}>{startYear}</div>
+                        <div className={cx(style.value)}>{startYear ? startYear : EMPTY_TEXT}</div>
                     </div>
                 </div>
                 <div className={cx(style.row)}>
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Капитал</div>
                         <div className={cx(style.value)}>
-                            {numeral(capital).format('0,0')} {investmentCurrency && investmentCurrency.symbol}
+                            {capital ? (
+                                <span>
+                                    {numeral(capital).format('0,0')} {investmentCurrency && investmentCurrency.symbol}
+                                </span>
+                            ) : (
+                                EMPTY_TEXT
+                            )}
                         </div>
                     </div>
                     <div className={cx(style.col)}>
                         <div className={cx(style.title)}>Количество-клиентов</div>
-                        <div className={cx(style.value)}>{numberOfClients}</div>
+                        <div className={cx(style.value)}>{numberOfClients ? numberOfClients : EMPTY_TEXT}</div>
                     </div>
                 </div>
                 <div className={cx(style.row)}>
                     <div className={cx(style.col, style.colFullWidth)}>
                         <div className={cx(style.title)}>Отслеживание статуса инвестиций онлайн</div>
-                        <div className={cx(style.value)}>{onlineInvestmentStatusTracking ? 'Да' : 'Нет'}</div>
+                        <div className={cx(style.value)}>
+                            {!isNil(onlineInvestmentStatusTracking) ? (
+                                <span>{onlineInvestmentStatusTracking ? 'Да' : 'Нет'}</span>
+                            ) : (
+                                EMPTY_TEXT
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
