@@ -13,11 +13,21 @@ import style from './SliderFilter.module.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-export default function SliderFilter({ title, selectedFilter, expanded = false, min = 500, max = 135000, onSelect }) {
+export default function SliderFilter({
+    title,
+    selectedFilter,
+    expanded = false,
+    min = 500,
+    max = 135000,
+    onSelect,
+    onStartSlide,
+    onEndSlide,
+}) {
     const { dollarExchangeRate } = useContext(GlobalDataContext);
 
     const handleBlur = (_value) => {
         onSelect(_value);
+        onEndSlide();
     };
 
     const formatValue = (value) => (
@@ -61,6 +71,7 @@ export default function SliderFilter({ title, selectedFilter, expanded = false, 
                             }}
                             railStyle={{ backgroundColor: 'transparent', height: 17, border: '1px solid #4349ba' }}
                             onAfterChange={handleBlur}
+                            onChange={onStartSlide}
                         />
                     </div>
                 }

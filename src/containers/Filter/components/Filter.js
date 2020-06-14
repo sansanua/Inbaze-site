@@ -19,6 +19,8 @@ export default function FilterComponent({
     onMinimumInvestmentAmountChange,
     onCurrenciesClick,
     onProfitabilitiesClick,
+    onStartSlide,
+    onEndSlide,
 }) {
     const handleInstrumentClick = (selectedFilter) => () => {
         onInstrumentClick(selectedFilter);
@@ -74,6 +76,8 @@ export default function FilterComponent({
                         }
                         title="Минимальная сумма&nbsp;инвестирования"
                         onSelect={handleMinimumInvestmentAmount}
+                        onStartSlide={onStartSlide}
+                        onEndSlide={onEndSlide}
                     />
                 </div>
 

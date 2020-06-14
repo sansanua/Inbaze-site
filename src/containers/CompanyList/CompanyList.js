@@ -15,6 +15,7 @@ import Loader from 'components/Loader';
 import style from './CompanyList.module.scss';
 
 const amountFilter = (company, minimumAmount, globalData) => {
+    debugger;
     if (!minimumAmount) {
         return true;
     }
@@ -23,7 +24,6 @@ const amountFilter = (company, minimumAmount, globalData) => {
     }
 
     const availableMinAmount = [];
-
     if (company.investmentCurrency.slug === CURRENCY.USD) {
         availableMinAmount.push(company.minimumInvestmentAmount * globalData.dollarExchangeRate);
     } else {
@@ -36,7 +36,7 @@ const amountFilter = (company, minimumAmount, globalData) => {
         availableMinAmount.push(company.secondMinimumInvestmentAmount);
     }
 
-    return availableMinAmount.some((a) => a <= minimumAmount);
+    return availableMinAmount.filter(Boolean).some((a) => a <= minimumAmount);
 };
 
 const currencyFilter = (company, investmentCurrency) => {

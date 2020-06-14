@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import ScrollArea from 'react-scrollbar';
 import StickyBox from 'react-sticky-box';
 
 import { useMedia } from 'hooks/useMedia';
@@ -15,6 +14,7 @@ import style from './Companies.module.scss';
 export default function CompaniesComponent() {
     const { isTab } = useMedia();
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [isSlidingFilter, setIsSlidingFilter] = useState(false);
 
     useEffect(() => {
         document.body.style.overflow = isMobileFilterOpen ? 'hidden' : 'visible';
@@ -30,8 +30,13 @@ export default function CompaniesComponent() {
     return (
         <div className={cx(style.base)}>
             {isTab && (
-                <div className={cx(style.filtersMobileContainer, { [style.open]: isMobileFilterOpen })}>
-                    <ScrollArea className={cx(style.filtersMobile)}>
+                <div
+                    className={cx(style.filtersMobileContainer, {
+                        [style.open]: isMobileFilterOpen,
+                        [style.isSlidingFilter]: isSlidingFilter,
+                    })}
+                >
+                    <div className={cx(style.filtersMobile)}>
                         <Filter
                             bottomContent={
                                 <Button
@@ -42,8 +47,10 @@ export default function CompaniesComponent() {
                                     Применить
                                 </Button>
                             }
+                            onStartSlide={() => setIsSlidingFilter(true)}
+                            onEndSlide={() => setIsSlidingFilter(false)}
                         />
-                    </ScrollArea>
+                    </div>
 
                     <div className={cx(style.overlay)} onClick={handleToggleFilter} />
                 </div>

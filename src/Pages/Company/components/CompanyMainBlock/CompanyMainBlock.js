@@ -172,13 +172,22 @@ const getContent = (data, block, additionalData = []) => {
     return content;
 };
 
+const isData = (data) => !isNil(data) || (Array.isArray(data) && data.length);
+
 export default function CompanyMainBlock(props) {
     const { isMobile } = useMedia();
+
+    const isTabHasData = (tab) => {
+        return tab.blocks.some((block) => {
+            console.log(isData(get(props, block.dataProp)));
+            return isData(get(props, block.dataProp));
+        });
+    };
 
     const renderBlock = (block) => {
         const data = get(props, block.dataProp);
 
-        if (isNil(data) || (Array.isArray(data) && !data.length)) {
+        if (!isData(data)) {
             return null;
         }
 
@@ -220,14 +229,12 @@ export default function CompanyMainBlock(props) {
         return (
             <Tabs>
                 <TabList>
-                    {structure.map((tab) => (
-                        <Tab key={tab.header}>{tab.header}</Tab>
-                    ))}
+                    {structure.map((tab) => (isTabHasData(tab) ? <Tab key={tab.header}>{tab.header}</Tab> : null))}
                 </TabList>
 
-                {structure.map((tab) => (
-                    <TabPanel>{tab.blocks.map((block) => renderBlock(block))}</TabPanel>
-                ))}
+                {structure.map((tab) =>
+                    isTabHasData(tab) ? <TabPanel>{tab.blocks.map((block) => renderBlock(block))}</TabPanel> : null
+                )}
             </Tabs>
         );
     };

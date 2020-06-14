@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import numeral from 'numeral';
-import { isNil } from 'lodash';
 
 import Button from 'components/Button/Button';
 import RequestModal from 'containers/Modals/RequestModal';
@@ -78,11 +77,7 @@ export default function CompanySideBlock({
                     <div className={cx(style.col, style.colFullWidth)}>
                         <div className={cx(style.title)}>Отслеживание статуса инвестиций онлайн</div>
                         <div className={cx(style.value)}>
-                            {!isNil(onlineInvestmentStatusTracking) ? (
-                                <span>{onlineInvestmentStatusTracking ? 'Да' : 'Нет'}</span>
-                            ) : (
-                                EMPTY_TEXT
-                            )}
+                            <span>{onlineInvestmentStatusTracking ? 'Да' : 'Нет'}</span>
                         </div>
                     </div>
                 </div>
