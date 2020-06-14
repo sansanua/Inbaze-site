@@ -28,7 +28,7 @@ export default function Header() {
                     <NavLink to="/companies" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         Инвестиционные предложения
                     </NavLink>
-                    <NavLink to="/123" className={cx(style.item)} activeClassName={cx(style.selected)}>
+                    <NavLink to="/about" className={cx(style.item)} activeClassName={cx(style.selected)}>
                         О нас
                     </NavLink>
                 </div>
