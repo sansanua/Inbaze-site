@@ -43,7 +43,7 @@ export default function InstrumentSideBlock({ risk, complexity, profitability, s
                 <div className={cx(style.buttonRow)}>
                     <Link
                         to={{
-                            pathname: '/companies',
+                            pathname: '/proposals',
                             search: toQuery({ [FILTERS.instruments]: slug }),
                         }}
                     >

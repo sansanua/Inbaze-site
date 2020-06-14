@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { useQuery } from '@apollo/react-hooks';
 import { Link } from 'react-router-dom';
+import useMetaTags from 'react-metatags-hook';
 
 import { INSTRUMENTS } from 'api/queries/instruments';
 
@@ -13,6 +14,11 @@ import Modal from 'containers/Modals/Modal';
 import style from './Main.module.scss';
 
 export default function Main() {
+    useMetaTags({
+        title: 'Все доступные инвестиционные предложения в Украине.',
+        description: 'Изучайте и выбирайте предложения в которые можно вложить деньги',
+    });
+
     const { data } = useQuery(INSTRUMENTS);
     const instruments = (data && data.instruments) || null;
 
@@ -34,7 +40,7 @@ export default function Main() {
                         <div className={cx(style.subtitle)}>
                             Изучайте и выбирайте предложения, в которые можно вложить деньги
                         </div>
-                        <Link to={{ pathname: '/companies' }}>
+                        <Link to={{ pathname: '/proposals' }}>
                             <Button className={cx(style.button)} mainColor="#b2eaea" secondColor="#4349ba">
                                 Перейти к предложениям
                             </Button>

@@ -29,8 +29,8 @@ function App() {
                 <Switch>
                     <Route path="/" component={Main} exact />
 
-                    <Route path="/companies" component={Companies} />
-                    <Route path="/company/:id" component={Company} />
+                    <Route path="/proposals" component={Companies} />
+                    <Route path="/company/:slug" component={Company} />
 
                     <Route path="/instrument/:slug" component={Instrument} />
 

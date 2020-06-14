@@ -56,7 +56,7 @@ export default function CompanyComponent(props) {
                 <div className={cx(style.navigation)}>
                     <Link to={'/'}>Главная</Link>
                     <span className={style.arrow}>></span>
-                    <Link to={'/companies'}>Предложения</Link>
+                    <Link to={'/proposals'}>Предложения</Link>
                     <span className={style.arrow}>></span>
                     <span>{name}</span>
                 </div>

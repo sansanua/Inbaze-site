@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
+import useMetaTags from 'react-metatags-hook';
 
 import { INSTRUMENT_BY_SLUG } from 'api/queries/instruments';
 
@@ -16,6 +17,14 @@ export default function CompanyPage() {
     });
 
     const instrument = (data && data.instruments && data.instruments.length && data.instruments[0]) || null;
+
+    useMetaTags(
+        {
+            title: instrument?.name,
+            description: instrument?.shortDescription,
+        },
+        [instrument]
+    );
 
     if (loading) {
         return <Loader></Loader>;

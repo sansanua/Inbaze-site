@@ -48,7 +48,7 @@ export default function InstrumentCard({ name, shortDescription, className, slug
                         disabled
                             ? null
                             : {
-                                  pathname: '/companies',
+                                  pathname: '/proposals',
                                   search: toQuery({ [FILTERS.instruments]: slug }),
                               }
                     }

@@ -45,7 +45,7 @@ export default function Footer() {
                         <div className={cx(style.logo)} />
 
                         <div className={cx(style.items)}>
-                            <a href="/companies" className={cx(style.item)}>
+                            <a href="/proposals" className={cx(style.item)}>
                                 Инвестиционные предложения
                             </a>
                             <a href="/about" className={cx(style.item)}>

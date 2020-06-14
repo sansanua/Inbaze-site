@@ -23,9 +23,10 @@ export default function CompanyItem({
     name,
     risk,
     image,
+    slug,
 }) {
     return (
-        <Link to={`/company/${id}`}>
+        <Link to={`/company/${slug}`}>
             <div className={cx(style.base)}>
                 <div className={cx(style.logoContainer)}>
                     {image ? <img src={image.url} alt="" /> : <div className={cx(style.noImage)} />}

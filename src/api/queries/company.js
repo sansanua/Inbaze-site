@@ -42,13 +42,14 @@ export const COMPANIES_FILTERED = gql`
                 slug
                 symbol
             }
+            slug
         }
     }
 `;
 
 export const COMPANY = gql`
-    query company($id: ID!) {
-        company(id: $id) {
+    query company($slug: ID!) {
+        companies(where: { slug: $slug }) {
             id
             image {
                 url
@@ -105,6 +106,7 @@ export const COMPANY = gql`
             startYear
             typeOfIncome
             updated_at
+            slug
         }
     }
 `;
