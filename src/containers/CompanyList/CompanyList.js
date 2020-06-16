@@ -15,7 +15,7 @@ import Loader from 'components/Loader';
 import style from './CompanyList.module.scss';
 
 const amountFilter = (company, minimumAmount, globalData) => {
-    if (!minimumAmount) {
+    if (!minimumAmount || minimumAmount === 135000) {
         return true;
     }
     if (!company.investmentCurrency) {
@@ -63,6 +63,7 @@ export default function CompanyList({ onFilterOpen }) {
     const minimumAmount = minimumInvestmentAmount.length ? Number(minimumInvestmentAmount[0]) : undefined;
 
     const companies = (data && data.companies) || [];
+
     const filteredCompanies = companies
         .filter((company) => {
             return isNil(company.disabled) || company.disabled === false;

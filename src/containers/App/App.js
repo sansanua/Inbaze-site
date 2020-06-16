@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
 import 'assets/index.scss';
@@ -15,10 +15,20 @@ import Companies from 'Pages/Companies';
 import Company from 'Pages/Company';
 import Instrument from 'Pages/Instrument';
 import About from 'Pages/About';
+import Terms from 'Pages/Terms';
 
 function App() {
-    const { data } = useQuery(GLOBAL);
+    const {
+        location: { pathname },
+    } = useHistory();
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+        });
+    }, [pathname]);
+
+    const { data } = useQuery(GLOBAL);
     const globalData = data ? data.global : null;
 
     return (
@@ -35,6 +45,7 @@ function App() {
                     <Route path="/instrument/:slug" component={Instrument} />
 
                     <Route path="/about" component={About} />
+                    <Route path="/termsAndConditions" component={Terms} />
                 </Switch>
 
                 <Footer />

@@ -72,7 +72,7 @@ export default function FilterComponent({
                         selectedFilter={
                             selectedMinimumInvestmentAmount && selectedMinimumInvestmentAmount.length
                                 ? selectedMinimumInvestmentAmount[0]
-                                : 100000
+                                : 135000
                         }
                         title="Минимальная сумма&nbsp;инвестирования"
                         onSelect={handleMinimumInvestmentAmount}
