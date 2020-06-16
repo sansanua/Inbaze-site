@@ -58,7 +58,7 @@ export default function CompaniesComponent() {
 
             <div className={cx(style.container)}>
                 <div className={cx(style.header)}>
-                    <div className={cx(style.headerTitle)}>Инвестиционные предложения</div>
+                    <h1 className={cx(style.headerTitle)}>Каталог предложений</h1>
                     <div className={cx(style.headerSubtitle)}>
                         Ознакомьтесь с предложениями, в которые можно вложить деньги
                     </div>

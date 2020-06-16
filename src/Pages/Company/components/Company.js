@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import CompanyHeder from './CompanyHeder';
 import CompanyMainBlock from './CompanyMainBlock';
@@ -50,14 +50,20 @@ export default function CompanyComponent(props) {
     } = props;
     //#endregion
 
+    const { goBack } = useHistory();
+
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
                 <div className={cx(style.navigation)}>
                     <Link to={'/'}>Главная</Link>
+
                     <span className={style.arrow}>></span>
-                    <Link to={'/proposals'}>Предложения</Link>
+
+                    <span onClick={goBack}>Предложения</span>
+
                     <span className={style.arrow}>></span>
+
                     <span>{name}</span>
                 </div>
 

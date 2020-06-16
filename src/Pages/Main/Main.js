@@ -15,7 +15,7 @@ import style from './Main.module.scss';
 
 export default function Main() {
     useMetaTags({
-        title: 'Все доступные инвестиционные предложения в Украине.',
+        title: 'Inbaze - актуальные инвестиционные предложения в Украине.',
         description: 'Изучайте и выбирайте предложения в которые можно вложить деньги',
     });
 
@@ -36,7 +36,7 @@ export default function Main() {
             <div className={cx(style.imageContainer)}>
                 <div className={cx(style.container)}>
                     <div className={cx(style.imageContent)}>
-                        <div className={cx(style.title)}>Все доступные инвестиционные предложения в Украине</div>
+                        <h1 className={cx(style.title)}>Все доступные инвестиционные предложения в Украине</h1>
                         <div className={cx(style.subtitle)}>
                             Изучайте и выбирайте предложения, в которые можно вложить деньги
                         </div>

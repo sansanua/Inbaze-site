@@ -5,7 +5,7 @@ import Companies from './components/Companies';
 
 export default function CompaniesPage() {
     useMetaTags({
-        title: 'Инвестиционные предложения',
+        title: 'Inbaze - каталог инвестиционных предложений',
         description: 'Выбирайте инструменты в которые можно инвестировать и ознакомьтесь с доступными предложениями',
     });
 

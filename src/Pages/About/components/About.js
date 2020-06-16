@@ -8,9 +8,9 @@ export default function AboutComponent({ header, text }) {
     return (
         <div className={cx(style.base)}>
             <div className={cx(style.container)}>
-                <div className={cx(style.header)}>
+                <h1 className={cx(style.header)}>
                     <div className={cx(style.headerTitle)}>{header}</div>
-                </div>
+                </h1>
 
                 <div className={cx(style.text)}>
                     <Markdown linkTarget="_target">{text}</Markdown>
