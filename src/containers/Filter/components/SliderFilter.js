@@ -27,7 +27,16 @@ export default function SliderFilter({
 
     const handleBlur = (_value) => {
         onSelect(_value);
-        onEndSlide();
+
+        if (onEndSlide) {
+            onEndSlide();
+        }
+    };
+
+    const handleChange = () => {
+        if (onStartSlide) {
+            onStartSlide();
+        }
     };
 
     const formatValue = (value) => (
@@ -71,7 +80,7 @@ export default function SliderFilter({
                             }}
                             railStyle={{ backgroundColor: 'transparent', height: 17, border: '1px solid #4349ba' }}
                             onAfterChange={handleBlur}
-                            onChange={onStartSlide}
+                            onChange={handleChange}
                         />
                     </div>
                 }

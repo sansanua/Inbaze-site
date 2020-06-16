@@ -1,0 +1,36 @@
+@import 'assets/index.scss';
+
+.base {
+    display: flex;
+}
+
+.textContainer {
+    flex: 1;
+    @include aCenter;
+    flex-direction: column;
+}
+
+.logoContainer {
+    width: 150px;
+    margin-left: 10px;
+}
+
+.title {
+    @include font30;
+    color: $primary;
+    font-weight: bold;
+}
+
+.subtitle {
+    @include font18;
+    margin-top: 30px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/images/letter.svg');
+}

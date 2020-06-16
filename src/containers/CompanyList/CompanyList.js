@@ -15,7 +15,6 @@ import Loader from 'components/Loader';
 import style from './CompanyList.module.scss';
 
 const amountFilter = (company, minimumAmount, globalData) => {
-    debugger;
     if (!minimumAmount) {
         return true;
     }
