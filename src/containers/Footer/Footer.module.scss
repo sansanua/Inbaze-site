@@ -116,6 +116,16 @@ $bgColor: #ced1ec;
             flex-wrap: wrap;
         }
 
+        .thanks {
+            width: 100%;
+            color: $primary;
+            font-weight: bold;
+
+            @include m {
+                text-align: center;
+            }
+        }
+
         .input {
             flex: 1;
             background-color: #dddff2;

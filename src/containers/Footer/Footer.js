@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
-// import { NavLink } from 'react-router-dom';
 
 import { CREATE_SUBSCRIBE_NEWS_USER } from 'api/mutations/subscribeNewsUsers';
 
@@ -31,7 +30,7 @@ const socialLinks = [
 export default function Footer() {
     const [email, setEmail] = useState('');
 
-    const [createSubscribeNewsUser] = useMutation(CREATE_SUBSCRIBE_NEWS_USER);
+    const [createSubscribeNewsUser, { data }] = useMutation(CREATE_SUBSCRIBE_NEWS_USER);
 
     const handleClick = () => {
         createSubscribeNewsUser({ variables: { email } });
@@ -80,18 +79,24 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className={cx(style.inputContainer)}>
-                            <Input
-                                placeholder="E-mail"
-                                className={cx(style.input)}
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+                            {data ? (
+                                <div className={style.thanks}>Спасибо за подписку! </div>
+                            ) : (
+                                <>
+                                    <Input
+                                        placeholder="E-mail"
+                                        className={cx(style.input)}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
 
-                            <div className={cx(style.buttonWrapper)}>
-                                <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
-                                    Подписаться
-                                </Button>
-                            </div>
+                                    <div className={cx(style.buttonWrapper)}>
+                                        <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
+                                            Подписаться
+                                        </Button>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
