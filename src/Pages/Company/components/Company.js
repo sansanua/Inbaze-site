@@ -50,7 +50,16 @@ export default function CompanyComponent(props) {
     } = props;
     //#endregion
 
-    const { goBack } = useHistory();
+    const { goBack, length, push } = useHistory();
+
+    const handleGoBack = () => {
+        if (!length <= 2) {
+            push('/proposals');
+            return;
+        }
+
+        goBack();
+    };
 
     return (
         <div className={cx(style.base)}>
@@ -60,7 +69,7 @@ export default function CompanyComponent(props) {
 
                     <span className={style.arrow}>></span>
 
-                    <span onClick={goBack}>Предложения</span>
+                    <span onClick={handleGoBack}>Предложения</span>
 
                     <span className={style.arrow}>></span>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import useMetaTags from 'react-metatags-hook';
 
 import About from './components/About';
 
@@ -28,5 +29,9 @@ Inbaze будет полезен тем, кто хочет:
 `;
 
 export default function AboutPage() {
+    useMetaTags({
+        title: 'Inbaze - О нас',
+    });
+
     return <About header={header} text={text} />;
 }

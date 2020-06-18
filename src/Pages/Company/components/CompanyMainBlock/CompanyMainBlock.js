@@ -179,7 +179,6 @@ export default function CompanyMainBlock(props) {
 
     const isTabHasData = (tab) => {
         return tab.blocks.some((block) => {
-            console.log(isData(get(props, block.dataProp)));
             return isData(get(props, block.dataProp));
         });
     };

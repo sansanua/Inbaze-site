@@ -16,6 +16,7 @@ import style from './CompanyList.module.scss';
 
 const amountFilter = (company, minimumAmount, globalData) => {
     if (!minimumAmount || minimumAmount === 135000) {
+        // move to const
         return true;
     }
     if (!company.investmentCurrency) {
@@ -44,8 +45,8 @@ const currencyFilter = (company, investmentCurrency) => {
     }
 
     return (
-        investmentCurrency.includes(company.investmentCurrency.slug) ||
-        investmentCurrency.includes(company.secondInvestmentCurrency && company.secondInvestmentCurrency.slug)
+        investmentCurrency.includes(company.investmentCurrency?.slug) ||
+        investmentCurrency.includes(company.secondInvestmentCurrency?.slug)
     );
 };
 
