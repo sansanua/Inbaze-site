@@ -50,7 +50,7 @@ $bgColor: #ced1ec;
         width: 100%;
         margin-right: 0;
         background-position: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 }
 
@@ -61,12 +61,22 @@ $bgColor: #ced1ec;
     margin-bottom: 23px;
 
     @include m {
-        display: none;
+        @include center;
+
+        position: absolute;
+        width: 100%;
+        top: 130px;
+        margin: 0;
+        padding: 0;
     }
 
     .item {
         margin-right: 40px;
         cursor: pointer;
+
+        @include m {
+            margin: 0;
+        }
     }
 }
 
@@ -167,7 +177,7 @@ $bgColor: #ced1ec;
 
     @include m {
         flex-wrap: wrap;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 }
 

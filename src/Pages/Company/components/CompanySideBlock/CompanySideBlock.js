@@ -84,7 +84,7 @@ export default function CompanySideBlock({
             </div>
             <div className={cx(style.button)}>
                 <Button type="lightBlueBlue" onClick={handleOpenModal}>
-                    Оставить заявку
+                    Узнать подробней
                 </Button>
             </div>
             <div className={cx(style.arrowImage)}></div>

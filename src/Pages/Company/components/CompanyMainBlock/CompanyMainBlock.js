@@ -206,20 +206,23 @@ export default function CompanyMainBlock(props) {
     const renderMobile = () => {
         return (
             <div>
-                {structure.map((tab) => (
-                    <Collapse
-                        key={tab.header}
-                        className={cx(style.collapse)}
-                        classNameHeader={cx(style.collapseHeader)}
-                        header={
-                            <div className={cx(style.tabHeaderMobile)}>
-                                <img className={cx(style.icon)} src={tab.icon} alt="" />
-                                <div className={cx(style.mobileHeader)}>{tab.header}</div>
-                            </div>
-                        }
-                        content={<>{tab.blocks.map((block) => renderBlock(block))}</>}
-                    />
-                ))}
+                {structure.map(
+                    (tab) =>
+                        isTabHasData(tab) && (
+                            <Collapse
+                                key={tab.header}
+                                className={cx(style.collapse)}
+                                classNameHeader={cx(style.collapseHeader)}
+                                header={
+                                    <div className={cx(style.tabHeaderMobile)}>
+                                        <img className={cx(style.icon)} src={tab.icon} alt="" />
+                                        <div className={cx(style.mobileHeader)}>{tab.header}</div>
+                                    </div>
+                                }
+                                content={<>{tab.blocks.map((block) => renderBlock(block))}</>}
+                            />
+                        )
+                )}
             </div>
         );
     };
