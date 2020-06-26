@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
+import { validate } from 'email-validator';
 
 import { CREATE_SUBSCRIBE_NEWS_USER } from 'api/mutations/subscribeNewsUsers';
-import { sendSubscribeUsersEvent, addContact } from 'api/esputnic';
+import { sendSubscribeUsersEvent } from 'api/esputnic';
 
 import Button from 'components/Button/Button';
 import Input from 'components/Input';
@@ -30,14 +31,24 @@ const socialLinks = [
 
 export default function Footer() {
     const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
     const [createSubscribeNewsUser, { data }] = useMutation(CREATE_SUBSCRIBE_NEWS_USER);
 
+    const handleEmailChange = (e) => {
+        setError(false);
+        setEmail(e.target.value);
+    };
+
     const handleClick = async () => {
+        if (!validate(email)) {
+            setError(true);
+            return;
+        }
+
         createSubscribeNewsUser({ variables: { email } });
 
         // const id = await addContact({ email });
-        debugger;
         sendSubscribeUsersEvent(email, [
             {
                 name: 'email',
@@ -95,9 +106,9 @@ export default function Footer() {
                                 <>
                                     <Input
                                         placeholder="E-mail"
-                                        className={cx(style.input)}
+                                        className={cx(style.input, { [style.error]: error })}
                                         value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        onChange={handleEmailChange}
                                     />
 
                                     <div className={cx(style.buttonWrapper)}>

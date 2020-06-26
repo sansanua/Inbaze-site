@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import style from './Input.module.scss';
 
-export default function Input({ className, placeholder, label, name, value, onChange }) {
+export default function Input({ className, error, placeholder, label, name, value, onChange }) {
     return (
         <div className={cx(className, style.base)}>
             {label && (
@@ -14,7 +14,7 @@ export default function Input({ className, placeholder, label, name, value, onCh
             <input
                 value={value}
                 type="input"
-                className={cx(style.input)}
+                className={cx(style.input, { [style.error]: error })}
                 placeholder={placeholder}
                 name={name}
                 id={name}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
+import { validate } from 'email-validator';
 
 import { CREATE_SUBSCRIBE_USER } from '../../../api/mutations/subscribeUsers';
 
@@ -13,10 +14,21 @@ import style from './SubscribeModal.module.scss';
 
 const SubscribeModal = ({ onCloseModal }) => {
     const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
     const [createSubscribeUser, { data }] = useMutation(CREATE_SUBSCRIBE_USER);
 
+    const handleEmailChange = (e) => {
+        setError(false);
+        setEmail(e.target.value);
+    };
+
     const handleClick = () => {
+        if (!validate(email)) {
+            setError(true);
+            return;
+        }
+
         createSubscribeUser({ variables: { email } });
     };
 
@@ -40,10 +52,11 @@ const SubscribeModal = ({ onCloseModal }) => {
 
             <div className={cx(style.inputContainer)}>
                 <Input
+                    error={error}
                     label="Email"
                     className={cx(style.input)}
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleEmailChange}
                 />
 
                 <Button className={cx(style.button)} type="lightBlueBlue" onClick={handleClick}>
