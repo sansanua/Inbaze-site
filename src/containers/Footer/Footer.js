@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
 
 import { CREATE_SUBSCRIBE_NEWS_USER } from 'api/mutations/subscribeNewsUsers';
+import { sendSubscribeUsersEvent, addContact } from 'api/esputnic';
 
 import Button from 'components/Button/Button';
 import Input from 'components/Input';
@@ -32,8 +33,17 @@ export default function Footer() {
 
     const [createSubscribeNewsUser, { data }] = useMutation(CREATE_SUBSCRIBE_NEWS_USER);
 
-    const handleClick = () => {
+    const handleClick = async () => {
         createSubscribeNewsUser({ variables: { email } });
+
+        // const id = await addContact({ email });
+        debugger;
+        sendSubscribeUsersEvent(email, [
+            {
+                name: 'email',
+                value: email,
+            },
+        ]);
     };
 
     return (
