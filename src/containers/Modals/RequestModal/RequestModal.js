@@ -8,6 +8,8 @@ import Button from 'components/Button/Button';
 import Input from 'components/Input';
 import CloseButton from 'components/CloseButton';
 
+import { trackLead } from 'utils/pixel';
+
 import SuccessScreen from '../components/SuccessScreen';
 
 import style from './RequestModal.module.scss';
@@ -41,6 +43,7 @@ const RequestModal = ({ companyName, onCloseModal }) => {
             return;
         }
 
+        trackLead();
         createRequestUser({ variables: { email, name, companyName, phone } });
     };
 

@@ -6,7 +6,7 @@ import Button from 'components/Button/Button';
 import RequestModal from 'containers/Modals/RequestModal';
 import Modal from 'containers/Modals/Modal';
 
-import { trackLead } from 'utils/pixel';
+import { trackSubmitApplication } from 'utils/pixel';
 
 import style from './CompanySideBlock.module.scss';
 
@@ -28,7 +28,7 @@ export default function CompanySideBlock({
 
     const handleOpenModal = () => {
         setOpen(true);
-        trackLead();
+        trackSubmitApplication();
     };
 
     let url = '';
