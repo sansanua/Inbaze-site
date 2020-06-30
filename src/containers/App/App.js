@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
 import 'assets/index.scss';
@@ -46,6 +46,8 @@ function App() {
 
                     <Route path="/about" component={About} />
                     <Route path="/termsAndConditions" component={Terms} />
+
+                    <Redirect to="/"></Redirect>
                 </Switch>
 
                 <Footer />

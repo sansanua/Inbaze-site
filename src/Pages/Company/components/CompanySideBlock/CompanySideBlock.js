@@ -6,6 +6,8 @@ import Button from 'components/Button/Button';
 import RequestModal from 'containers/Modals/RequestModal';
 import Modal from 'containers/Modals/Modal';
 
+import { trackLead } from 'utils/pixel';
+
 import style from './CompanySideBlock.module.scss';
 
 const EMPTY_TEXT = 'Информация отсутствует';
@@ -26,6 +28,7 @@ export default function CompanySideBlock({
 
     const handleOpenModal = () => {
         setOpen(true);
+        trackLead();
     };
 
     let url = '';

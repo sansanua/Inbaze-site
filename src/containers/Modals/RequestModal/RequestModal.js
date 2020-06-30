@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
 import { validate } from 'email-validator';
@@ -19,11 +19,6 @@ const RequestModal = ({ companyName, onCloseModal }) => {
     const [emailError, setEmailError] = useState('');
     const [nameError, setNameError] = useState('');
     const [phoneError, setPhoneError] = useState('');
-
-    useEffect(() => {
-        /* eslint-disable no-undef */
-        fbq('track', 'Lead');
-    }, []);
 
     const [createRequestUser, { data }] = useMutation(CREATE_REQUEST_USER);
 
