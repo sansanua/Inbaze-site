@@ -30,19 +30,19 @@ export const instrumentsItems = [
         imageColored: '/images/instruments/money-01-colored.svg',
     },
     {
-        slug: 'ipo',
+        slug: 'dov',
         color: '#dce3ff',
         image: '/images/instruments/handshake-02.svg',
         imageColored: '/images/instruments/handshake-02-colored.svg',
     },
     {
-        slug: 'biznes',
+        slug: 'business',
         color: '#dce3ff',
         image: '/images/instruments/case-01.svg',
         imageColored: '/images/instruments/case-01-colored.svg',
     },
     {
-        slug: 'nedvizhimost',
+        slug: 'estate',
         color: '#dce3ff',
         image: '/images/instruments/property-01.svg',
         imageColored: '/images/instruments/property-01-colored.svg',

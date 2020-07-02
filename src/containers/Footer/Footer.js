@@ -86,7 +86,7 @@ export default function Footer() {
                                 </div>
                             </div>
                             <div className={cx(style.contactsEmail)}>
-                                <div className={cx(style.email)}>info@inbaze.com</div>
+                                <div className={cx(style.email)}>inbaze.info@gmail.com</div>
                             </div>
                         </div>
                     </div>
