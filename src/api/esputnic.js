@@ -31,11 +31,11 @@ const sendEmailEvent = (email, key, params) => {
     return post('/api/v1/event', body);
 };
 
-export const getInfo = () => {
+const getInfo = () => {
     return get('/api/v1/account/info');
 };
 
-export const addContact = (email) => {
+const addContact = (email) => {
     return post('/api/v1/contact', {
         channels: [
             {
@@ -45,8 +45,22 @@ export const addContact = (email) => {
         ],
     });
 };
+const contactSubscribe = ({ email, phone, name, groups }) => {
+    return post('/api/v1/contact/subscribe', {
+        contact: {
+            firstName: name,
+            channels: [
+                {
+                    type: 'email',
+                    value: email,
+                },
+            ],
+        },
+        groups,
+    });
+};
 
-export const addContacts = (...contacts) => {
+const addContacts = (...contacts) => {
     const body = {
         contacts: contacts.map(({ email }) => ({
             // firstName: '...',
@@ -64,6 +78,14 @@ export const addContacts = (...contacts) => {
     return post('/api/v1/contacts', body);
 };
 
-export const sendSubscribeUsersEvent = (email, params) => {
-    return sendEmailEvent(email, 'SubscribeUsers', params);
+export const sendContactRequestEvent = (email, phone, name) => {
+    return contactSubscribe({ email, phone, name, groups: ['companyRequest'] });
+};
+
+export const sendInstrumentSubscribeEvent = (email) => {
+    return contactSubscribe({ email, groups: ['instrumentSubscribe'] });
+};
+
+export const sendSubscribeForNewsEvent = (email) => {
+    return contactSubscribe({ email, groups: ['subscribeForNews'] });
 };

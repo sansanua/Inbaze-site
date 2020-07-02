@@ -8,6 +8,8 @@ import Button from 'components/Button/Button';
 import Input from 'components/Input';
 import CloseButton from 'components/CloseButton';
 
+import { sendContactRequestEvent } from 'api/esputnic';
+
 import { trackLead } from 'utils/pixel';
 
 import SuccessScreen from '../components/SuccessScreen';
@@ -44,6 +46,7 @@ const RequestModal = ({ companyName, onCloseModal }) => {
         }
 
         trackLead();
+        sendContactRequestEvent(email, phone, name);
         createRequestUser({ variables: { email, name, companyName, phone } });
     };
 

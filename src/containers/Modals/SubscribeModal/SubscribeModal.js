@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 import cx from 'classnames';
 import { validate } from 'email-validator';
 
+import { sendInstrumentSubscribeEvent } from 'api/esputnic';
 import { CREATE_SUBSCRIBE_USER } from '../../../api/mutations/subscribeUsers';
 
 import Button from '../../../components/Button/Button';
@@ -29,6 +30,7 @@ const SubscribeModal = ({ onCloseModal }) => {
             return;
         }
 
+        sendInstrumentSubscribeEvent(email);
         createSubscribeUser({ variables: { email } });
     };
 

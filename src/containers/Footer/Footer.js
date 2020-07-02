@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { validate } from 'email-validator';
 
 import { CREATE_SUBSCRIBE_NEWS_USER } from 'api/mutations/subscribeNewsUsers';
-import { sendSubscribeUsersEvent } from 'api/esputnic';
+import { sendSubscribeForNewsEvent } from 'api/esputnic';
 
 import Button from 'components/Button/Button';
 import Input from 'components/Input';
@@ -48,13 +48,7 @@ export default function Footer() {
 
         createSubscribeNewsUser({ variables: { email } });
 
-        // const id = await addContact({ email });
-        sendSubscribeUsersEvent(email, [
-            {
-                name: 'email',
-                value: email,
-            },
-        ]);
+        sendSubscribeForNewsEvent(email);
     };
 
     return (
