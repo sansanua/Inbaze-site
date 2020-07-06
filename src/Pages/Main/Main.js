@@ -22,13 +22,17 @@ export default function Main() {
     const { data } = useQuery(INSTRUMENTS);
     const instruments = (data && data.instruments) || null;
 
+    const [selectedInstrument, setSelectedInstrument] = useState('');
     const [open, setOpen] = useState(false);
+
     const handleCloseModal = () => {
         setOpen(false);
+        setSelectedInstrument('');
     };
 
-    const handleOpenModal = () => {
+    const handleOpenModal = (instrument) => {
         setOpen(true);
+        setSelectedInstrument(instrument);
     };
 
     return (
@@ -71,7 +75,7 @@ export default function Main() {
             </div>
 
             <Modal open={open} handleCloseModal={handleCloseModal}>
-                <SubscribeModal />
+                <SubscribeModal instrument={selectedInstrument} />
             </Modal>
         </div>
     );

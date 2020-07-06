@@ -31,7 +31,7 @@ export default function InstrumentCard({ name, shortDescription, className, slug
     );
 
     const handlePopup = () => {
-        onOpenSubscribeModal();
+        onOpenSubscribeModal(name);
     };
 
     return (

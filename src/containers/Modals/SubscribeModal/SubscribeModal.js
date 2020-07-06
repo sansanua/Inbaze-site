@@ -13,7 +13,7 @@ import SuccessScreen from '../components/SuccessScreen';
 
 import style from './SubscribeModal.module.scss';
 
-const SubscribeModal = ({ onCloseModal }) => {
+const SubscribeModal = ({ instrument, onCloseModal }) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
 
@@ -31,7 +31,7 @@ const SubscribeModal = ({ onCloseModal }) => {
         }
 
         sendInstrumentSubscribeEvent(email);
-        createSubscribeUser({ variables: { email } });
+        createSubscribeUser({ variables: { email, instrument } });
     };
 
     if (data) {
