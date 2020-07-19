@@ -11,6 +11,7 @@ const get = (url) => {
         })
         .then((result) => result.data);
 };
+
 const post = (url, body = {}) => {
     return axios
         .post(`https://esputnik.com${url}`, body, {
@@ -46,7 +47,8 @@ const addContact = (email) => {
         ],
     });
 };
-const contactSubscribe = ({ email, phone, name, groups }) => {
+
+const contactSubscribe = ({ email, name, groups, formType, fields }) => {
     return post('/api/v1/contact/subscribe', {
         contact: {
             firstName: name,
@@ -56,8 +58,10 @@ const contactSubscribe = ({ email, phone, name, groups }) => {
                     value: email,
                 },
             ],
+            // fields,
         },
         groups,
+        formType,
     });
 };
 
@@ -80,13 +84,24 @@ const addContacts = (...contacts) => {
 };
 
 export const sendContactRequestEvent = (email, phone, name) => {
-    return contactSubscribe({ email, phone, name, groups: ['companyRequest'] });
+    return contactSubscribe({
+        email,
+        // fields: [
+        //     {
+        //         id: 0,
+        //         value: phone,
+        //     },
+        // ],
+        name,
+        groups: ['companyRequest'],
+        formType: 'companyRequest',
+    });
 };
 
 export const sendInstrumentSubscribeEvent = (email) => {
-    return contactSubscribe({ email, groups: ['instrumentSubscribe'] });
+    return contactSubscribe({ email, groups: ['instrumentSubscribe'], formType: 'instrumentSubscribe' });
 };
 
 export const sendSubscribeForNewsEvent = (email) => {
-    return contactSubscribe({ email, groups: ['subscribeForNews'] });
+    return contactSubscribe({ email, groups: ['subscribeForNews'], formType: 'subscribeForNews' });
 };

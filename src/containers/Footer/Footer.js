@@ -95,7 +95,10 @@ export default function Footer() {
                         </div>
                         <div className={cx(style.inputContainer)}>
                             {data ? (
-                                <div className={style.thanks}>Спасибо за подписку! </div>
+                                <div className={style.thanks}>
+                                    Спасибо за подписку! Подтвердите, пожалуйста, свой email на почте чтобы мы могли
+                                    отправлять вам подборки материалов.
+                                </div>
                             ) : (
                                 <>
                                     <Input

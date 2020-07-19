@@ -39,7 +39,7 @@ const SubscribeModal = ({ instrument, onCloseModal }) => {
             <div className={cx(style.base)}>
                 <SuccessScreen
                     title="Cпасибо за подписку!"
-                    subtitle="Мы оповестим вас как только запустим предложения, связанные с данным инструментом."
+                    subtitle="Подтвердите, пожалуйста, свой email на почте и мы сможем оповестить вас о предложениях по данному направлению."
                 ></SuccessScreen>
             </div>
         );
@@ -48,7 +48,7 @@ const SubscribeModal = ({ instrument, onCloseModal }) => {
     return (
         <div className={cx(style.base)}>
             <div className={style.text}>
-                Мы еще не добавляли эти инструменты на нашу платформу. Но если вы хотите знать, когда они появтся -
+                Мы еще не добавляли этот инструмент на нашу платформу. Но если вы хотите знать, когда он появится -
                 оставьте свой email и мы вас обязательно оповестим
             </div>
 
