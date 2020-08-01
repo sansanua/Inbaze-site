@@ -6,10 +6,12 @@ import useMetaTags from 'react-metatags-hook';
 
 import { INSTRUMENTS } from 'api/queries/instruments';
 
-import Button from '../../components/Button';
-import InstrumentCard from './components/InstrumentCard';
+import Button from 'components/Button';
 import SubscribeModal from 'containers/Modals/SubscribeModal/SubscribeModal';
 import Modal from 'containers/Modals/Modal';
+
+import InstrumentCard from './components/InstrumentCard';
+import AdditionalBlok from './components/AdditionalBlok';
 
 import style from './Main.module.scss';
 
@@ -53,11 +55,15 @@ export default function Main() {
                 </div>
             </div>
 
+            <AdditionalBlok></AdditionalBlok>
+
             <div className={cx(style.instruments)}>
                 <div className={cx(style.container)}>
-                    <div className={cx(style.title)}>Инструменты для инвестирования</div>
+                    <div className={cx(style.title)}>
+                        Для удобства предложения распределены по основным направлениям инвестиций
+                    </div>
                     <div className={cx(style.subtitle)}>
-                        Выбирайте инструменты, в которые можно инвестировать, и ознакомьтесь с доступными предложениями
+                        Выбирайте интересующие направления и изучайте доступные по ним предложения на рынке Украины
                     </div>
 
                     {instruments && (

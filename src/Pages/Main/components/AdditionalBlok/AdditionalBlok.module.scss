@@ -1,0 +1,72 @@
+@import 'assets/index.scss';
+
+.base {
+    @include center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    @include m {
+        margin-top: 60px;
+        margin-bottom: 120px;
+    }
+}
+
+.container {
+    @include contentWidth;
+
+    display: flex;
+
+    @include m {
+        flex-wrap: wrap;
+    }
+}
+
+.textBlock {
+    width: 50%;
+
+    @include m {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.title {
+    @include font48;
+
+    color: $primary;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+    @include m {
+        text-align: center;
+    }
+}
+
+.text {
+    @include font24;
+
+    @include m {
+        text-align: center;
+    }
+}
+
+.imageBlock {
+    .image {
+        width: 583px;
+        height: 464px;
+        margin-right: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/images/mainAdditional.png');
+
+        @include t {
+            width: 390px;
+            height: 315px;
+        }
+
+        @include m {
+            width: 340px;
+            height: 272px;
+        }
+    }
+}
