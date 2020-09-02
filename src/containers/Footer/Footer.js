@@ -15,17 +15,17 @@ const socialLinks = [
     {
         name: 'instagram',
         logo: '/images/logos/instagram.svg',
-        link: 'https://www.instagram.com/',
+        link: 'https://www.instagram.com/inbaze_invest/',
     },
     {
         name: 'facebook',
         logo: '/images/logos/facebook.svg',
-        link: 'https://www.facebook.com/',
+        link: 'https://www.facebook.com/inbaze1/',
     },
     {
         name: 'telegram',
         logo: '/images/logos/telegram.svg',
-        link: 'https://telegram.org/',
+        link: 'https://t.me/inbaze',
     },
 ];
 
